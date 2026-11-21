@@ -1,0 +1,536 @@
+{
+  "layers": {
+    "roads": {
+      "path": "/Users/frank/Desktop/AI4Science/event/inputs/assets/roads-20241028.geojson",
+      "inputs": [],
+      "parameters": [],
+      "stale": false,
+      "source": true,
+      "sha256": "9202e73783f51f313b0d1102f2fb135a2404910eb5c90b019ef277d112747514"
+    },
+    "aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/inputs/assets/study-area.geojson",
+      "inputs": [],
+      "parameters": [],
+      "stale": false,
+      "source": true,
+      "sha256": "47871848b33851563e86f3d167dff1be28b2dd8481a1b213f519212d4e7d91a9"
+    },
+    "flood": {
+      "path": "/Users/frank/Desktop/AI4Science/event/products/ems-reference.geojson",
+      "inputs": [],
+      "parameters": [],
+      "stale": false,
+      "source": true,
+      "sha256": "894d1922ab11d90d29df36afbeb1849336b1c500d8fd5092436f24b3ab4d72bf"
+    },
+    "aoi_utm": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/aoi_utm.gpkg",
+      "inputs": [
+        "aoi"
+      ],
+      "parameters": [
+        "target_crs"
+      ],
+      "stale": false,
+      "source": false,
+      "sha256": "ce4908a0496ac690627e87b502ef281067531c26d6922cb1767436e0675aca44",
+      "operation": {
+        "algorithm": "native:reprojectlayer",
+        "params": {
+          "INPUT": {
+            "layer": "aoi"
+          },
+          "TARGET_CRS": {
+            "parameter": "target_crs"
+          }
+        }
+      }
+    },
+    "roads_utm": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_utm.gpkg",
+      "inputs": [
+        "roads"
+      ],
+      "parameters": [
+        "target_crs"
+      ],
+      "stale": false,
+      "source": false,
+      "sha256": "44a8d7c2ec06e6e7e2d6a8be5b0aa041ec1a0ac08e2b5b907faee46c3f38e1b5",
+      "operation": {
+        "algorithm": "native:reprojectlayer",
+        "params": {
+          "INPUT": {
+            "layer": "roads"
+          },
+          "TARGET_CRS": {
+            "parameter": "target_crs"
+          }
+        }
+      }
+    },
+    "roads_aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_aoi.gpkg",
+      "inputs": [
+        "aoi_utm",
+        "roads_utm"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "eb601f012d01ed9a3b8d18c27d0cc519e52d3e975dd63c4b7a60c2c09c24261b",
+      "operation": {
+        "algorithm": "native:clip",
+        "params": {
+          "INPUT": {
+            "layer": "roads_utm"
+          },
+          "OVERLAY": {
+            "layer": "aoi_utm"
+          }
+        }
+      }
+    },
+    "roads_unique": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_unique.gpkg",
+      "inputs": [
+        "roads_aoi"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "08eee2f2807ecef315183e288b6039e1d27983dd98daa0aea6c7e37aba46c375",
+      "operation": {
+        "algorithm": "native:dissolve",
+        "params": {
+          "INPUT": {
+            "layer": "roads_aoi"
+          },
+          "FIELD": []
+        }
+      }
+    },
+    "flood_fixed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/flood_fixed.gpkg",
+      "inputs": [
+        "flood"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "35711f0099325178d6b8986a9cb86a064acef5ef1ea2a4b83a39efd2fd4e16cf",
+      "operation": {
+        "algorithm": "native:fixgeometries",
+        "params": {
+          "INPUT": {
+            "layer": "flood"
+          }
+        }
+      }
+    },
+    "flood_union": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/flood_union.gpkg",
+      "inputs": [
+        "flood_fixed"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "4d6eccd9d375abac2f6abb7c98521a4fadaf6dc038937b3d24d3598c83ad4826",
+      "operation": {
+        "algorithm": "native:dissolve",
+        "params": {
+          "INPUT": {
+            "layer": "flood_fixed"
+          },
+          "FIELD": []
+        }
+      }
+    },
+    "roads_exposed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_exposed.gpkg",
+      "inputs": [
+        "flood_union",
+        "roads_unique"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "ebc13030b4a2c1941e5a9ecde35186d1a06f07ca73e890aaa0eb2fdbde4aad50",
+      "operation": {
+        "algorithm": "native:clip",
+        "params": {
+          "INPUT": {
+            "layer": "roads_unique"
+          },
+          "OVERLAY": {
+            "layer": "flood_union"
+          }
+        }
+      }
+    },
+    "grid_1km": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_1km.gpkg",
+      "inputs": [
+        "aoi_utm"
+      ],
+      "parameters": [
+        "grid_size_m",
+        "target_crs"
+      ],
+      "stale": true,
+      "source": false,
+      "sha256": "3def37323bd117fc61e7c79118be738f817e7f8b3dfef833e5aaacaae82d5322",
+      "operation": {
+        "algorithm": "native:creategrid",
+        "params": {
+          "TYPE": 2,
+          "EXTENT": {
+            "layer": "aoi_utm"
+          },
+          "HSPACING": {
+            "parameter": "grid_size_m"
+          },
+          "VSPACING": {
+            "parameter": "grid_size_m"
+          },
+          "CRS": {
+            "parameter": "target_crs"
+          }
+        }
+      }
+    },
+    "grid_total": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_total.gpkg",
+      "inputs": [
+        "grid_1km",
+        "roads_unique"
+      ],
+      "parameters": [],
+      "stale": true,
+      "source": false,
+      "sha256": "b63d7842f68a2a92292e1be46f47852461dfae685f3b6b0bc345972c59f9c26b",
+      "operation": {
+        "algorithm": "native:sumlinelengths",
+        "params": {
+          "POLYGONS": {
+            "layer": "grid_1km"
+          },
+          "LINES": {
+            "layer": "roads_unique"
+          },
+          "LEN_FIELD": "total_m",
+          "COUNT_FIELD": "total_n"
+        }
+      }
+    },
+    "grid_lengths": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_lengths.gpkg",
+      "inputs": [
+        "grid_total",
+        "roads_exposed"
+      ],
+      "parameters": [],
+      "stale": true,
+      "source": false,
+      "sha256": "2a09055357606d4707250bd610422d5b47a9863b8a665a795a63adf5e8dcf07c",
+      "operation": {
+        "algorithm": "native:sumlinelengths",
+        "params": {
+          "POLYGONS": {
+            "layer": "grid_total"
+          },
+          "LINES": {
+            "layer": "roads_exposed"
+          },
+          "LEN_FIELD": "exposed_m",
+          "COUNT_FIELD": "exposed_n"
+        }
+      }
+    },
+    "grid_exposure": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_exposure.gpkg",
+      "inputs": [
+        "grid_lengths"
+      ],
+      "parameters": [
+        "rate_expression"
+      ],
+      "stale": true,
+      "source": false,
+      "sha256": "796fd4375e263d0d7316c17a1fe5bd60294e21a0b059126823efc50cd2eff8b4",
+      "operation": {
+        "algorithm": "native:fieldcalculator",
+        "params": {
+          "INPUT": {
+            "layer": "grid_lengths"
+          },
+          "FIELD_NAME": "exposure_rate",
+          "FIELD_TYPE": 0,
+          "FIELD_LENGTH": 20,
+          "FIELD_PRECISION": 8,
+          "FORMULA": {
+            "parameter": "rate_expression"
+          }
+        }
+      }
+    },
+    "roads_ps_aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_aoi.gpkg",
+      "inputs": [
+        "roads_aoi"
+      ],
+      "parameters": [
+        "road_filter"
+      ],
+      "stale": false,
+      "source": false,
+      "sha256": "4a29d0d9e2e2ea9a4d0cf1a187faba552e8664a2b671bbe71b00f0bf382c6389",
+      "operation": {
+        "algorithm": "native:extractbyexpression",
+        "params": {
+          "INPUT": {
+            "layer": "roads_aoi"
+          },
+          "EXPRESSION": {
+            "parameter": "road_filter"
+          }
+        }
+      }
+    },
+    "roads_ps_unique": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_unique.gpkg",
+      "inputs": [
+        "roads_ps_aoi"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "6432245c7b2ceb032627402ba217515101e622bcf847f90192cc434e02a97685",
+      "operation": {
+        "algorithm": "native:dissolve",
+        "params": {
+          "INPUT": {
+            "layer": "roads_ps_aoi"
+          },
+          "FIELD": []
+        }
+      }
+    },
+    "roads_ps_exposed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_exposed.gpkg",
+      "inputs": [
+        "flood_union",
+        "roads_ps_unique"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "3ad9ddaafee18bbedad376135f328d04aabedcf71c1b741bc9a04d6bcca8506d",
+      "operation": {
+        "algorithm": "native:clip",
+        "params": {
+          "INPUT": {
+            "layer": "roads_ps_unique"
+          },
+          "OVERLAY": {
+            "layer": "flood_union"
+          }
+        }
+      }
+    },
+    "grid_ps_2km": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km.gpkg",
+      "inputs": [
+        "aoi_utm"
+      ],
+      "parameters": [
+        "grid_size_m",
+        "target_crs"
+      ],
+      "stale": false,
+      "source": false,
+      "sha256": "ca60f020a107e38b9e71f5aa548ceaf5dfe5679c8af61744e5feda9241696fde",
+      "operation": {
+        "algorithm": "native:creategrid",
+        "params": {
+          "TYPE": 2,
+          "EXTENT": {
+            "layer": "aoi_utm"
+          },
+          "HSPACING": {
+            "parameter": "grid_size_m"
+          },
+          "VSPACING": {
+            "parameter": "grid_size_m"
+          },
+          "CRS": {
+            "parameter": "target_crs"
+          }
+        }
+      }
+    },
+    "grid_ps_2km_total": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_total.gpkg",
+      "inputs": [
+        "grid_ps_2km",
+        "roads_ps_unique"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "46c339bab4283ccb0069845e10dcde6bc060287ac142944e0b17ed4cb6d32b69",
+      "operation": {
+        "algorithm": "native:sumlinelengths",
+        "params": {
+          "POLYGONS": {
+            "layer": "grid_ps_2km"
+          },
+          "LINES": {
+            "layer": "roads_ps_unique"
+          },
+          "LEN_FIELD": "total_m",
+          "COUNT_FIELD": "total_n"
+        }
+      }
+    },
+    "grid_ps_2km_lengths": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_lengths.gpkg",
+      "inputs": [
+        "grid_ps_2km_total",
+        "roads_ps_exposed"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "22f06754121b8a0299750a25b0e89b1ec97831be38178935e13ca6db6a1bc8ca",
+      "operation": {
+        "algorithm": "native:sumlinelengths",
+        "params": {
+          "POLYGONS": {
+            "layer": "grid_ps_2km_total"
+          },
+          "LINES": {
+            "layer": "roads_ps_exposed"
+          },
+          "LEN_FIELD": "exposed_m",
+          "COUNT_FIELD": "exposed_n"
+        }
+      }
+    },
+    "grid_ps_2km_exposure": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_exposure.gpkg",
+      "inputs": [
+        "grid_ps_2km_lengths"
+      ],
+      "parameters": [
+        "rate_expression"
+      ],
+      "stale": false,
+      "source": false,
+      "sha256": "8a57dbf5eb658fe36c2f83ffac302a673c0a78097e78dcc66e5b9cacd9e31c5d",
+      "operation": {
+        "algorithm": "native:fieldcalculator",
+        "params": {
+          "INPUT": {
+            "layer": "grid_ps_2km_lengths"
+          },
+          "FIELD_NAME": "exposure_rate",
+          "FIELD_TYPE": 0,
+          "FIELD_LENGTH": 20,
+          "FIELD_PRECISION": 8,
+          "FORMULA": {
+            "parameter": "rate_expression"
+          }
+        }
+      }
+    },
+    "grid_ps_2km_rankable": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_rankable.gpkg",
+      "inputs": [
+        "grid_ps_2km_exposure"
+      ],
+      "parameters": [],
+      "stale": false,
+      "source": false,
+      "sha256": "af1e3082e2dffafd21adb0cb5323d7f42836453a1238057a3c30513b625a777c",
+      "operation": {
+        "algorithm": "native:extractbyexpression",
+        "params": {
+          "INPUT": {
+            "layer": "grid_ps_2km_exposure"
+          },
+          "EXPRESSION": "\"total_m\" > 0"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "target_crs": "EPSG:32630",
+    "grid_size_m": 2000,
+    "road_selection": [
+      "primary",
+      "primary_link",
+      "secondary",
+      "secondary_link"
+    ],
+    "exposure_definition": "planar overlap with EMSR773 flood delineation",
+    "rate_expression": "CASE WHEN \"total_m\" > 0 THEN \"exposed_m\" / \"total_m\" ELSE NULL END",
+    "road_filter": "\"highway\" IN ('primary','primary_link','secondary','secondary_link')",
+    "ranking_field": "exposure_rate"
+  },
+  "artifacts": {
+    "horta_sud_exposure_map": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_exposure_map.qgz",
+      "pdf": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_exposure_map.pdf",
+      "png": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_exposure_map.png",
+      "inputs": [
+        "grid_exposure"
+      ],
+      "parameters": [],
+      "stale": true,
+      "spec": {
+        "layer_id": "grid_exposure",
+        "field": "exposed_m",
+        "title": "Horta Sud road flood exposure - 1 km grid",
+        "unit": "m",
+        "breaks": [
+          0,
+          100,
+          300,
+          600,
+          1000,
+          1600
+        ],
+        "source_note": "OSM roads 2024-10-28; EMSR773 flood 2024-10-31; Horta Sud AOI. All supplied roads; coincident lines dissolved. Planar overlap only; no damage, closure or depth inference. Bridges/tunnels: elevation not assessed. Source coverage incomplete."
+      }
+    },
+    "horta_sud_ps_2km_rate_map": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_ps_2km_rate_map.qgz",
+      "pdf": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_ps_2km_rate_map.pdf",
+      "png": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_ps_2km_rate_map.png",
+      "inputs": [
+        "grid_ps_2km_exposure"
+      ],
+      "parameters": [],
+      "stale": false,
+      "spec": {
+        "layer_id": "grid_ps_2km_exposure",
+        "field": "exposure_rate",
+        "title": "Horta Sud primary and secondary road exposure - 2 km grid",
+        "unit": "fraction (0-1)",
+        "breaks": [
+          0,
+          0.01,
+          0.05,
+          0.1,
+          0.25,
+          1
+        ],
+        "source_note": "OSM 2024-10-28: primary, primary_link, secondary, secondary_link; EMSR773 2024-10-31. AOI-clipped roads; coincident lines dissolved. Rate = exposed / total length; NULL if no roads. Planar overlap only; no damage, closure or depth inference. Bridge/tunnel elevation unassessed; source coverage incomplete."
+      }
+    }
+  },
+  "tracked": false
+}

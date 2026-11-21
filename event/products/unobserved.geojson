@@ -1,0 +1,11 @@
+{
+  "type": "FeatureCollection",
+  "name": "unobserved",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::32630"
+    }
+  },
+  "features": []
+}

@@ -1,0 +1,92 @@
+{
+  "parameters": {
+    "target_crs": "EPSG:32630",
+    "grid_size_m": 2000,
+    "road_selection": [
+      "primary",
+      "primary_link",
+      "secondary",
+      "secondary_link"
+    ],
+    "exposure_definition": "planar overlap with EMSR773 flood delineation",
+    "rate_expression": "CASE WHEN \"total_m\" > 0 THEN \"exposed_m\" / \"total_m\" ELSE NULL END",
+    "road_filter": "\"highway\" IN ('primary','primary_link','secondary','secondary_link')",
+    "ranking_field": "exposure_rate"
+  },
+  "layers": {
+    "roads": {
+      "path": "/Users/frank/Desktop/AI4Science/event/inputs/assets/roads-20241028.geojson"
+    },
+    "aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/inputs/assets/study-area.geojson"
+    },
+    "flood": {
+      "path": "/Users/frank/Desktop/AI4Science/event/products/ems-reference.geojson"
+    },
+    "aoi_utm": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/aoi_utm.gpkg"
+    },
+    "roads_utm": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_utm.gpkg"
+    },
+    "roads_aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_aoi.gpkg"
+    },
+    "roads_unique": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_unique.gpkg"
+    },
+    "flood_fixed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/flood_fixed.gpkg"
+    },
+    "flood_union": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/flood_union.gpkg"
+    },
+    "roads_exposed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_exposed.gpkg"
+    },
+    "grid_1km": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_1km.gpkg"
+    },
+    "grid_total": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_total.gpkg"
+    },
+    "grid_lengths": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_lengths.gpkg"
+    },
+    "grid_exposure": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_exposure.gpkg"
+    },
+    "roads_ps_aoi": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_aoi.gpkg"
+    },
+    "roads_ps_unique": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_unique.gpkg"
+    },
+    "roads_ps_exposed": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/roads_ps_exposed.gpkg"
+    },
+    "grid_ps_2km": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km.gpkg"
+    },
+    "grid_ps_2km_total": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_total.gpkg"
+    },
+    "grid_ps_2km_lengths": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_lengths.gpkg"
+    },
+    "grid_ps_2km_exposure": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_exposure.gpkg"
+    },
+    "grid_ps_2km_rankable": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/grid_ps_2km_rankable.gpkg"
+    }
+  },
+  "artifacts": {
+    "horta_sud_exposure_map": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_exposure_map.qgz"
+    },
+    "horta_sud_ps_2km_rate_map": {
+      "path": "/Users/frank/Desktop/AI4Science/event/runs/gis-comparison/generic/horta_sud_ps_2km_rate_map.qgz"
+    }
+  }
+}

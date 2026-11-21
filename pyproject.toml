@@ -1,0 +1,22 @@
+[project]
+name = "flood-water-agent"
+version = "0.1.0"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy",
+  "rasterio",
+  "pyproj",
+  "scikit-image",
+  "scipy",
+  "shapely>=2.1",
+  "torch>=2.6",
+  "torchvision",
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+local-agent = ["mlx-lm; sys_platform == 'darwin' and platform_machine == 'arm64'"]
+qa = ["pytest", "pymupdf"]
+
+[tool.uv]
+package = false

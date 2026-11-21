@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FloodLab · 洪涝分析与制图工作台</title>
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/studio.css">
+  <script defer src="/vendor/leaflet/leaflet.js"></script>
+  <script defer src="/vendor/lucide.js"></script>
+  <script defer src="/vendor/markdown-it/markdown-it.umd.min.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <aside id="sidebar" class="sidebar" aria-label="会话导航">
+    <div class="wordmark"><i data-lucide="layers-3"></i><strong>FloodLab</strong></div>
+    <button id="newTask" class="nav-row"><i data-lucide="square-pen"></i>新对话</button>
+    <div class="nav-label">历史对话</div><div id="historyList" class="history-list"></div>
+    <div class="side-bottom"><i data-lucide="layers"></i><div><strong>FloodLab</strong><small>洪涝研究工作区</small></div></div>
+  </aside>
+  <button id="scrim" aria-label="收起侧栏" tabindex="-1"></button>
+  <header class="app-header">
+    <div class="header-left"><button id="toggleSidebar" class="icon-button" title="切换侧栏" aria-label="切换侧栏" aria-controls="sidebar"><i data-lucide="panel-left"></i></button><span id="threadTitle">新对话</span></div>
+    <nav class="view-nav" aria-label="工作区"><button data-panel="chat" class="active"><i data-lucide="message-square"></i>对话</button><button data-panel="map"><i data-lucide="map"></i>地图</button><button data-panel="results"><i data-lucide="files"></i>成果</button></nav>
+  </header>
+  <main class="workspace" data-panel="chat">
+    <aside class="chat-panel panel">
+      <div id="welcome"><span class="welcome-mark"><i data-lucide="layers-3"></i></span><h1>想分析什么？</h1></div>
+      <div id="conversation" class="conversation" aria-live="polite"></div>
+      <form id="taskForm" class="composer">
+        <label for="question" class="sr-only">分析要求</label>
+        <button type="button" id="projectFolder" title="选择对话工作区"><i data-lucide="folder-open"></i><span>默认工作区</span></button>
+        <textarea id="question" rows="2" placeholder="向 FloodLab 提问…"></textarea>
+        <div class="composer-footer"><button id="connectionButton" type="button" title="模型连接"><i data-lucide="sliders-horizontal"></i><span id="connectionStatus">配置模型</span><i data-lucide="chevron-down"></i></button><span id="taskStatus" role="status"></span><button id="stopTask" type="button" class="icon-button hidden" title="停止任务" aria-label="停止任务"><i data-lucide="square"></i></button><button id="sendTask" type="submit" class="primary compact" title="发送" aria-label="发送"><i data-lucide="arrow-up"></i></button></div>
+      </form>
+      <div id="starters"><button data-prompt="最近国内哪儿发生洪涝了？"><i data-lucide="search"></i>查近期洪涝</button><button data-prompt="我想研究洪涝，但手上没有数据，该从哪里开始？"><i data-lucide="message-square"></i>帮我选方向</button><button id="example"><i data-lucide="history"></i>查看案例</button></div>
+    </aside>
+    <section class="map-panel panel">
+      <div class="map-heading"><div><span class="eyebrow">西班牙 · 瓦伦西亚</span><h2>Horta Sud 洪涝道路暴露</h2></div><button id="fitMap" class="icon-button" title="缩放至研究区" aria-label="缩放至研究区"><i data-lucide="scan"></i></button></div>
+      <div class="map-toolbar">
+        <select id="versionSelect" aria-label="成果版本"></select>
+        <div class="segmented" role="group" aria-label="显示指标"><button data-metric="exposed_m" class="active">暴露长度</button><button data-metric="exposure_pct">暴露率</button></div>
+      </div>
+      <div class="map-wrap">
+        <div id="map" aria-label="洪涝道路暴露交互地图"></div>
+        <div class="layers-control">
+          <label><input id="showSatellite" type="checkbox" checked>灾前影像</label>
+          <label><input id="showFlood" type="checkbox" checked>洪涝轮廓</label>
+          <label><input id="showRoads" type="checkbox">道路</label>
+        </div>
+        <div id="legend" class="map-legend"></div>
+        <div id="mapEmpty" class="map-empty hidden">等待分析图层</div>
+      </div>
+      <div class="map-footer"><span>Sentinel-2 · 2024-10-26</span><span>OSM · 2024-10-28</span><span>EMS · 2024-10-31</span></div>
+    </section>
+    <aside class="results-panel panel">
+      <div class="panel-heading"><h2>分析结果</h2><span id="versionBadge" class="badge">当前版本</span></div>
+      <div class="results-scroll">
+        <div class="metric-summary">
+          <div><span>道路总长度</span><strong id="totalLength">—</strong></div>
+          <div><span>暴露长度</span><strong id="exposedLength">—</strong></div>
+          <div><span>整体暴露率</span><strong id="overallRatio">—</strong></div>
+          <div><span>统计网格</span><strong id="gridCount">—</strong></div>
+        </div>
+        <section class="result-section"><div class="section-title"><h3>网格排名</h3><span id="rankingUnit">长度 / m</span></div>
+          <div class="table-wrap"><table><thead><tr><th>网格</th><th>暴露长度 m</th><th>暴露率 %</th></tr></thead><tbody id="ranking"></tbody></table></div>
+          <span class="secondary">点击网格定位；无道路网格不参与暴露率排名。</span>
+        </section>
+        <section class="result-section"><h3>成果文件</h3><p id="artifactTitle" class="secondary">尚无专题图</p>
+          <div class="downloads"><button id="previewMap"><i data-lucide="image"></i>查看专题图</button><a id="downloadPDF"><i data-lucide="file-down"></i>PDF</a><a id="downloadQGIS"><i data-lucide="layers"></i>QGIS</a><a id="downloadData"><i data-lucide="database"></i>GeoPackage</a><button id="openQGIS" class="hidden"><i data-lucide="external-link"></i>在 QGIS 中打开</button></div>
+        </section>
+        <section class="result-section"><h3>执行与核验</h3><div id="verification" class="verification">等待结果</div><div id="trace" class="trace"></div></section>
+        <section class="result-section limitations"><h3>结果含义</h3><p>道路与洪涝轮廓的平面重叠，仅表示空间暴露，不代表道路损毁或封闭。桥梁、隧道未进行高程判别。</p><p>道路来源：© OpenStreetMap contributors，ODbL。洪涝轮廓：Copernicus EMSR773。</p></section>
+      </div>
+    </aside>
+  </main>
+  <div id="toast" class="toast hidden" role="alert"></div>
+  <dialog id="folderDialog"><form id="folderForm"><div class="dialog-heading"><h2>对话工作区</h2><button type="button" class="icon-button close-dialog" aria-label="关闭"><i data-lucide="x"></i></button></div><label>本机文件夹<input id="folderPath" required placeholder="已有文件夹的绝对路径"></label><p class="secondary">每个新对话使用独立的 FloodLab 子目录。</p><button class="primary">选用文件夹</button><p id="folderError" class="error"></p></form></dialog>
+  <dialog id="eventDialog" class="map-dialog"><div class="dialog-heading"><h2 id="eventTitle">事件地图</h2><button type="button" class="icon-button close-dialog" aria-label="关闭"><i data-lucide="x"></i></button></div><img id="eventPreview" alt="当前研究区观测洪涝专题图"><div id="eventFiles" class="downloads"></div></dialog>
+  <dialog id="connectionDialog"><form id="connectionForm"><div class="dialog-heading"><h2>模型连接</h2><button type="button" class="icon-button close-dialog" aria-label="关闭"><i data-lucide="x"></i></button></div><label>服务地址<input id="baseURL" type="url" value="https://api.clawlab.chat/v1" required></label><label>模型<input id="modelName" value="gpt-6.1-sol" list="modelOptions" required><datalist id="modelOptions"><option value="gpt-6.2-sol"><option value="gpt-6.1-sol"></datalist></label><label for="apiKey">API key<input type="password" id="apiKey" autocomplete="off" required></label><label id="rememberRow" class="hidden"><input id="rememberKey" type="checkbox">在本机加密保存</label><p id="keyNote" class="secondary">密钥默认仅在本次会话中保留。连接测试会发送一次简短请求。</p><div class="connection-actions"><button class="primary" type="submit">连接</button><button id="disconnectButton" type="button"><i data-lucide="log-out"></i>清除连接</button></div><p id="connectionError" class="error"></p></form></dialog>
+  <dialog id="mapDialog" class="map-dialog"><div class="dialog-heading"><h2>Agent 导出的专题图</h2><button type="button" class="icon-button close-dialog" aria-label="关闭"><i data-lucide="x"></i></button></div><img id="mapPreview" alt="QGIS 专题地图"></dialog>
+</body>
+</html>

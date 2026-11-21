@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FloodLab</title>
+<style>
+  *{box-sizing:border-box}body{margin:0;font:15px system-ui,sans-serif;color:#21352e;background:#f5f7f8;display:grid;place-content:center;min-height:100vh}
+  main{max-width:680px;padding:40px}h1{font-size:32px;margin:0 0 14px;letter-spacing:0}p{line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;color:#536760}
+  progress{width:100%;height:5px;accent-color:#20846a}button{padding:9px 22px;background:#20846a;color:white;border:0;border-radius:5px;font:inherit;cursor:pointer}
+</style>
+<main><h1>FloodLab</h1><p id="status">正在启动…</p><progress></progress><button id="retry" hidden>重试</button></main>
+<script>
+window.floodlab.onStartup(text=>document.querySelector("#status").textContent=text);
+window.floodlab.onStartupFailed(()=>{document.querySelector("progress").hidden=true;document.querySelector("#retry").hidden=false;});
+document.querySelector("#retry").onclick=()=>{document.querySelector("#retry").hidden=true;document.querySelector("progress").hidden=false;window.floodlab.retryStartup();};
+</script>
+</html>

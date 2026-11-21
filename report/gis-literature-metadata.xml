@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/+bDsGqLgUfJETR744JVlOEp6XOU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2411.03205,2505.09936&amp;start=0&amp;max_results=10</title>
+  <updated>2026-11-21T18:03:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2411.03205,2505.09936" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>2</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2411.03205v4</id>
+    <title>GIS Copilot: Towards an Autonomous GIS Agent for Spatial Analysis</title>
+    <updated>2024-11-22T02:00:21Z</updated>
+    <link href="https://arxiv.org/abs/2411.03205v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2411.03205v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advancements in Generative AI offer promising capabilities for spatial analysis. Despite their potential, the integration of generative AI with established GIS platforms remains underexplored. In this study, we propose a framework for integrating LLMs directly into existing GIS platforms, using QGIS as an example. Our approach leverages the reasoning and programming capabilities of LLMs to autonomously generate spatial analysis workflows and code through an informed agent that has comprehensive documentation of key GIS tools and parameters. The implementation of this framework resulted in the development of a "GIS Copilot" that allows GIS users to interact with QGIS using natural language commands for spatial analysis. The GIS Copilot was evaluated with over 100 spatial analysis tasks with three complexity levels: basic tasks that require one GIS tool and typically involve one data layer to perform simple operations; intermediate tasks involving multi-step processes with multiple tools, guided by user instructions; and advanced tasks which involve multi-step processes that require multiple tools but not guided by user instructions, necessitating the agent to independently decide on and executes the necessary steps. The evaluation reveals that the GIS Copilot demonstrates strong potential in automating foundational GIS operations, with a high success rate in tool selection and code generation for basic and intermediate tasks, while challenges remain in achieving full autonomy for more complex tasks. This study contributes to the emerging vision of Autonomous GIS, providing a pathway for non-experts to engage with geospatial analysis with minimal prior expertise. While full autonomy is yet to be achieved, the GIS Copilot demonstrates significant potential for simplifying GIS workflows and enhancing decision-making processes.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.ET" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-05T15:53:59Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Temitope Akinboyewa</name>
+    </author>
+    <author>
+      <name>Zhenlong Li</name>
+    </author>
+    <author>
+      <name>Huan Ning</name>
+    </author>
+    <author>
+      <name>M. Naser Lessani</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2505.09936v1</id>
+    <title>CartoAgent: a multimodal large language model-powered multi-agent cartographic framework for map style transfer and evaluation</title>
+    <updated>2025-05-15T03:45:10Z</updated>
+    <link href="https://arxiv.org/abs/2505.09936v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2505.09936v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid development of generative artificial intelligence (GenAI) presents new opportunities to advance the cartographic process. Previous studies have either overlooked the artistic aspects of maps or faced challenges in creating both accurate and informative maps. In this study, we propose CartoAgent, a novel multi-agent cartographic framework powered by multimodal large language models (MLLMs). This framework simulates three key stages in cartographic practice: preparation, map design, and evaluation. At each stage, different MLLMs act as agents with distinct roles to collaborate, discuss, and utilize tools for specific purposes. In particular, CartoAgent leverages MLLMs' visual aesthetic capability and world knowledge to generate maps that are both visually appealing and informative. By separating style from geographic data, it can focus on designing stylesheets without modifying the vector-based data, thereby ensuring geographic accuracy. We applied CartoAgent to a specific task centered on map restyling-namely, map style transfer and evaluation. The effectiveness of this framework was validated through extensive experiments and a human evaluation study. CartoAgent can be extended to support a variety of cartographic design decisions and inform future integrations of GenAI in cartography.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-05-15T03:45:10Z</published>
+    <arxiv:comment>57 pages, 17 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Chenglong Wang</name>
+    </author>
+    <author>
+      <name>Yuhao Kang</name>
+    </author>
+    <author>
+      <name>Zhaoya Gong</name>
+    </author>
+    <author>
+      <name>Pengjun Zhao</name>
+    </author>
+    <author>
+      <name>Yu Feng</name>
+    </author>
+    <author>
+      <name>Wenjia Zhang</name>
+    </author>
+    <author>
+      <name>Ge Li</name>
+    </author>
+  </entry>
+</feed>

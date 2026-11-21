@@ -1,0 +1,77 @@
+{
+  "assertions": [
+    {
+      "name": "initial verified grid",
+      "passed": true
+    },
+    {
+      "name": "initial total length",
+      "passed": true
+    },
+    {
+      "name": "real fraction layer displays correct percent",
+      "passed": true
+    },
+    {
+      "name": "zero denominator remains null",
+      "passed": true
+    },
+    {
+      "name": "display normalization preserves source",
+      "passed": true
+    },
+    {
+      "name": "historical version marked",
+      "passed": true
+    },
+    {
+      "name": "metric switch",
+      "passed": true
+    },
+    {
+      "name": "map popup",
+      "passed": true
+    },
+    {
+      "name": "map preview opens",
+      "passed": true
+    },
+    {
+      "name": "PDF download",
+      "passed": true
+    },
+    {
+      "name": "tablet results accessible",
+      "passed": true
+    },
+    {
+      "name": "tablet map accessible",
+      "passed": true
+    },
+    {
+      "name": "mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "mobile results available",
+      "passed": true
+    },
+    {
+      "name": "mobile composer available",
+      "passed": true
+    },
+    {
+      "name": "new task clears old downloads",
+      "passed": true
+    },
+    {
+      "name": "new task clears old metrics",
+      "passed": true
+    },
+    {
+      "name": "no browser runtime errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

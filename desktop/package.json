@@ -1,0 +1,56 @@
+{
+  "name": "floodlab-desktop",
+  "version": "0.6.0",
+  "private": true,
+  "description": "FloodLab desktop GIS agent with an offline QGIS runtime",
+  "author": "FloodLab course project",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build:pi": "esbuild pi-worker.mjs --bundle --platform=node --format=cjs --target=node22 --minify --legal-comments=inline --outfile=../event/pi-worker.cjs",
+    "build:mac": "electron-builder --mac zip --arm64",
+    "build:win": "electron-builder --win zip --x64"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "1.6.0",
+    "@earendil-works/pi-ai": "1.6.0",
+    "electron": "45.4.1",
+    "electron-builder": "26.18.0",
+    "esbuild": "0.28.2",
+    "playwright": "1.58.2"
+  },
+  "build": {
+    "appId": "org.floodlab.desktop",
+    "productName": "FloodLab",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "splash.html",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "stage/payload",
+        "to": "payload"
+      },
+      {
+        "from": "stage/${os}-${arch}",
+        "to": "runtime-bundle"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "assets/icon.icns",
+      "identity": null,
+      "artifactName": "FloodLab-${version}-mac-${arch}.${ext}"
+    },
+    "win": {
+      "signAndEditExecutable": false,
+      "artifactName": "FloodLab-${version}-windows-${arch}.${ext}"
+    }
+  }
+}

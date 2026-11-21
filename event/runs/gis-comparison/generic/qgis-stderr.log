@@ -1,0 +1,9 @@
+/Users/frank/Desktop/AI4Science/.tools/qgis/share/qgis/python/plugins/processing/algs/help/__init__.py:40: DeprecationWarning: codecs.open() is deprecated. Use open() instead.
+  with codecs.open(filename, encoding="utf-8") as stream:
+/Users/frank/Desktop/AI4Science/event/gis_tools.py:267: DeprecationWarning: QgsLayoutItemLabel.setFont() is deprecated
+  item.setFont(QFont("Helvetica", size))
+/Users/frank/Desktop/AI4Science/event/gis_tools.py:293: DeprecationWarning: QgsLayoutItemMapGrid.setAnnotationFont() is deprecated
+  grid.setAnnotationFont(QFont("Helvetica", 7))
+qt.qpa.fonts: Populating font family aliases took 49 ms. Replace uses of missing font family "Open Sans" with one that exists to avoid this cost. 
+ERROR 6: The PNG driver does not support update access to existing datasets.
+ERROR 6: The PNG driver does not support update access to existing datasets.

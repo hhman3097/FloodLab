@@ -1,0 +1,332 @@
+[
+  {
+    "question": "最近国内哪儿发生洪涝了？",
+    "answer": "按近30天（2026年10月23日至11月21日）查了洪涝事件目录、国内新闻索引和中新网，暂未找到能同时确认具体地点和发生日期的国内新发洪涝报道。这不代表这段时间没有发生洪涝。\n\n11月的报道提到天津蓟州曾发生洪涝，但没有交代事发日期 [S8]；福建莆田的内涝发生在9月 [S18]；广西贵港的11月报道讲的是7月洪涝后的重建 [S17]。这些都不能算作近30天的新发灾情。\n\n[S8 · 中国新闻网 · 2026-11-19](https://www.chinanews.com.cn/cj/2026/11-19/10734650.shtml)\n\n[S18 · 中国新闻网 · 2026-11-10](https://www.chinanews.com.cn/sh/2026/11-10/10729695.shtml)\n\n[S17 · 中国新闻网 · 2026-11-21](https://www.chinanews.com.cn/sh/2026/11-21/10735805.shtml)\n\n检索范围：2026-10-23 至 2026-11-21。",
+    "searched": true,
+    "diagnostics": [
+      {
+        "source": "GDACS",
+        "hits": 0
+      },
+      {
+        "source": "Google News RSS",
+        "hits": 0
+      },
+      {
+        "source": "国内新闻索引",
+        "hits": 13
+      },
+      {
+        "source": "中新网：洪涝灾害",
+        "hits": 10
+      },
+      {
+        "source": "中新网：超警洪水",
+        "hits": 0
+      },
+      {
+        "source": "中新网：内涝",
+        "hits": 8
+      },
+      {
+        "source": "中新网：受淹",
+        "hits": 2
+      }
+    ],
+    "sources": [
+      {
+        "date": "2026-11-05",
+        "title": "应急管理系统以“备”应“变”筑牢安全底线",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/gn/2026/11-05/10726673.shtml"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "中国援柬埔寨中医医疗队首次赴特本克蒙省开展义诊巡诊",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/aseaninfo/2026/10-30/10723624.shtml"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-11-21",
+        "title": "暴雨、山洪、龙卷风——中国南方灾情频发 - DW.com",
+        "publisher": "DW.com",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPcTZobGkwd0hOeFU2c1dLdm1XcjFvbk1nTjZoaTdmdURiQkdlSVlGLXJMZUhIVzVubmdxTFV2cFBPZXBkUXZKelpJQV9SVWw5ZmxGdmtMdUZXRXI1VlEyeXlFQ2pIejRPNDhMN193SzhOSTBGN3pBLTBqZXhCZzgwVzBSaFYzaXFrSkNoOFNsd0FDVmZuV3pyRnNvaGtqZEszNC1HdHoyY2o2RFNtOUV4OGx2ejVXbkxzOFItX1dUcnFockgtbUtGMDd5bzJfZFBIYThCWGNLbWR6OXJPdmxQR0FMUTMyUmF6ZGx4TU4zN2xNSG96eW9KaDlkNDA?oc=5"
+      },
+      {
+        "date": "2026-11-20",
+        "title": "2026地球“体检”报告发布 郭华东院士解读十大亮点成果",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/gn/2026/11-20/10735440.shtml"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-11-18",
+        "title": "1998年大洪水，2027年重来？南方的雨，救不了东部的电 - Sohu",
+        "publisher": "Sohu",
+        "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZlNlQ2dZNThxY3lWd292aGM0T2dTSVVDNmpNa0hUY2JiU1c3b1NBZFAzck1NWWlUTzRxcWVPc1BMQ1JremNLOTdmWTk4MktsQjJsdmZxal83NEVmNll1dU9sSHBGYWJJM2RmU01DRndaT0JNaUVYWnRlTWl6NXREbm9LbHFMQ0lpRy1WQg?oc=5"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-11-17",
+        "title": "媒体关注丨城市暴雨洪涝近实时推演，精准监测甲烷排放！华东师大发布两项地理学重磅成果 - 华东师范大学",
+        "publisher": "华东师范大学",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVMldhSVBkcXBGanVVVVJMc19GNlNNUXBDbWI0SV9CUDJ5YVVwQ3F5bEtaQnhCa0Fqa0R3Wko5RklqWXMyVENMSmlVdnZjNTVGRnBrd1FB?oc=5"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "东西问丨袁兴中：中国三峡库区消落带治理经验如何惠及全球？",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/dxw/2026/11-04/10725989.shtml"
+      },
+      {
+        "date": "2026-11-19",
+        "title": "天津国资国企“十五五”开局四方面发力 服务民生保障城市运行",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/cj/2026/11-19/10734650.shtml"
+      },
+      {
+        "date": "2026-11-11",
+        "title": "国家发改委密集举行发布会 释放“十五五”大量信息",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/cj/2026/11-11/10730514.shtml"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "极端暴雨趋频 山西“十五五”将水雨情测报覆盖117县",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/sh/2026/11-10/10729766.shtml"
+      },
+      {
+        "date": "2026-11-09",
+        "title": "明后天南北方大部地区将加入升温行列 北方部分地区昼夜温差可达15℃以上",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/sh/2026/11-09/10729008.shtml"
+      },
+      {
+        "date": "2026-11-05",
+        "title": "中国驻宋卡总领馆提醒在泰南中国公民注意防范雨季易发自然灾害",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/hr/2026/11-04/10725985.shtml"
+      },
+      {
+        "date": "2026-11-02",
+        "title": "文脉共续、产业共兴、邻里共融：探访云南民族团结的生动实践",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/mz/2026/10-30/10723646.shtml"
+      },
+      {
+        "date": "2026-11-01",
+        "title": "刘建国：治水是史前长江中下游定居农业聚落重要社会活动",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/gn/2026/11-01/10724456.shtml"
+      },
+      {
+        "date": "2026-10-29",
+        "title": "一廊多舱分置 多网高效协同 广州织密城市“生命线”",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/dwq/2026/10-29/10722745.shtml"
+      },
+      {
+        "date": "2026-10-27",
+        "title": "广西前三季度税收收入增长态势持续向好 同比增长6.9%",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/cj/2026/10-27/10721806.shtml"
+      },
+      {
+        "date": "2026-11-21",
+        "title": "中国红基会援助贵港市高级中学灾后重建 着重提升校园抗灾能力",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/sh/2026/11-21/10735805.shtml"
+      },
+      {
+        "date": "2026-11-10",
+        "title": "“妈祖故里”来了台湾“新村民”：从乡建乡创到生态农业",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/sh/2026/11-10/10729695.shtml"
+      }
+    ],
+    "original_pages": 6
+  },
+  {
+    "question": "那把范围扩大到近90天，给我一个有具体发生日期和地点的已发生事件。",
+    "answer": "在近90天（2026年8月24日至11月21日）内查到一例：2026年9月14日，海南省保亭黎族苗族自治县部分区域河水暴涨，洪水冲毁部分道路路基，低洼地区有房屋受淹。[S6] 据中新网援引当地防灾减灾救灾委员会的消息，截至当天12时，全县已转移4474人。[S6]\n\n[S6 · 中国新闻网 · 2026-09-14](https://www.chinanews.com.cn/sh/2026/09-14/10696394.shtml)\n\n检索范围：2026-08-24 至 2026-11-21。",
+    "searched": true,
+    "diagnostics": [
+      {
+        "source": "GDACS",
+        "hits": 2
+      },
+      {
+        "source": "Google News RSS",
+        "hits": 0
+      },
+      {
+        "source": "国内新闻索引",
+        "hits": 12
+      },
+      {
+        "source": "中新网：洪涝灾害",
+        "hits": 10
+      },
+      {
+        "source": "中新网：超警洪水",
+        "hits": 9
+      },
+      {
+        "source": "中新网：内涝",
+        "hits": 9
+      },
+      {
+        "source": "中新网：受淹",
+        "hits": 8
+      }
+    ],
+    "sources": [
+      {
+        "date": "2026-09-03",
+        "title": "韩江发生2026年第1号洪水",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/sh/2026/09-03/10689895.shtml"
+      },
+      {
+        "kind": "洪水事件目录",
+        "date": "2026-08-22",
+        "through": "2026-08-26",
+        "title": "Flood in China",
+        "publisher": "GDACS",
+        "url": "https://www.gdacs.org/report.aspx?eventid=1104123&episodeid=4&eventtype=FL"
+      },
+      {
+        "kind": "洪水事件目录",
+        "date": "2026-07-31",
+        "through": "2026-09-27",
+        "title": "Flood in China",
+        "publisher": "GDACS",
+        "url": "https://www.gdacs.org/report.aspx?eventid=1104081&episodeid=20&eventtype=FL"
+      },
+      {
+        "date": "2026-09-03",
+        "title": "强降雨持续影响福建 多地“三停一休”逾8万人转移",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/sh/2026/09-03/10689546.shtml"
+      },
+      {
+        "date": "2026-10-30",
+        "title": "中国援柬埔寨中医医疗队首次赴特本克蒙省开展义诊巡诊",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/aseaninfo/2026/10-30/10723624.shtml"
+      },
+      {
+        "date": "2026-09-14",
+        "title": "持续强降雨侵袭海南保亭 引发山体滑坡等多重险情",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/sh/2026/09-14/10696394.shtml"
+      },
+      {
+        "date": "2026-09-05",
+        "title": "韩江水库群拦洪2.5亿立方米",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/gn/2026/09-05/10691173.shtml"
+      },
+      {
+        "date": "2026-09-05",
+        "title": "“中国白茶第一镇”灾后恢复见闻：各界同心复产 共护白茶金字招牌",
+        "publisher": "中国新闻网",
+        "kind": "原文段落（发布日期不等于发生日期）",
+        "url": "https://www.chinanews.com.cn/sh/2026/09-05/10690801.shtml"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-09-05",
+        "title": "福建莆田多地出现洪涝灾害 受困群众转移工作仍在紧张推进中 - 中国之声",
+        "publisher": "中国之声",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9RSGNOS0gxeVFndlMwMnFmU3h3UUlNbmFLX2JEcEJTdTBZcnI5VzdELWhWTF9wMXIxNElZR3dscEdHOGwzblZLSkRUNmZkcS1PbVRqMFR0SDNHUENUTFFURlNWekNuQ2tvSjJSWA?oc=5"
+      },
+      {
+        "date": "2026-09-03",
+        "title": "福州：水漫“金山寺”",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/tp/2026/09-03/10689860.shtml"
+      },
+      {
+        "date": "2026-09-03",
+        "title": "受台风“沙德尔”影响 福州多处景区公园临时关闭",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/tp/2026/09-03/10689814.shtml"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-08-25",
+        "title": "广西宁明发生洪涝灾害 - 天气网",
+        "publisher": "天气网",
+        "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBQQW1wZU9KUDljQkpYYnpla1pjVUtnNzhhTWVKTzFjMFJwakRZRDR4RzZYRkZuNnV0WjB3UnZOeHZRdllWLVdsZHBpMlFyekRpYjhGazFRWEhGYzFzelBJdWZpWlo?oc=5"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-08-24",
+        "title": "洪水漫城 救援不歇——广西宁明县抗洪一线见闻 - 中国日报网",
+        "publisher": "中国日报网",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9SRFgzWE5LOUVJMUZMUEZ3LU9HcGdqMzJKa1hUZU5ONGFTMG5JWjZzY1FJb2dDdWRIQjQ2blhFNnpBQUtScV9FMEw3ang1NjdsUUZZRFBlaUsyZVFwRHFrQWZEbFpNV2c5RW81ZEI2eTlaMXNqWXRyWWdZb3I?oc=5"
+      },
+      {
+        "date": "2026-10-22",
+        "title": "水利部针对4省市启动洪水防御Ⅳ级应急响应",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/gn/2026/10-22/10718963.shtml"
+      },
+      {
+        "date": "2026-09-03",
+        "title": "水利部针对江西启动洪水防御Ⅳ级应急响应",
+        "publisher": "中国新闻网",
+        "kind": "站内搜索摘要（待核实）",
+        "url": "https://www.chinanews.com.cn/sh/2026/09-03/10689519.shtml"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-11-21",
+        "title": "暴雨、山洪、龙卷风——中国南方灾情频发 - DW.com",
+        "publisher": "DW.com",
+        "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPcTZobGkwd0hOeFU2c1dLdm1XcjFvbk1nTjZoaTdmdURiQkdlSVlGLXJMZUhIVzVubmdxTFV2cFBPZXBkUXZKelpJQV9SVWw5ZmxGdmtMdUZXRXI1VlEyeXlFQ2pIejRPNDhMN193SzhOSTBGN3pBLTBqZXhCZzgwVzBSaFYzaXFrSkNoOFNsd0FDVmZuV3pyRnNvaGtqZEszNC1HdHoyY2o2RFNtOUV4OGx2ejVXbkxzOFItX1dUcnFockgtbUtGMDd5bzJfZFBIYThCWGNLbWR6OXJPdmxQR0FMUTMyUmF6ZGx4TU4zN2xNSG96eW9KaDlkNDA?oc=5"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-10-01",
+        "title": "中国水利部：极端洪涝灾害“一增加三随机”态势明显 - 联合早报",
+        "publisher": "联合早报",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9rQ2M1bXlhOFpkS2FHdC0xOURhZVBzRGVScThHX2s3NEpnTnA0d2RTYktwTzFxcVRRRll3MkR2VTZ1YmxlcmgyU19mMG5lRTR2UWRxdGkzODNYVnI0aURoRHd5cjhQWE5GQ1E?oc=5"
+      },
+      {
+        "kind": "报道标题（未核实发生日期）",
+        "date": "2026-09-27",
+        "title": "驻泰国使馆提醒在泰中国公民防范强降雨及洪涝灾害 - 中国新闻网",
+        "publisher": "中国新闻网",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE80MlU4YjRwbDA0ZUsyMDNYYVJvSnhNcms5ckRsOW5tdlNIVW5CblY1Z2t5Vjc4cS1rSUNtdXdwTUZhRzJUSFBfQ2ZfQWtmLUt3ZlVjWXE2OEY3UkQwem9ZNXpDdmV0QmhO?oc=5"
+      }
+    ],
+    "original_pages": 6
+  }
+]

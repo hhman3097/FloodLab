@@ -1,0 +1,108 @@
+{
+  "bbox_lon_lat": [
+    -0.645,
+    39.23,
+    -0.269,
+    39.505
+  ],
+  "crs": "EPSG:32630",
+  "resolution_m": 20,
+  "sar": [
+    {
+      "file": "sar-2024-10-08-r110.tif",
+      "date": "2024-10-08",
+      "orbit": 110,
+      "items": [
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241008T060207_20241008T060232_056007_06D989_rtc",
+          "utc": "2024-10-08T06:02:20.071271Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/8/IW/DV/S1A_IW_GRDH_1SDV_20241008T060207_20241008T060232_056007_06D989_06B8/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/8/IW/DV/S1A_IW_GRDH_1SDV_20241008T060207_20241008T060232_056007_06D989_06B8/measurement/iw-vh.rtc.tiff"
+          }
+        },
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241008T060232_20241008T060257_056007_06D989_rtc",
+          "utc": "2024-10-08T06:02:45.071434Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/8/IW/DV/S1A_IW_GRDH_1SDV_20241008T060232_20241008T060257_056007_06D989_4780/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/8/IW/DV/S1A_IW_GRDH_1SDV_20241008T060232_20241008T060257_056007_06D989_4780/measurement/iw-vh.rtc.tiff"
+          }
+        }
+      ]
+    },
+    {
+      "file": "sar-2024-10-20-r110.tif",
+      "date": "2024-10-20",
+      "orbit": 110,
+      "items": [
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_rtc",
+          "utc": "2024-10-20T06:02:19.757291Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_6472/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_6472/measurement/iw-vh.rtc.tiff"
+          }
+        },
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_rtc",
+          "utc": "2024-10-20T06:02:44.757665Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_07B0/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_07B0/measurement/iw-vh.rtc.tiff"
+          }
+        }
+      ]
+    },
+    {
+      "file": "sar-2024-11-01-r110.tif",
+      "date": "2024-11-01",
+      "orbit": 110,
+      "items": [
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_rtc",
+          "utc": "2024-11-01T06:02:19.665430Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_9042/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_9042/measurement/iw-vh.rtc.tiff"
+          }
+        },
+        {
+          "id": "S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_rtc",
+          "utc": "2024-11-01T06:02:44.666044Z",
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_6949/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_6949/measurement/iw-vh.rtc.tiff"
+          }
+        }
+      ]
+    }
+  ],
+  "ems": {
+    "activation": "https://mapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR773",
+    "layer": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR773/AOI01/DEL_PRODUCT/EMSR773_AOI01_DEL_PRODUCT_observedEventA_v1.json",
+    "image": {
+      "uuid": "dd7890ed-efdb-4631-9d7e-1fb81fb888aa",
+      "new": true,
+      "sensorType": "optical",
+      "sensorName": "Sentinel-2",
+      "resolutionClass": "HR+",
+      "acquisitionTime": "2024-10-31T10:51:00",
+      "fileName": "EMSR773_AOI01_DEL_PRODUCT_SENTINEL2_20241031_1051_ORTHO.tif"
+    },
+    "extent_wkt": "POLYGON ((-1.445179 39.781191, -1.485936 39.670665, -1.508716 39.470674, -1.236598 39.052786, -0.858222 38.872957, -0.456856 38.727721, -0.238921 38.723182, -0.040215 38.817867, 0.020432 38.892022, -0.26688 39.421202, -0.251454 39.615411, -0.539548 39.724123, -0.552116 39.724452, -0.551959 39.728807, -1.243609 39.989801, -1.445179 39.781191))",
+    "event_time": "2024-10-29T14:30:00"
+  },
+  "terrain": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N39_00_W001_00_DEM/Copernicus_DSM_COG_10_N39_00_W001_00_DEM.tif",
+  "image_context": {
+    "file": "context-s2-display.tif",
+    "item": "S2A_30SYJ_20241026_0_L2A",
+    "utc": "2024-10-26T11:00:15.452000Z",
+    "role": "pre-event cartographic context only, independent 1.5-98.5 percentile DN stretch",
+    "assets": {
+      "red": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/30/S/YJ/2024/10/S2A_30SYJ_20241026_0_L2A/B04.tif",
+      "green": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/30/S/YJ/2024/10/S2A_30SYJ_20241026_0_L2A/B03.tif",
+      "blue": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/30/S/YJ/2024/10/S2A_30SYJ_20241026_0_L2A/B02.tif"
+    }
+  }
+}

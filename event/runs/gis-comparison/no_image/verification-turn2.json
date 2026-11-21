@@ -1,0 +1,99 @@
+{
+  "layer_file": "grid_2km_major_stats.gpkg",
+  "layer_sha256": "d69ba806515dd4081b53d5853ba1709e7b0add36fc97a73dfcb9d34723c784bb",
+  "fields": {
+    "total": "total_m",
+    "exposed": "exposed_m",
+    "ratio": "exposure_rate",
+    "ratio_scale": 1
+  },
+  "passed": true,
+  "checks": {
+    "numeric": true,
+    "grid_count": true,
+    "grid_width_height": true,
+    "grid_covers_aoi": true,
+    "grid_nonoverlap": true
+  },
+  "cells": 42,
+  "classes": [
+    "primary",
+    "primary_link",
+    "secondary",
+    "secondary_link"
+  ],
+  "grid_size_m": 2000,
+  "expected_total_m": 56848.183225550245,
+  "expected_exposed_m": 443.5197699470806,
+  "max_absolute_length_error_m": 1.8189894035458565e-12,
+  "mismatches": [],
+  "reference_top5": [
+    {
+      "id": 38,
+      "total_m": 1234.550397039023,
+      "exposed_m": 434.94076156419453,
+      "ratio": 0.35230701201617004
+    },
+    {
+      "id": 37,
+      "total_m": 2203.1390575379987,
+      "exposed_m": 8.57900838288603,
+      "ratio": 0.0038939931428899665
+    },
+    {
+      "id": 1,
+      "total_m": 1283.6063916315657,
+      "exposed_m": 0.0,
+      "ratio": 0.0
+    },
+    {
+      "id": 2,
+      "total_m": 846.2370529673511,
+      "exposed_m": 0.0,
+      "ratio": 0.0
+    },
+    {
+      "id": 3,
+      "total_m": 0.0,
+      "exposed_m": 0.0,
+      "ratio": null
+    }
+  ],
+  "reference_ratio_top5": [
+    {
+      "id": 38,
+      "total_m": 1234.550397039023,
+      "exposed_m": 434.94076156419453,
+      "ratio": 0.35230701201617004
+    },
+    {
+      "id": 37,
+      "total_m": 2203.1390575379987,
+      "exposed_m": 8.57900838288603,
+      "ratio": 0.0038939931428899665
+    },
+    {
+      "id": 1,
+      "total_m": 1283.6063916315657,
+      "exposed_m": 0.0,
+      "ratio": 0.0
+    },
+    {
+      "id": 2,
+      "total_m": 846.2370529673511,
+      "exposed_m": 0.0,
+      "ratio": 0.0
+    },
+    {
+      "id": 5,
+      "total_m": 2177.042421672812,
+      "exposed_m": 0.0,
+      "ratio": 0.0
+    }
+  ],
+  "tolerance": {
+    "absolute_m": 0.01,
+    "relative": 1e-07
+  },
+  "independence": "Separate Shapely overlay code and original source layers. Both stacks use GEOS; not independent survey truth."
+}

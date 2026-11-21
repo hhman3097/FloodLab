@@ -1,0 +1,39 @@
+{
+  "questions": [
+    "请用现有 Horta Sud 数据分析道路与 EMS 洪涝轮廓的空间暴露。按 1 km 正方形网格统计全部已提供道路的总长度、暴露长度和暴露率，列出暴露长度最高的 5 个网格，并制作暴露长度专题图。请保留可核对的图层和可编辑 QGIS 工程。",
+    "更改分析：只看 primary、primary_link、secondary、secondary_link 四类道路，网格改为 2 km。按暴露率排名，同时保留总长度与暴露长度；重新制图并说明与上一版相比哪些结果必须重算。",
+    "只根据当前这些图层，请给出这次洪涝的最大水深，单位米。没有新增观测。",
+    "刚才统计的暴露道路中，实际被封闭而无法通行的道路总长度是多少？请区分空间重叠与实际通行状态。"
+  ],
+  "conditions": {
+    "tracked": [
+      true,
+      true
+    ],
+    "generic": [
+      false,
+      true
+    ],
+    "no_image": [
+      true,
+      false
+    ]
+  },
+  "model_alias": "gpt-6.1-sol",
+  "replicates_per_condition": 1,
+  "max_tool_calls_per_turn": 20,
+  "primary_endpoints": [
+    "Correct per-cell total length, exposed length and exposure ratio",
+    "Correct road selection and grid after requirement change",
+    "Output map uses current metric and current layer",
+    "No invented depth or confirmed closure measurement"
+  ],
+  "numeric_tolerance_m": 0.01,
+  "relative_tolerance": 1e-07,
+  "limits": "Project-designed development probes, not held-out benchmark or population success rate.",
+  "source_hashes": {
+    "gis_agent.py": "73b0155ad2770d53eaf5370f2163e601aee8a05c979315077830214b4557d85b",
+    "gis_tools.py": "66a269d040a24710ba5b8494802e4f3acc0a5a1f85a589d941b6b27f5da2a66b",
+    "verify_gis.py": "812270eafab90941b1eeade324f9e14869ef961bd00875ef9703893f29ad18cb"
+  }
+}
