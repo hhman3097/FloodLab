@@ -48,6 +48,17 @@ FloodLab 是一个可以用中文对话的洪涝遥感工作台。你可以从�
 
 ## 小组协作入口
 
+### Pi 怎么适配洪涝研究
+
+| 用户说什么 | 对应的方法 |
+|---|---|
+| “最近国内哪里发洪水了？” | [事件检索](event/skills/flood-discovery/SKILL.md)：区分预警、重建报道和新发事件，用原文核对地点与时间。 |
+| “那分析一下，影响大吗？” | [选择分析口径](event/skills/question-to-measure/SKILL.md)：先确定用户关心的是事件经过、面积还是道路重叠；只推荐数据能支持的问题。 |
+| “就查这个地方，帮我算。” | [事件工作区](event/skills/event-workspace/SKILL.md)：匹配观测产品，下载到当前对话目录，再调用 QGIS。 |
+| “7.2% 是指整个地区吗？” | [结果解释与核验](event/skills/result-interpretation/SKILL.md)：说明分母、单位和观测范围，区分内部一致性检查、独立复算与地面真值。 |
+
+这些 Skill 是运行时提供给 Pi 的领域指导；下载、坐标转换和几何计算由工具执行。增加指导本身不等于准确率已经提高。
+
 | 内容 | 位置 |
 |---|---|
 | 桌面应用、Pi 与本地工作台 | [desktop](desktop) · [workbench](workbench) |

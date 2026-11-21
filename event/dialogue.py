@@ -107,11 +107,12 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
         return public_evidence()
     context={"today":str(today),"history":history[-8:],"last_scope":memory.get("scope"),
              "has_local_case_context":local,"evidence":public_evidence(),"user":question}
-    skill=(Path(__file__).parent/"skills/flood-discovery/SKILL.md").read_text(encoding="utf-8").split("---",2)[-1]
-    policy=POLICY+"\n检索必须实际调用 search_floods 工具，完成后最终 JSON 只可选择 reply 或 gis。\n"+skill
+    names=["flood-discovery","question-to-measure","result-interpretation"]
+    if project is not None:names.append("event-workspace")
+    skills=[(Path(__file__).parent/"skills"/name/"SKILL.md").read_text(encoding="utf-8").split("---",2)[-1] for name in names]
+    policy=POLICY+"\n检索必须实际调用 search_floods 工具，完成后最终 JSON 只可选择 reply 或 gis。\n"+"\n".join(skills)
     if project is not None:
         context["project"]={"downloaded":list(project.index["products"]),"outputs":project.index["outputs"][-2:]}
-        policy+="\n"+(Path(__file__).parent/"skills/event-workspace/SKILL.md").read_text(encoding="utf-8")
         policy=policy.replace("可继续检索公开线索，不能声称已下载/核准图层。","可调用事件目录和下载工具，只有取得产物后才能报告已下载。")
     plan=pi_turn(api,policy,context,cancel,tool)
     if not isinstance(plan,dict) or plan.get("action") not in ("reply","gis"):

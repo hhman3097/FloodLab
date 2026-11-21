@@ -44,6 +44,7 @@ def payload():
         "event/runs/gis-agent-pilot-v2", "event/runs/workbench_d0e0a1f802",
         "workbench/server.py", "workbench/projects.py", "workbench/public",
         "event/ems_project.py", "event/footprint_worker.py", "event/skills/event-workspace/SKILL.md",
+        "event/skills/question-to-measure/SKILL.md", "event/skills/result-interpretation/SKILL.md",
         "workbench/node_modules/leaflet/dist", "workbench/node_modules/lucide/dist/umd",
         "workbench/node_modules/leaflet/LICENSE", "workbench/node_modules/lucide/LICENSE",
         "desktop/THIRD_PARTY.md", "desktop/QGIS-COPYING",
