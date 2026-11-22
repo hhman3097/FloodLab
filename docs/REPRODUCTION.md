@@ -41,6 +41,8 @@ uv run --no-sync pytest -q
 事件输入已有归档，需重取时运行 `event/acquire.py`、`event/acquire_assets.py`。
 `pytest` 的全清单核对需要先下载 Sen1Floods11 输入。
 
+浏览器、真实模型和桌面候选版验收见 [回归验收](ACCEPTANCE.md)。
+
 ### 新版 Agent 与独立核验
 
 ```sh

@@ -20,3 +20,7 @@ qa = ["pytest", "pymupdf"]
 
 [tool.uv]
 package = false
+
+[tool.pytest.ini_options]
+testpaths = ["test_project.py", "event", "workbench"]
+norecursedirs = [".*", "node_modules", "cache", "runs", "inputs", "projects"]

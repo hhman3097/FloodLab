@@ -55,6 +55,14 @@ def registry(directory):
     return load(directory / "worker-checkpoint.json") or load(directory / "state.json", {})
 
 
+def project_file(run_id,path):
+    file=Path(path).resolve()
+    root=Projects(RUNS).info(run_id).get("root")
+    if ROOT not in file.parents and (not root or Path(root).resolve() not in file.parents):
+        raise ValueError("文件不属于此工作区")
+    return file
+
+
 def geojson(path,project_root=None):
     path = Path(path)
     if not path.is_file() or (ROOT not in path.resolve().parents and project_root not in path.resolve().parents):
@@ -101,7 +109,13 @@ def summary(run_id):
                           "spec": item["spec"], "layer_id": item["inputs"][0],
                           "files": [kind for kind in ("pdf", "png", "path") if Path(item[kind]).exists()]})
         layer_file = Path(state["layers"][item["inputs"][0]]["path"])
-        digest = hashlib.sha256(layer_file.read_bytes()).hexdigest()
+        try:
+            digest = hashlib.sha256(layer_file.read_bytes()).hexdigest()
+        except OSError:
+            artifacts[-1]["layer_available"]=False
+            verified.append(None)
+            continue
+        artifacts[-1]["layer_available"]=True
         candidates = set(directory.glob("verification-*.json")) | set(layer_file.parent.glob("verification-*.json"))
         matches = [value for p in candidates if (value := load(p, {})).get("layer_sha256") == digest]
         verified.append(matches[0] if matches else None)
@@ -138,6 +152,7 @@ def worker(job_id, api, directory, question, resume, event):
         local=guide.get("scope")=="local" if guide.get("scope") else bool(data.get("turns"))
         guide.update(model=api.model,status="running")
         entry={"before_gis":len(data.get("turns",[])),"question":question,"status":"running","calls":[],"options":[]}
+        guide["event_outputs"]=[]
         guide["turns"].append(entry);save()
         info=Projects(RUNS).info(directory.name)
         project=EventTools(info["root"]) if info else None
@@ -149,21 +164,31 @@ def worker(job_id, api, directory, question, resume, event):
                              "response":{"status":"ok","result":decision["evidence"]}}]
         if project:
             entry["calls"].extend(project.audit)
-            guide["event_outputs"]=project.index["outputs"] if decision["scope"]=="external" else []
-            if any(c["name"]=="analyse_footprint" for c in project.audit):
-                guide["event_outputs"]=project.index["outputs"]
+            created=[c["response"]["result"] for c in project.audit if c["name"]=="analyse_footprint" and c["response"]["status"]=="ok"]
+            guide["event_outputs"]=created or decision["maps"]
         if decision["task"]:
             entry.update(answer="按当前研究区执行以下空间分析。",options=[])
             save()
             run(api,directory,[decision["task"]],resume=bool(data.get("turns")),cancel_event=event)
-        status = "cancelled" if event.is_set() else "execution_finished_not_independently_evaluated"
-        guide["status"]=status;save()
-        JOBS[job_id]["status"] = "cancelled" if status == "cancelled" else "finished"
+        with LOCK:
+            status="finished"
+            if event.is_set():
+                status="cancelled";entry.update(status=status,answer="任务已停止。",options=[])
+            elif decision["task"]:
+                record=load(directory/"agent-run.json",{})
+                tail=(record.get("turns") or [{}])[-1]
+                if tail.get("status")!="model_finished_unverified":
+                    status="incomplete"
+                    entry.update(status=status,answer="本轮空间分析未完成。"+("已达到工具调用上限。" if tail.get("status")=="tool_budget_exhausted" else "没有完整的执行结果。"),options=[])
+            guide["status"]="execution_finished_not_independently_evaluated" if status=="finished" else status
+            save();JOBS[job_id]["status"]=status
     except Exception as exc:
         reason=str(exc).replace(api.key,"[REDACTED]")
-        if guide.get("turns"):guide["turns"][-1].update(status="failed",error=reason,answer="任务已停止。" if event.is_set() else "本轮未完成："+reason)
-        guide["status"]="cancelled" if event.is_set() else "failed";save()
-        JOBS[job_id].update(status=guide["status"],error=reason)
+        with LOCK:
+            status="cancelled" if event.is_set() else "failed"
+            if "entry" in locals():entry.update(status=status,error=reason,answer="任务已停止。" if event.is_set() else "本轮未完成："+reason,options=[])
+            guide["status"]=status;save()
+            JOBS[job_id].update(status=status,error=reason)
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -234,7 +259,8 @@ class Handler(BaseHTTPRequestHandler):
                 directory = run_path(args["run"])
                 state = registry(directory)
                 layer = state["layers"][args["id"]]
-                self.send_file(geojson(layer["path"],Path(Projects(RUNS).info(args["run"]).get("root","")).resolve()))
+                file=project_file(args["run"],layer["path"])
+                self.send_file(geojson(file,file.parent))
             elif query.path=="/api/project-output":
                 directory=run_path(args["run"]);info=Projects(RUNS).info(args["run"])
                 outputs=load(directory/"dialogue.json",{}).get("event_outputs",[])
@@ -259,14 +285,14 @@ class Handler(BaseHTTPRequestHandler):
                 kind = args["kind"]
                 if kind not in ("pdf", "png", "path"):
                     raise ValueError("Unsupported artifact")
-                self.send_file(item[kind], download=args.get("download") == "1")
+                self.send_file(project_file(args["run"],item[kind]), download=args.get("download") == "1")
             elif query.path == "/api/data":
                 state = registry(run_path(args["run"]))
-                self.send_file(state["layers"][args["id"]]["path"], download=True)
+                self.send_file(project_file(args["run"],state["layers"][args["id"]]["path"]), download=True)
             elif query.path == "/api/desktop-project" and os.environ.get("AI4S_DESKTOP_TOKEN"):
                 state = registry(run_path(args["run"]))
-                project = Path(state["artifacts"][args["artifact"]]["path"]).resolve()
-                if ROOT not in project.parents or project.suffix != ".qgz" or not project.is_file():
+                project = project_file(args["run"],state["artifacts"][args["artifact"]]["path"])
+                if project.suffix != ".qgz" or not project.is_file():
                     raise ValueError("Unknown QGIS project")
                 self.send_json({"path": str(project)})
             elif query.path == "/satellite.png":
@@ -326,10 +352,12 @@ class Handler(BaseHTTPRequestHandler):
                 KEY = ""
                 self.send_json({"configured": False})
             elif self.path == "/api/stop":
-                job = JOBS[body["id"]]
-                job["event"].set()
-                job["status"] = "stopping"
-                self.send_json({"status": "stopping"})
+                with LOCK:
+                    job=JOBS[body["id"]]
+                    if job["status"]=="running":
+                        job["event"].set();job["status"]="stopping"
+                    status=job["status"]
+                self.send_json({"status":status})
             elif self.path == "/api/task":
                 question = body.get("question", "").strip()
                 if not question or len(question) > 5000:
@@ -343,13 +371,17 @@ class Handler(BaseHTTPRequestHandler):
                         return
                     identifier = "workbench_" + uuid.uuid4().hex[:10]
                     source = body.get("run_id")
-                    if source:run_path(source)
+                    origin=run_path(source) if source else None
+                    data=load(origin/"agent-run.json",{}) if origin else {}
+                    guide=load(origin/"dialogue.json",{}) if origin else {}
+                    guide.setdefault("turns",[])
+                    if data and (data.get("status")!="execution_finished_not_independently_evaluated" or guide.get("status") in {"incomplete","cancelled","failed"}):
+                        # Keep the original checkpoint intact. A follow-up starts a fresh GIS loop.
+                        guide["turns"]=[{**t,"before_gis":0} for t in summary(source)["turns"]]
+                        guide["event_outputs"]=[]
+                        data={}
                     directory,info=Projects(RUNS).bind(identifier,source,body.get("folder_key"),question)
-                    if source:
-                        origin = run_path(source)
-                        data = load(origin / "agent-run.json",{})
-                        if data and data["status"] != "execution_finished_not_independently_evaluated":
-                            raise ValueError("上个任务尚未结束；请新建任务")
+                    if data:
                         for name in ("agent-run.json", "state.json", "worker-checkpoint.json", "tools.jsonl"):
                             if (origin / name).exists():
                                 shutil.copy2(origin / name, directory / name)
@@ -360,8 +392,6 @@ class Handler(BaseHTTPRequestHandler):
                         })
                         data["requested_model"], data["provider"] = MODEL, BASE
                         (directory / "agent-run.json").write_text(json.dumps(data, ensure_ascii=False, indent=2))
-                    guide=load(origin/"dialogue.json",{}) if source else {}
-                    guide.setdefault("turns",[])
                     if type(body.get("utc_offset_minutes")) is int:
                         guide["utc_offset_minutes"]=body["utc_offset_minutes"]
                     (directory/"dialogue.json").write_text(json.dumps(guide,ensure_ascii=False),encoding="utf-8")

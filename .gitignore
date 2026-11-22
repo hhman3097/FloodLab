@@ -2,7 +2,13 @@
 __pycache__/
 .pytest_cache/
 data/
-outputs/
+/outputs/*
+!/outputs/agent/
+/outputs/agent/*
+!/outputs/agent/benchmark.json
+!/outputs/agent/benchmark-v1.json
+!/outputs/agent/legacy-transfer.json
+!/outputs/agent/masks/
 report/build/
 workbench/node_modules/
 workbench/cache/

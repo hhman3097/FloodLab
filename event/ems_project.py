@@ -78,16 +78,22 @@ class EventTools:
             if not p:raise ValueError("须先列出该事件的观测产品")
             folder=self.root/"inputs"/key.replace(":","-");folder.mkdir(parents=True,exist_ok=True)
             path=folder/"observed.geojson"
-            if key in self.index["products"] and path.exists():
+            cached=key in self.index["products"] and path.exists()
+            if cached:
                 raw=path.read_bytes()
                 if hashlib.sha256(raw).hexdigest()!=self.index["products"][key]["sha256"]:raise ValueError("本地数据校验失败")
             else:raw=download(p["source"],40_000_000)
             fc=json.loads(raw);features=fc.get("features",[])
             if fc.get("type")!="FeatureCollection" or not features or any((f.get("geometry") or {}).get("type") not in ("Polygon","MultiPolygon") for f in features):
                 raise ValueError("此产品没有可计算的观测多边形")
-            if not path.exists():path.write_bytes(raw)
+            if not cached:
+                if path.exists() and path.read_bytes()!=raw:raise ValueError("检测到未登记且内容不同的观测文件，已保留原文件；请选用新工作区")
+                if not path.exists():
+                    temp=folder/(uuid.uuid4().hex+".tmp")
+                    try:temp.write_bytes(raw);temp.replace(path)
+                    finally:temp.unlink(missing_ok=True)
             result={**p,"file":str(path.relative_to(self.root)),"features":len(features),"sha256":hashlib.sha256(raw).hexdigest(),
-                    "retrieved_utc":datetime.now(timezone.utc).isoformat(),"notation":sorted({str(f.get("properties",{}).get("notation","")) for f in features})}
+                    "retrieved_utc":self.index["products"][key]["retrieved_utc"] if cached else datetime.now(timezone.utc).isoformat(),"notation":sorted({str(f.get("properties",{}).get("notation","")) for f in features})}
             self.index["products"][key]=result;put(folder/"provenance.json",result);put(self.state,self.index)
         elif name=="analyse_footprint":
             key=args["key"];p=self.index["products"].get(key)

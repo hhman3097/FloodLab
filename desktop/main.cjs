@@ -291,7 +291,7 @@ else {
       title:"FloodLab", backgroundColor:"#f5f7f8",
       webPreferences:{preload:path.join(__dirname,"preload.cjs"), contextIsolation:true, sandbox:true, nodeIntegration:false}});
     window.webContents.setWindowOpenHandler(({url}) => {
-      try {const u=new URL(url);if(u.protocol==="https:"&&["www.gdacs.org","gdacs.org","news.google.com","www.chinanews.com.cn","www.chinanews.com"].includes(u.hostname))void shell.openExternal(u.href);} catch {}
+      try {const u=new URL(url);if(u.protocol==="https:"&&["rapidmapping.emergency.copernicus.eu","www.gdacs.org","gdacs.org","news.google.com","www.chinanews.com.cn","www.chinanews.com"].includes(u.hostname))void shell.openExternal(u.href);} catch {}
       return {action:"deny"};
     });
     window.webContents.on("will-navigate", (event, url) => {if (!origin || new URL(url).origin !== origin) event.preventDefault();});

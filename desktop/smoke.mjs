@@ -1,9 +1,10 @@
 import {_electron as electron} from "playwright";
 import {mkdir, writeFile} from "node:fs/promises";
 import path from "node:path";
-const here=path.dirname(new URL(import.meta.url).pathname);
+import {fileURLToPath} from "node:url";
+const here=path.dirname(fileURLToPath(import.meta.url));
 const dir=process.env.FLOODLAB_USER_DATA || path.join(here,"qa","fresh-user");
-const out=path.join(here,"qa");
+const out=process.env.FLOODLAB_QA_OUT||path.join(here,"qa");
 await mkdir(out,{recursive:true});
 const args=process.env.FLOODLAB_APP ? [] : [here];
 const app=await electron.launch({
@@ -19,8 +20,13 @@ try{
   await page.waitForURL("http://127.0.0.1:*/",{timeout:600000});
   await page.locator("#example").waitFor();
   check("new conversation is initial view",await page.locator("#welcome").isVisible());
+  if(process.env.FLOODLAB_EXPECT_HISTORY){
+    const history=await page.evaluate(async id=>fetch("/api/run?id="+encodeURIComponent(id)).then(r=>r.json()),process.env.FLOODLAB_EXPECT_HISTORY);
+    check("real conversation survives upgrade",history.turns?.some(t=>t.calls.some(c=>c.name==="process"&&c.response.status==="ok")));
+  }
   await page.screenshot({path:path.join(out,"studio-home.png")});
   await page.click("#example");
+  await page.waitForFunction(()=>document.querySelector("#gridCount")?.textContent==="42",{},{timeout:60000});
   await page.click('.view-nav [data-panel="results"]');
   await page.waitForFunction(()=>document.querySelector("#gridCount")?.textContent==="42",{},{timeout:60000});
   check("bundled runtime and seed case start",true);
@@ -57,9 +63,9 @@ try{
   await page.screenshot({path:path.join(out,"settings.png"),fullPage:true});
   await page.locator("#connectionDialog .close-dialog").click();
   const state=await app.evaluate(()=>({node:process.versions.node,electron:process.versions.electron,platform:process.platform,arch:process.arch}));
-  check("native Electron process",state.platform==="darwin"&&state.arch==="arm64");
+  check("native Electron process",state.platform===process.platform&&state.arch===(process.env.FLOODLAB_TARGET_ARCH||process.arch));
   check("no renderer errors",errors.length===0);
-  await writeFile(path.join(out,"checks.json"),JSON.stringify({checks,state,errors,userData:dir,scope:"Real desktop execution on this Mac; no Windows execution claimed."},null,2));
+  await writeFile(path.join(out,"checks.json"),JSON.stringify({checks,state,errors,userData:dir,scope:"Real desktop execution on the recorded host."},null,2));
   console.log(JSON.stringify({checks,state},null,2));
 }finally{
   await writeFile(path.join(out,"last-checks.json"),JSON.stringify(checks,null,2));

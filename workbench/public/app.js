@@ -21,7 +21,7 @@ function renderAnswer(text){
   for(const link of body.querySelectorAll("a")){
     const href=link.getAttribute("href")||"";
     const name=href.split(/[\\/]/).pop();
-    const artifact=state.run.artifacts.find(a=>[".pdf",".qgz",".png"].some(ext=>a.id+ext===name));
+    const artifact=state.run.artifacts.find(a=>[".pdf",".qgz",".png"].some(ext=>a.id+ext===name&&a.files.includes(ext===".qgz"?"path":ext.slice(1))));
     if(artifact){
       const kind=name.endsWith(".qgz")?"path":name.split(".").pop();
       link.href="/api/file?"+query({run:state.runId,artifact:artifact.id,kind,download:"1"});
@@ -126,7 +126,7 @@ function displayStats(data){
 }
 function isRateMap(spec){return ["exposure_pct","exposure_rate","exposure_ratio","ratio"].includes(spec.field);}
 function drawGrid(){
-  if(state.grid)map.removeLayer(state.grid);
+  if(state.grid){map.removeLayer(state.grid);state.grid=null;}
   const b=breaksFor();
   if(state.geo){
     state.grid=L.geoJSON(state.geo,{style:f=>({color:"#ffffff",weight:.8,fillColor:colorFor(f.properties[state.metric],b),fillOpacity:f.properties[state.metric]==null?.12:.7}),
@@ -174,8 +174,21 @@ async function selectArtifact(id,fit=true){
   $("mapEmpty").classList.toggle("hidden",!!state.artifact);
   $("versionBadge").classList.toggle("historical",!!state.artifact?.stale);
   $("versionBadge").textContent=state.artifact?.stale?"历史版本":"当前版本";
-  for(const e of document.querySelectorAll(".downloads a,.downloads button"))e.classList.toggle("disabled",!state.artifact);
-  if(!state.artifact){state.geo=null;drawGrid();return;}
+  function control(id,available,url){
+    const el=$(id);el.classList.toggle("disabled",!available);el.setAttribute("aria-disabled",String(!available));
+    if(el.tagName==="BUTTON")el.disabled=!available;
+    else if(available)el.href=url;else el.removeAttribute("href");
+  }
+  const artifact=state.artifact,files=artifact?.files||[];
+  control("downloadPDF",files.includes("pdf"),artifact&&fileURL("pdf",true));
+  control("downloadQGIS",files.includes("path"),artifact&&fileURL("path",true));
+  control("openQGIS",files.includes("path"));control("previewMap",files.includes("png"));
+  control("downloadData",!!artifact&&artifact.layer_available!==false,artifact&&"/api/data?"+query({run:state.runId,id:artifact.layer_id}));
+  $("artifactTitle").textContent=artifact?.spec.title||"尚无专题图";
+  if(!artifact||artifact.layer_available===false){
+    state.geo=null;drawGrid();$("verification").textContent=artifact?"统计图层文件已移动或丢失，无法重新核验。":"等待分析";
+    $("mapEmpty").classList.remove("hidden");$("mapEmpty").textContent=artifact?"统计图层文件不可用":"等待分析图层";return;
+  }
   $("artifactTitle").textContent=state.artifact.spec.title;
   state.metric=isRateMap(state.artifact.spec)?"exposure_pct":"exposed_m";
   syncMetricButtons();
@@ -183,8 +196,6 @@ async function selectArtifact(id,fit=true){
   const data=await api("/api/layer?"+query({run:state.runId,id:state.artifact.layer_id}));
   if(state.runId!==requestedRun||state.artifact?.id!==requestedId)return;
   state.geo=displayStats(data);drawGrid();if(fit){state.fitPending=document.querySelector(".workspace").dataset.panel!=="map";if(!state.fitPending&&state.grid.getBounds().isValid())map.fitBounds(state.grid.getBounds().pad(.08));}
-  $("downloadPDF").href=fileURL("pdf",true);$("downloadQGIS").href=fileURL("path",true);
-  $("downloadData").href="/api/data?"+query({run:state.runId,id:state.artifact.layer_id});
   const artifacts=state.run.artifacts,index=artifacts.findIndex(a=>a.id===state.artifact.id);
   const check=state.run.verification?.[index];
   $("verification").textContent=check?.passed?`${check.cells} 个网格已通过独立数值核验；长度绝对允差 0.01 m。`:"本次模型执行已记录；该版本尚无独立数值核验记录。";
@@ -300,10 +311,32 @@ $("newTask").onclick=()=>{state.folder=null;state.newTask=true;state.runId=null;
 $("taskForm").onsubmit=async e=>{
   e.preventDefault();const question=$("question").value.trim();if(!question)return;
   $("sendTask").disabled=true;
-  try{if(!$("connectionStatus").classList.contains("ready")){await $("connectionButton").onclick();$("sendTask").disabled=false;return;}const result=await api("/api/task",{question,run_id:state.newTask?null:state.runId,folder_key:state.runId?undefined:state.folder?.key,utc_offset_minutes:-new Date().getTimezoneOffset()});state.runId=result.run_id;state.titles??={};state.titles[state.runId]=question.slice(0,28);state.newTask=false;$("question").value="";$("threadTitle").textContent=runName(state.runId);renderConversation();await refreshStatus();toast("任务已开始");}
+  try{
+    if(!$("connectionStatus").classList.contains("ready")){await $("connectionButton").onclick();$("sendTask").disabled=false;return;}
+    const result=await api("/api/task",{question,run_id:state.newTask?null:state.runId,folder_key:state.runId?undefined:state.folder?.key,utc_offset_minutes:-new Date().getTimezoneOffset()});
+    state.pendingJob=result.job_id;state.runId=result.run_id;state.titles??={};state.titles[result.run_id]=question.slice(0,28);
+    state.newTask=false;$("question").value="";$("threadTitle").textContent=runName(result.run_id);
+    await loadRun(result.run_id,false);await pollJobs();
+  }
   catch(error){toast(error.message);$("sendTask").disabled=false;}
 };
-$("stopTask").onclick=async()=>{if(state.job){await api("/api/stop",{id:state.job.id});await refreshStatus();}};
+$("stopTask").onclick=async()=>{try{if(state.job){await api("/api/stop",{id:state.job.id});await pollJobs();}}catch(e){toast(e.message);}};
+let polling=false;
+async function pollJobs(){
+  if(polling)return;polling=true;
+  try{
+    const latest=await refreshStatus();
+    const job=latest.jobs.find(j=>j.id===state.pendingJob)||state.job;
+    if(!job)return;
+    state.pendingJob=job.id;
+    if(job.run_id===state.runId)await loadRun(job.run_id,false);
+    if(!["running","stopping"].includes(job.status)){
+      state.pendingJob=null;
+      const messages={finished:"本轮执行结束",cancelled:"任务已停止",incomplete:"本轮未完成，请查看执行记录",failed:"本轮失败："+(job.error||"请查看执行记录")};
+      toast(messages[job.status]||"请查看执行记录");
+    }
+  }finally{polling=false;}
+}
 async function init(){
   icons();
   const data=await refreshStatus();
@@ -315,10 +348,7 @@ async function init(){
   $("showFlood").onchange=e=>e.target.checked?state.flood.addTo(map):map.removeLayer(state.flood);
   $("showRoads").onchange=async e=>{try{if(e.target.checked){if(!state.roads)state.roads=L.geoJSON(await api("/api/context?id=roads"),{style:{color:"#425c51",weight:1,opacity:.65},attribution:"© OpenStreetMap contributors / ODbL"});state.roads.addTo(map);}else if(state.roads)map.removeLayer(state.roads);}catch(error){toast(error.message);}};
   if(state.job)await loadRun(state.job.run_id);else if(!state.runId)renderConversation();
-  setInterval(async()=>{try{
-    const wasRunning=!!state.job;const latest=await refreshStatus();
-    if((wasRunning||state.job)&&state.runId)await loadRun(state.runId,false);
-    if(wasRunning&&!state.job){const done=latest.jobs.at(-1);toast(done?.error|| (done?.status==="cancelled"?"任务已停止":"本轮执行结束；请查看结果与核验状态"));}
-  }catch(error){console.warn(error.message);}},2500);
+  if(state.job)state.pendingJob=state.job.id;
+  setInterval(()=>pollJobs().catch(e=>console.warn(e.message)),2500);
 }
 init().catch(e=>toast(e.message));

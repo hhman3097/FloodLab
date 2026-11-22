@@ -111,8 +111,17 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     if project is not None:names.append("event-workspace")
     skills=[(Path(__file__).parent/"skills"/name/"SKILL.md").read_text(encoding="utf-8").split("---",2)[-1] for name in names]
     policy=POLICY+"\n检索必须实际调用 search_floods 工具，完成后最终 JSON 只可选择 reply 或 gis。\n"+"\n".join(skills)
+    presented={}
     if project is not None:
-        context["project"]={"downloaded":list(project.index["products"]),"outputs":project.index["outputs"][-2:]}
+        for i,o in enumerate(project.index["outputs"]):
+            image=(project.root/o["folder"]/"map.png").resolve()
+            if project.root.resolve() in image.parents and image.is_file():
+                presented[f"M{i+1}"]=o
+        context["project"]={"downloaded":list(project.index["products"]),"maps":[
+            {"ref":ref,**{k:o.get(k) for k in ("key","aoi","observations","grid_m","total_km2")},
+             **({"top_cells":o.get("top_cells",[])} if ref in list(presented)[-3:] else {})}
+            for ref,o in presented.items()]}
+        policy+="\nS 编号和 refs 只用于 search_floods 的 sources。EMS 产品目录不是新闻，不给它编 S 编号；写产品编号、研究区与观测日期即可。最终 JSON 增加 map_refs 数组：仅引用本轮正在解释或要求打开的已有地图（如 M1）；切换到不同地点、只讨论新方案或没有匹配时返回 []。返回的有效引用会在回答下方生成可点击的地图预览，不需要给路径。只打开已有成果时不要重算。"
         policy=policy.replace("可继续检索公开线索，不能声称已下载/核准图层。","可调用事件目录和下载工具，只有取得产物后才能报告已下载。")
     plan=pi_turn(api,policy,context,cancel,tool)
     if not isinstance(plan,dict) or plan.get("action") not in ("reply","gis"):
@@ -126,21 +135,42 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     if plan["action"]=="gis" and not handoff:
         answer="当前案例数据覆盖瓦伦西亚。你希望分析哪个地方？我可以先查当地洪涝记录，再确认有哪些资料可用。"
         options=["查近期国内洪涝","分析瓦伦西亚案例"]
-    refs=[i for i in (plan.get("refs") or []) if type(i) is int and 0<=i<len(evidence.get("sources",[]))]
+    sources=evidence.get("sources",[])
+    refs=[i for i in (plan.get("refs") or []) if type(i) is int and 0<=i<len(sources)]
     visible_refs=[int(i)-1 for i in re.findall(r"\[S(\d+)\]",answer)]
-    if any(i<0 or i>=len(evidence.get("sources",[])) for i in visible_refs) or (searched and evidence["sources"] and not (refs or visible_refs)):
-        answer="检索得到了一些候选资料，但还不能从中确认具体灾情。可以缩小到一个省，或查看这些资料的原始发布记录。"
-        refs=list(range(min(3,len(evidence["sources"]))))
+    computed=project is not None and any(c["name"]=="analyse_footprint" and c["response"]["status"]=="ok" for c in project.audit)
+    invalid_refs=any(i<0 or i>=len(sources) for i in visible_refs)
+    products=[p for c in (project.audit if project else []) if c["name"]=="list_products" and c["response"]["status"]=="ok"
+              for p in c["response"]["result"] if p.get("key") and p.get("observations")]
+    if invalid_refs and not sources and products and not computed:
+        # An unbound S-number cannot substantiate a catalog claim. Rebuild it from the tool return.
+        preferred=[p for p in products if p["aoi"].casefold() in question.casefold()]
+        selected=list({p["key"]:p for p in (preferred or products)}.values())[:8]
+        answer="从 EMS 官方产品目录查到以下可用观测：\n\n"+"\n".join(
+            f"- {p['aoi']}：{', '.join(p['observations'])}（{p['key']}）" for p in selected)
+        answer+=f"\n\n[核对 EMS 产品目录]({selected[0]['catalog']})"
+        refs=[];visible_refs=[]
+    elif computed and invalid_refs:
+        answer=re.sub(r"\[S(\d+)\]",lambda m:m[0] if 1<=int(m[1])<=len(sources) else "",answer)
+        visible_refs=[i for i in visible_refs if 0<=i<len(sources)]
+    elif invalid_refs or (searched and not computed and sources and not (refs or visible_refs)):
+        answer=("检索得到了一些候选资料，但还不能从中确认具体灾情。可以缩小到一个省，或查看这些资料的原始发布记录。"
+                if sources else "本轮没有可核对的新闻来源，不能确认具体灾情。可以指定地区重新查询。")
+        refs=list(range(min(3,len(sources))))
         visible_refs=[]
     refs+=visible_refs
     for i in dict.fromkeys(refs):
-        source=evidence["sources"][i]
+        source=sources[i]
         answer+=f"\n\n[S{i+1} · {source['publisher']} · {source['date']}]({source['url']})"
     if searched:
         answer+=f"\n\n检索范围：{evidence['from']} 至 {evidence['to']}。"
         if evidence["errors"]:answer+=" 暂不可用："+ "、".join(x.split(":")[0] for x in evidence["errors"])+"。"
-        if not evidence["sources"]:
+        if not evidence["sources"] and not computed:
             answer="本次检索没有取得可核对的记录，无法据此判断有没有发生洪涝。"+answer[answer.rfind("\n\n检索范围"):]
             options=["把时间扩大到近90天","换一个省份查询"]
-    return {"answer":answer,"options":options,"searched":searched,"scope":scope,"evidence":evidence,
+        elif not evidence["sources"]:
+            answer+=" 新闻检索未返回记录；空间统计依据是已下载的观测产品。"
+    refs=plan.get("map_refs")
+    referenced=[presented[r] for r in dict.fromkeys(r for r in refs if isinstance(r,str) and r in presented)] if isinstance(refs,list) else []
+    return {"answer":answer,"options":options,"searched":searched,"scope":scope,"evidence":evidence,"maps":referenced,
             "task":str(plan.get("task") or question) if handoff else None}
