@@ -1,4 +1,4 @@
-# FloodLab 0.6.0 研究环境
+# FloodLab 研究环境
 
 ## 新机器复现
 

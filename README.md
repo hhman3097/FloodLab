@@ -2,7 +2,7 @@
 
 FloodLab 是一个可以用中文对话的洪涝遥感工作台。你可以从“最近哪里发生了洪涝？”开始，选定事件后再追问“那片区域有多大，哪里最集中？”。Pi 查找资料、确认研究区和观测时间；QGIS 从实际下载的空间数据计算结果，并导出可编辑地图。
 
-**[下载桌面版 0.6.0](https://github.com/hhman3097/FloodLab/releases/tag/v0.6.0) · [课程报告 PDF](report/build/main.pdf) · [LaTeX 源码](report/main.tex) · [实验复现](docs/REPRODUCTION.md)**
+**[下载桌面版 0.6.1](https://github.com/hhman3097/FloodLab/releases/tag/v0.6.1) · [课程报告 PDF](report/build/main.pdf) · [LaTeX 源码](report/main.tex) · [实验复现](docs/REPRODUCTION.md) · [回归验收](docs/ACCEPTANCE.md)**
 
 ![瓦伦西亚案例的实际地图视图：可切换灾前影像、洪涝轮廓和道路](docs/demo/valencia.jpg)
 
