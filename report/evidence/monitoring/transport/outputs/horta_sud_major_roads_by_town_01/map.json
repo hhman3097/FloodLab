@@ -1,0 +1,12 @@
+{
+  "analysis_id": "horta_sud_major_roads_by_town_01",
+  "top_n": 10,
+  "files": {
+    "north.svg": "805d10765445da987da106ea0e625167a29b91d7e5210a4cc6e8faa15a88db29",
+    "review_points.geojson": "ef2517df2dfa3c22859030b8e5cd2920e38bc3f93f7d361b0b4c63c06004770c",
+    "transport.pdf": "2792dc53d027de1b2640d6bfefc6feb6da89588d5dbdffc6546824f94fe7f9f7",
+    "transport.png": "6829c396a32bfd72aa7e9ff8d1e89ca82e46ba02ebc57a48e8c506e4d5eecba3",
+    "transport.qgz": "9482fffd3781c2517fd602f652a587b827bab98350442ffc26ad5b5e851807ed"
+  },
+  "map_title": "Horta Sud Major Road Candidates by Municipality, 31 Oct 2024"
+}

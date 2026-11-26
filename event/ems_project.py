@@ -6,16 +6,29 @@ import subprocess
 import uuid
 from datetime import datetime,timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode,urlsplit
-from urllib.request import Request,urlopen
+from urllib.request import ProxyHandler, Request, build_opener, urlopen
 from runtime import executable,environment
+from satellite_catalog import query_catalog,write_coverage
+from sar_project import run_tool as sar_tool, make_bundle
+from karla_project import TOOL_NAMES as KARLA_TOOLS, execute as karla_tool
 
 BASE="https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/"
 
 
 def download(url,limit):
-    with urlopen(Request(url,headers={"User-Agent":"FloodLab-Research/0.6"}),timeout=30) as r:
-        data=r.read(limit+1)
+    request=Request(url,headers={"User-Agent":"FloodLab-Research/0.6"})
+    try:
+        with urlopen(request,timeout=30) as r:
+            data=r.read(limit+1)
+    except HTTPError:
+        raise
+    except (URLError, OSError):
+        if urlsplit(url).hostname != "stac.dataspace.copernicus.eu":
+            raise
+        with build_opener(ProxyHandler({})).open(request,timeout=30) as r:
+            data=r.read(limit+1)
     if len(data)>limit:raise ValueError("产品超过本地下载限额")
     return data
 
@@ -68,11 +81,33 @@ class EventTools:
         self.audit=[]
 
     def call(self,name,args):
+        try:
+            result = self._call(name, args)
+        except (OSError, ValueError, TypeError, KeyError, RuntimeError, subprocess.SubprocessError) as exc:
+            self.audit.append({"name":name,"arguments":json.dumps(args,ensure_ascii=False),
+                               "response":{"status":"error","message":str(exc)[:400]}})
+            raise RuntimeError(str(exc)[:400]) from None
+        self.audit.append({"name":name,"arguments":json.dumps(args,ensure_ascii=False),"response":{"status":"ok","result":result}})
+        return result
+
+    def _call(self,name,args):
         if name=="find_events":
             result=match_events(str(args.get("place","")),args.get("from_date"),args.get("to_date"))
         elif name=="list_products":
             result=inventory(str(args["code"]).upper())
             self.index["catalog"].update({p["key"]:p for p in result});put(self.state,self.index)
+        elif name=="search_satellite":
+            response=query_catalog(args["place"],args["from_date"],args["to_date"],
+                                   args["utc_offset_minutes"],args.get("bbox"),download)
+            folder=self.root/"outputs"/("satellite-"+uuid.uuid4().hex[:10])
+            folder.mkdir(parents=True)
+            write_coverage(folder,response,put)
+            result={k:v for k,v in response.items() if k!="catalogs"}
+            result.update(folder=folder.relative_to(self.root).as_posix(),key=folder.name,observations=[],
+                          preview="The application displays an interactive coverage map and GeoJSON download for this result.",
+                          catalogs=[{**c,"count":len(c["items"]),"items":[{k:v for k,v in t.items() if k!="geometry"}
+                                    for t in c["items"][:12]]} for c in response["catalogs"]])
+            self.index["outputs"].append(result);put(self.state,self.index)
         elif name=="get_footprint":
             key=args["key"];p=self.index["catalog"].get(key)
             if not p:raise ValueError("须先列出该事件的观测产品")
@@ -109,6 +144,27 @@ class EventTools:
             result=json.loads((out/"results.json").read_text(encoding="utf-8"))
             result.update(key=key,aoi=p["aoi"],observations=p["observations"],folder=out.relative_to(self.root).as_posix())
             self.index["outputs"].append(result);put(self.state,self.index)
+        elif name in {"sar_inventory","download_sar_pair","segment_sar_flood","publish_sar_map"}:
+            result = sar_tool(self,name,args)
+            put(self.state,self.index)
+        elif name in KARLA_TOOLS:
+            result=karla_tool(self,name,args)
+            put(self.state,self.index)
+        elif name in {"transport_inventory","screen_transport","export_transport_map"}:
+            from transport_case import Transport
+            if name=="transport_inventory":
+                result=Transport(self.root/"outputs").inventory()
+            elif name=="screen_transport":
+                result=Transport(self.root/"outputs").screen(**args)
+                result={k:v for k,v in result.items() if k!="files"}
+            else:
+                published=next((o for o in self.index["outputs"] if o["key"]==args["analysis_id"] and o.get("kind")=="transport_screening"),None)
+                if published:return published
+                result=Transport(self.root/"outputs").render(**args)
+                folder=self.root/"outputs"/result["analysis_id"]
+                make_bundle(folder,[f for f in sorted(folder.iterdir()) if f.is_file() and f.suffix in
+                                    {".pdf",".qgz",".png",".geojson",".csv",".json",".svg"}],folder)
+                result.update(folder=folder.relative_to(self.root).as_posix(),preview_file="transport.png")
+                self.index["outputs"].append(result);put(self.state,self.index)
         else:raise ValueError("未知项目工具")
-        self.audit.append({"name":name,"arguments":json.dumps(args,ensure_ascii=False),"response":{"status":"ok","result":result}})
         return result

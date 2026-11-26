@@ -1,0 +1,41 @@
+{
+  "both_km2": 66.9064,
+  "sar_only_km2": 1.1196,
+  "optical_only_km2": 28.5196,
+  "unknown_km2": 23.2508,
+  "joint_pct": 96.44700054645543,
+  "sar_candidate_outside_joint_km2": 3.1632,
+  "dates": [
+    "2023-12-18",
+    "2023-12-19"
+  ],
+  "interpretation": "Cross-date cross-sensor evidence; never infer expansion or recession from these differences.",
+  "sar_id": "sar-mask-3497eeb209",
+  "optical_id": "optical-mask-244ef38415",
+  "official_reference": {
+    "sar": {
+      "pixels": {
+        "common": 960635,
+        "both": 172673,
+        "official_only": 56520,
+        "candidate_only": 5300
+      },
+      "iou": 0.7363673968945769,
+      "layer": "P04FLDEL01_FloodExtent",
+      "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+      "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+    },
+    "optical": {
+      "pixels": {
+        "common": 936434,
+        "both": 229629,
+        "official_only": 8184,
+        "candidate_only": 7906
+      },
+      "iou": 0.9345186981877673,
+      "layer": "P04FLDEL02_FloodExtent",
+      "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+      "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+    }
+  }
+}

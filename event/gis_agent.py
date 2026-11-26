@@ -133,13 +133,13 @@ def replay_messages(messages, turns, images):
                     ]})
 
 
-def run(api, workspace, questions, tracked=True, images=True, resume=False, cancel_event=None):
+def run(api, workspace, questions, tracked=True, images=True, resume=False, cancel_event=None, summarize_at_limit=False, max_calls=20):
     workspace = Path(workspace)
     record = {
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "provider": api.base, "requested_model": api.model,
         "condition": "tracked" if tracked else "generic",
-        "images_enabled": images, "max_tool_calls_per_turn": 20,
+        "images_enabled": images, "max_tool_calls_per_turn": max_calls,
         "questions": questions, "turns": [],
         "status": "running",
         "system_prompt": SYSTEM,
@@ -162,7 +162,11 @@ def run(api, workspace, questions, tracked=True, images=True, resume=False, canc
         raise ValueError("Run exists; use --resume or a new workspace")
     path.write_text(json.dumps(record, ensure_ascii=False, indent=2))
     with GISClient(workspace, tracked=tracked, resume=resume) as gis:
-        system = SYSTEM if images else SYSTEM + "\nImage input is disabled in this experimental condition; do not request view_map. Other tools remain available."
+        system = SYSTEM.replace("at most 20 tool calls", f"at most {max_calls} tool calls")
+        if not images:
+            system += "\nImage input is disabled in this experimental condition; do not request view_map. Other tools remain available."
+        if summarize_at_limit:
+            system += "\nPrioritize the user's requested deliverables. If a map was requested, export it as soon as the measured layer and usable legend fields exist, before optional checks. Avoid re-inspecting an unchanged layer when the tool already returned its metadata."
         record["effective_system_prompt"] = system
         messages = [{"role": "system", "content": system},
                     {"role": "user", "content": "Available data and algorithms:\n" +
@@ -185,12 +189,20 @@ def run(api, workspace, questions, tracked=True, images=True, resume=False, canc
             image_reviews = sum(c["name"] == "view_map" and c["response"]["status"] == "ok"
                                 for c in turn["calls"])
             start = time.monotonic()
-            for _ in range(21):
+            for _ in range(max_calls+1):
                 if cancel_event is not None and cancel_event.is_set():
                     turn["status"] = "cancelled"
                     break
-                if len(turn["calls"]) >= 20:
+                if len(turn["calls"]) >= max_calls:
                     turn["status"] = "tool_budget_exhausted"
+                    if summarize_at_limit:
+                        closing={"role":"user","content":"工具调用已达上限。只根据已有工具返回总结：明确已生成的文件和已计算的值，以及仍未完成的要求。没有证据就直说。不要继续调用工具。"}
+                        try:
+                            last=api.complete([*messages,closing],allow_tools=False)["choices"][0]["message"]
+                            if not last.get("tool_calls") and last.get("content"):
+                                turn["answer"]=last["content"]
+                        except (OSError,RuntimeError,KeyError,ValueError) as exc:
+                            turn["summary_error"]=str(exc)
                     break
                 path.write_text(json.dumps(record, ensure_ascii=False, indent=2))
                 try:
@@ -218,7 +230,7 @@ def run(api, workspace, questions, tracked=True, images=True, resume=False, canc
                     turn["status"] = "model_finished_unverified"
                     break
                 for call in calls:
-                    if len(turn["calls"]) >= 20:
+                    if len(turn["calls"]) >= max_calls:
                         response = {"status": "error", "message": "Tool budget exhausted"}
                     else:
                         name = call["function"]["name"]

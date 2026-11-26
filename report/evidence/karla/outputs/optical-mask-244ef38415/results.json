@@ -1,0 +1,16 @@
+{
+  "algorithm": "optical_mndwi",
+  "dates": [
+    "2023-08-31",
+    "2023-12-19"
+  ],
+  "input_id": "optical-975de5f20b",
+  "patches": 126,
+  "candidate_km2": 95.426,
+  "candidate_pixels": 238565,
+  "valid_pixels": 1577871,
+  "valid_pct": 96.44700054645543,
+  "baseline_km2": 32.9328,
+  "evidence_sha256": "b1e70f87315fce45272fbb8782d30782b7a4bb4890ee67b67768a68e2f2f4f73",
+  "method_reason": "已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。"
+}

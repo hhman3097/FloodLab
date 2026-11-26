@@ -34,6 +34,14 @@ LOCK = threading.Lock()
 CACHE = HERE / "cache"
 GEO_LOCK = threading.Lock()
 DEMO = "gis-agent-pilot-v2"
+PROJECT_PREVIEWS = {
+    "karla_evidence": {"map.pdf","map.png","map.qgz","project.zip","results.json","evidence.tif","agreement.tif","candidates.gpkg"},
+    "karla_exposure": {"map.pdf","map.png","map.qgz","project.zip","results.json","roads.csv","cropland.csv","roads.geojson"},
+    "sar_flood_change": {"map.pdf","map.png","map.qgz","candidate.tif","candidate.gpkg","agreement.tif","results.json","project.zip"},
+    "transport_screening": {"transport.pdf","transport.png","transport.qgz","segments.csv","municipalities.csv","corridors.csv","segments.geojson","analysis.json","project.zip"},
+    "satellite_coverage": {"coverage.geojson","results.json"},
+}
+FOOTPRINT_FILES = {"map.pdf","map.png","map.qgz","grid.geojson","results.json"}
 
 
 def load(path, default=None):
@@ -164,12 +172,16 @@ def worker(job_id, api, directory, question, resume, event):
                              "response":{"status":"ok","result":decision["evidence"]}}]
         if project:
             entry["calls"].extend(project.audit)
-            created=[c["response"]["result"] for c in project.audit if c["name"]=="analyse_footprint" and c["response"]["status"]=="ok"]
-            guide["event_outputs"]=created or decision["maps"]
+            created=[c["response"]["result"] for c in project.audit
+                     if c["name"] in {"analyse_footprint","search_satellite","publish_sar_map","export_transport_map",
+                                      "karla_segment","karla_compare","karla_exposure"}
+                     and c["response"]["status"]=="ok"]
+            guide["event_outputs"]=list({o["folder"]:o for o in (created or decision["maps"])}.values())
+            entry["event_outputs"]=guide["event_outputs"]
         if decision["task"]:
             entry.update(answer="按当前研究区执行以下空间分析。",options=[])
             save()
-            run(api,directory,[decision["task"]],resume=bool(data.get("turns")),cancel_event=event)
+            run(api,directory,[decision["task"]],resume=bool(data.get("turns")),cancel_event=event,summarize_at_limit=True,max_calls=26)
         with LOCK:
             status="finished"
             if event.is_set():
@@ -263,9 +275,10 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_file(geojson(file,file.parent))
             elif query.path=="/api/project-output":
                 directory=run_path(args["run"]);info=Projects(RUNS).info(args["run"])
-                outputs=load(directory/"dialogue.json",{}).get("event_outputs",[])
+                guide=load(directory/"dialogue.json",{})
+                outputs=guide.get("event_outputs",[])+[o for t in guide.get("turns",[]) for o in t.get("event_outputs",[])]
                 item=next((o for o in outputs if o["folder"]==args["folder"]),None)
-                if not info or not item or args["file"] not in {"map.pdf","map.png","map.qgz","grid.geojson","results.json"}:raise ValueError("Unknown output")
+                if not info or not item or args["file"] not in PROJECT_PREVIEWS.get(item.get("kind"),FOOTPRINT_FILES):raise ValueError("Unknown output")
                 base=Path(info["root"]).resolve();p=(base/item["folder"]/args["file"]).resolve()
                 if base not in p.parents:raise ValueError("Unknown output")
                 self.send_file(p,download=args.get("download")=="1")
@@ -414,12 +427,16 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    global KEY, BASE, MODEL
+    global KEY, BASE, MODEL, RUNS
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8765)
     parser.add_argument("--ask-key", action="store_true")
     parser.add_argument("--desktop-stdin", action="store_true")
+    parser.add_argument("--runs-dir", type=Path)
     args = parser.parse_args()
+    if args.runs_dir:
+        RUNS = args.runs_dir.resolve()
+        RUNS.mkdir(parents=True, exist_ok=True)
     KEY = os.environ.get("AI4S_API_KEY", "")
     if args.desktop_stdin:
         config = json.loads(sys.stdin.readline())

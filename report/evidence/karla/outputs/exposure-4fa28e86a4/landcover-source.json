@@ -1,0 +1,43 @@
+{
+  "sensor": "landcover",
+  "bbox": [
+    22.55,
+    39.43,
+    22.85,
+    39.65
+  ],
+  "resolution_m": 20,
+  "crs": "EPSG:32634",
+  "captures": [
+    {
+      "file": "landcover-2021.tif",
+      "date": "2021",
+      "sensor": "landcover",
+      "valid_pct": 100.0,
+      "scenes": [
+        {
+          "id": "ESA_WorldCover_10m_2021_v200_N39E021",
+          "datetime": null,
+          "relative_orbit": null,
+          "assets": {
+            "map": "https://ai4edataeuwest.blob.core.windows.net/esa-worldcover/v200/2021/map/ESA_WorldCover_10m_2021_v200_N39E021_Map.tif"
+          },
+          "stac_raster_bands": {
+            "map": [
+              {
+                "name": "Band1",
+                "nodata": 0,
+                "sampling": "area",
+                "data_type": "uint8",
+                "description": "Classification values",
+                "spatial_resolution": 10
+              }
+            ]
+          }
+        }
+      ],
+      "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=esa-worldcover&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2021-01-01T00%3A00%3A00Z%2F2021-12-31T23%3A59%3A59Z&limit=50",
+      "sha256": "9fb5b3e807274bf8d1ccd34e89eaaf8a2696e4ea4af5504d5c847b81632de3bb"
+    }
+  ]
+}

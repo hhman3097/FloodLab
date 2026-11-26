@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "all_qgis_projects_reopened": true,
+  "outputs": {
+    "sar-mask-3497eeb209": {
+      "area_km2": 71.1892,
+      "raster_vector_agree": true
+    },
+    "optical-mask-244ef38415": {
+      "area_km2": 95.426,
+      "raster_vector_agree": true
+    },
+    "comparison-ce8daf32d0": {
+      "compared_pixels": 1577871,
+      "classes_verified": true
+    },
+    "exposure-c6e0b9df2e": {
+      "road_features": 159,
+      "road_and_cropland_verified": true
+    },
+    "exposure-4fa28e86a4": {
+      "road_features": 103,
+      "road_and_cropland_verified": true
+    }
+  }
+}

@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 from pathlib import Path
+from karla_project import TOOL_NAMES as KARLA_TOOLS
 
 
 async def _turn(api, system, context, cancel, search):
@@ -17,7 +18,7 @@ async def _turn(api, system, context, cancel, search):
         child.stdin.write((json.dumps(obj,ensure_ascii=False)+"\n").encode());await child.stdin.drain()
     try:
         await write({"key":api.key,"base":api.base,"model":api.model,"system":system,"context":context})
-        deadline=asyncio.get_running_loop().time()+210
+        deadline=asyncio.get_running_loop().time()+530
         while True:
             if cancel.is_set():raise InterruptedError("任务已停止")
             if asyncio.get_running_loop().time()>deadline:raise TimeoutError("Pi 请求超时")
@@ -28,7 +29,9 @@ async def _turn(api, system, context, cancel, search):
             if "error" in msg:raise RuntimeError(str(msg["error"]).replace(api.key,"[REDACTED]"))
             if "final" in msg:return msg["final"]
             name=msg.get("tool")
-            if name not in {"search_floods","find_events","list_products","get_footprint","analyse_footprint"}:raise ValueError("Unknown Pi tool")
+            if name not in {"search_floods","find_events","list_products","search_satellite","get_footprint","analyse_footprint",
+                            "sar_inventory","download_sar_pair","segment_sar_flood","publish_sar_map",
+                            "transport_inventory","screen_transport","export_transport_map"} | KARLA_TOOLS:raise ValueError("Unknown Pi tool")
             try:result=await asyncio.to_thread(search,msg["args"],name)
             except (RuntimeError,ValueError,KeyError,OSError,TimeoutError) as exc:result={"error":str(exc)[:450]}
             await write(result)
@@ -40,4 +43,14 @@ async def _turn(api, system, context, cancel, search):
 
 
 def turn(api,system,context,cancel,search):
-    return asyncio.run(_turn(api,system,context,cancel,search))
+    called=False
+    def dispatch(args,name):
+        nonlocal called
+        called=True
+        return search(args,name)
+    try:
+        return asyncio.run(_turn(api,system,context,cancel,dispatch))
+    except RuntimeError as exc:
+        if called or cancel.is_set() or not any(s in str(exc).lower() for s in ("connection error","econnreset","fetch failed")):
+            raise
+        return asyncio.run(_turn(api,system,context,cancel,dispatch))

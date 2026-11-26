@@ -1,0 +1,91 @@
+{
+  "dataset": "OpenStreetMap map API",
+  "endpoint": "https://api.openstreetmap.org/api/0.6/map",
+  "snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+  "license": "ODbL; OpenStreetMap contributors",
+  "windows": [
+    {
+      "bbox": [
+        22.55,
+        39.43,
+        22.65,
+        39.5
+      ],
+      "sha256": "c672bfdafdaaaf5d9b7f785ad046e3fb3af88a1c5442f1909cf6c827a5934a70"
+    },
+    {
+      "bbox": [
+        22.55,
+        39.5,
+        22.65,
+        39.575
+      ],
+      "sha256": "0a8ddf36a27f9a7169605a19295f6881ebe262d2665540e8a95069b321dc254c"
+    },
+    {
+      "bbox": [
+        22.55,
+        39.575,
+        22.65,
+        39.65
+      ],
+      "sha256": "323be7902f89f8249b91ba46aab0748bfb9667c4be3d9be22155e351201e019e"
+    },
+    {
+      "bbox": [
+        22.65,
+        39.43,
+        22.75,
+        39.5
+      ],
+      "sha256": "3bbc9859189646379722babdecafa0dc3c65c48d60d738bffc901888367441a7"
+    },
+    {
+      "bbox": [
+        22.65,
+        39.5,
+        22.75,
+        39.575
+      ],
+      "sha256": "6b3db59ebfc763ca7fb7023ab11653ef13e766c360719e7cfd5af8a74ef766e8"
+    },
+    {
+      "bbox": [
+        22.65,
+        39.575,
+        22.75,
+        39.65
+      ],
+      "sha256": "36ad2fa473db6e7def0e6a8482105981146e56d6d6407513469c5591632ea170"
+    },
+    {
+      "bbox": [
+        22.75,
+        39.43,
+        22.85,
+        39.5
+      ],
+      "sha256": "13ba5dc61d84cb070db973d19050c21255bf1233ee7a24da9caf6ce8aaa4f42f"
+    },
+    {
+      "bbox": [
+        22.75,
+        39.5,
+        22.85,
+        39.575
+      ],
+      "sha256": "89908e4ce05dc5fc7f01ffd1b281c2dd7f1a5737763e7809380cf21520b2af16"
+    },
+    {
+      "bbox": [
+        22.75,
+        39.575,
+        22.85,
+        39.65
+      ],
+      "sha256": "93993d3aa412c318b0cba2d9037b8a702c32cc49eee60089be89789e59a84a87"
+    }
+  ],
+  "features": 321,
+  "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6"
+}

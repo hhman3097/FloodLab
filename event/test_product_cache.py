@@ -12,7 +12,9 @@ def test_provenance_preserves_first_download_and_unregistered_files(tmp_path,mon
     monkeypatch.setattr(ems_project,"download",lambda *a:downloads.append(a) or raw)
     folder=tmp_path/"inputs"/key.replace(":","-");folder.mkdir(parents=True)
     file=folder/"observed.geojson";file.write_bytes(b"unregistered")
-    with pytest.raises(ValueError):tools.call("get_footprint",{"key":key})
+    with pytest.raises(RuntimeError, match="保留原文件"):
+        tools.call("get_footprint",{"key":key})
+    assert tools.audit[-1]["response"]["status"] == "error"
     assert file.read_bytes()==b"unregistered" and key not in tools.index["products"]
     file.unlink()
     first=tools.call("get_footprint",{"key":key})

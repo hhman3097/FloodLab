@@ -47,6 +47,21 @@ function renderAnswer(text){
 }
 function fileURL(kind,download=false){return "/api/file?"+query({run:state.runId,artifact:state.artifact.id,kind,...(download?{download:"1"}:{})});}
 function putText(parent,tag,text,className){const e=document.createElement(tag);e.textContent=text;if(className)e.className=className;parent.append(e);return e;}
+function outputLabel(o){
+  if(o.kind==="satellite_coverage")return "卫星影像覆盖";
+  if(o.kind==="karla_evidence")return o.candidate_km2==null?"证据对照":"候选积水 "+number(o.candidate_km2,2)+" km²";
+  if(o.kind==="karla_exposure")return "核查地图和清单";
+  if(o.kind==="transport_screening")return "道路核查图与清单";
+  if(o.kind==="sar_flood_change")return (o.preset==="conservative"?"保守参数":"均衡参数")+" · 候选淹没 "+number(o.total_km2,2)+" km²";
+  return number(o.total_km2,3)+" km²";
+}
+function outputButtons(parent,outputs){
+  for(const o of outputs){
+    const b=document.createElement("button");b.type="button";b.className="artifact-link";
+    b.append(icon("map"),document.createTextNode(o.aoi+" · "+outputLabel(o)));
+    b.onclick=()=>showEvent(o);parent.append(b);
+  }
+}
 function renderConversation(){
   updateFolder();
   const box=$("conversation"),follow=box.scrollHeight-box.scrollTop-box.clientHeight<40;
@@ -74,11 +89,11 @@ function renderConversation(){
       for(const label of turn.options){const b=document.createElement("button");b.type="button";b.textContent=label;b.disabled=!!state.job;b.onclick=()=>{$("question").value=label;$("taskForm").requestSubmit();};choices.append(b);}
       answer.append(choices);
     }
+    outputButtons(answer,turn.event_outputs||[]);
     box.append(answer);
   }
-  for(const o of state.run.event_outputs||[]){
-    const btn=document.createElement("button");btn.className="artifact-link";btn.append(icon("map"),document.createTextNode(o.aoi+" · "+number(o.total_km2,3)+" km²"));btn.onclick=()=>showEvent(o);box.append(btn);
-  }
+  const shown=new Set(turns.flatMap(t=>(t.event_outputs||[]).map(o=>o.folder)));
+  outputButtons(box,(state.run.event_outputs||[]).filter(o=>!shown.has(o.folder)));
   if(state.run.artifacts.length){
     const b=document.createElement("button");b.className="artifact-link";b.append(icon("map"),document.createTextNode("查看本次专题图"),icon("arrow-up-right"));b.onclick=()=>setPanel("map");box.append(b);
   }
@@ -89,7 +104,9 @@ function renderTrace(){
   const trace=$("trace");trace.replaceChildren();
   const turn=state.run?.turns.at(-1);
   if(!turn)return;
-  const labels={state:"读取任务状态",set_parameters:"更新分析参数",algorithm_help:"查询工具参数",table:"检查统计与排名",export_map:"导出专题图",view_map:"读取地图截图",inspect:"检查图层"};
+  const labels={state:"读取任务状态",set_parameters:"更新分析参数",algorithm_help:"查询工具参数",table:"检查统计与排名",export_map:"导出专题图",view_map:"读取地图截图",inspect:"检查图层",
+    sar_inventory:"核对雷达观测方案",download_sar_pair:"下载灾前后 Sentinel-1",segment_sar_flood:"提取候选淹没范围",publish_sar_map:"面积分析与专题制图",
+    transport_inventory:"核对观测产品与行政区",screen_transport:"统计需核查路段",export_transport_map:"导出道路核查成果"};
   for(const call of turn.calls){
     const row=document.createElement("div");row.className="trace-item"+(call.response.status==="ok"?"":" failed");
     row.append(icon(call.response.status==="ok"?"check":"triangle-alert"));
@@ -240,13 +257,46 @@ function setPanel(panel){
   document.querySelectorAll(".view-nav button").forEach(b=>{b.classList.toggle("active",b.dataset.panel===panel);b.setAttribute("aria-pressed",String(b.dataset.panel===panel));});
   if(panel==="map")requestAnimationFrame(()=>{map.invalidateSize();if(state.grid&&state.geo&&state.grid.getBounds().isValid()&&state.fitPending){map.fitBounds(state.grid.getBounds().pad(.08));state.fitPending=false;}});
 }
-function showEvent(o){
+let coverageMap;
+async function showEvent(o){
   const url=(file,download=0)=>"/api/project-output?"+query({run:state.runId,folder:o.folder,file,download});
-  $("eventTitle").textContent=o.aoi+" · "+o.key.split(":")[0];$("eventPreview").src=url("map.png");
-  $("eventFiles").replaceChildren();for(const [file,text] of [["map.pdf","专题图 PDF"],["grid.geojson","网格 GeoJSON"],["results.json","面积与排名"],["map.qgz","QGIS 工程"]]){
+  if(coverageMap){coverageMap.remove();coverageMap=null;}
+  const satellite=o.kind==="satellite_coverage";
+  $("eventTitle").textContent=o.aoi+" · "+outputLabel(o);
+  $("eventPreview").classList.toggle("hidden",satellite);
+  $("satelliteCoverage").classList.toggle("hidden",!satellite);
+  if(!satellite)$("eventPreview").src=url(o.preview_file||"map.png");
+  const files=satellite?[["coverage.geojson","影像足迹 GeoJSON"],["results.json","查询范围与元数据"]]:
+    o.kind==="karla_evidence"?[["map.pdf","专题图 PDF"],[o.candidate_km2==null?"agreement.tif":"evidence.tif","证据分类 GeoTIFF"],
+    ["results.json","分析结果与口径"],["project.zip","完整 QGIS 工程包"]]:
+    o.kind==="karla_exposure"?[["map.pdf","核查图 PDF"],["cropland.csv","农田核查 CSV"],["roads.csv","路段清单 CSV"],
+    ["project.zip","完整 QGIS 工程包"]]:
+    o.kind==="sar_flood_change"?[["map.pdf","专题图 PDF"],["candidate.tif","分割掩膜 GeoTIFF"],
+    ["candidate.gpkg","淹没候选 GeoPackage"],["agreement.tif","异时相对照栅格"],["results.json","分区统计与对照"],["project.zip","完整 QGIS 工程包"]]:
+    o.kind==="transport_screening"?[["transport.pdf","核查图 PDF"],["segments.csv","候选路段 CSV"],
+    ["municipalities.csv","市镇汇总 CSV"],["corridors.csv","道路汇总 CSV"],["project.zip","完整 QGIS 工程包"]]:
+    [["map.pdf","专题图 PDF"],["grid.geojson","网格 GeoJSON"],["results.json","面积与排名"],["map.qgz","QGIS 工程"]];
+  $("eventFiles").replaceChildren();for(const [file,text] of files){
     const a=document.createElement("a");a.href=url(file,1);a.textContent=text;$("eventFiles").append(a);}
   $("eventDialog").showModal();
+  if(!satellite)return;
+  const [w,s,e,n]=o.bbox,bounds=[[s,w],[n,e]];
+  const target=L.map("satelliteFootprints",{attributionControl:false,scrollWheelZoom:false,maxZoom:16});
+  coverageMap=target;target.fitBounds(bounds,{padding:[32,32]});
+  const windowLayer=L.rectangle(bounds,{color:"#222c34",weight:2,dashArray:"6 4",fill:false}).addTo(target);
+  L.control.scale({imperial:false}).addTo(target);
+  $("satelliteSummary").textContent=o.from+" 至 "+o.to+" · 黑色虚线：检索框；紫色：Sentinel-1；蓝色：Sentinel-2。仅为影像足迹，不是洪水范围。";
+  try{
+    const features=await api(url("coverage.geojson"));
+    if(target!==coverageMap||!$("eventDialog").open)return;
+    L.geoJSON(features,{
+      style:f=>({color:f.properties.collection.startsWith("sentinel-1")?"#583e92":"#1b71a5",weight:2,fillOpacity:.12}),
+      onEachFeature:(f,l)=>{const p=f.properties,content=document.createElement("div");putText(content,"strong",p.collection);putText(content,"p",p.datetime_local);if(p.cloud_pct_scene!=null)putText(content,"p","整景云量："+p.cloud_pct_scene+"%");if(p.orbit!=null)putText(content,"p","相对轨道："+p.orbit);l.bindPopup(content);}
+    }).addTo(target);
+    windowLayer.bringToFront();
+  }catch(error){toast("无法读取影像足迹："+error.message);}
 }
+$("eventDialog").addEventListener("close",()=>{if(coverageMap){coverageMap.remove();coverageMap=null;}});
 function updateFolder(){
   const info=state.runId?state.run?.project:state.folder;
   $("projectFolder").querySelector("span").textContent=info?.root?info.root.split(/[\\/]/).at(-1):info?.name||"默认工作区";

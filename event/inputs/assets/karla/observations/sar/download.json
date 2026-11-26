@@ -1,0 +1,83 @@
+{
+  "sensor": "sar",
+  "bbox": [
+    22.55,
+    39.43,
+    22.85,
+    39.65
+  ],
+  "resolution_m": 20,
+  "crs": "EPSG:32634",
+  "captures": [
+    {
+      "file": "sar-2023-09-01.tif",
+      "date": "2023-09-01",
+      "sensor": "sar",
+      "valid_pct": 100.0,
+      "scenes": [
+        {
+          "id": "S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_rtc",
+          "datetime": "2023-09-01T04:32:09.898447Z",
+          "relative_orbit": 7,
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/9/1/IW/DV/S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_5360/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/9/1/IW/DV/S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_5360/measurement/iw-vh.rtc.tiff"
+          },
+          "stac_raster_bands": {
+            "vv": [
+              {
+                "nodata": -32768,
+                "data_type": "float32",
+                "spatial_resolution": 10
+              }
+            ],
+            "vh": [
+              {
+                "nodata": -32768,
+                "data_type": "float32",
+                "spatial_resolution": 10
+              }
+            ]
+          }
+        }
+      ],
+      "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-1-rtc&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-09-01T00%3A00%3A00Z%2F2023-09-01T23%3A59%3A59Z&limit=50",
+      "sha256": "ca16d931058c6b1197c55f743d6c56ef4caacf1f462669085a466d05ebeb3a23"
+    },
+    {
+      "file": "sar-2023-12-18.tif",
+      "date": "2023-12-18",
+      "sensor": "sar",
+      "valid_pct": 100.0,
+      "scenes": [
+        {
+          "id": "S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_rtc",
+          "datetime": "2023-12-18T04:32:08.861032Z",
+          "relative_orbit": 7,
+          "assets": {
+            "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/12/18/IW/DV/S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_2E3F/measurement/iw-vv.rtc.tiff",
+            "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/12/18/IW/DV/S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_2E3F/measurement/iw-vh.rtc.tiff"
+          },
+          "stac_raster_bands": {
+            "vv": [
+              {
+                "nodata": -32768,
+                "data_type": "float32",
+                "spatial_resolution": 10
+              }
+            ],
+            "vh": [
+              {
+                "nodata": -32768,
+                "data_type": "float32",
+                "spatial_resolution": 10
+              }
+            ]
+          }
+        }
+      ],
+      "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-1-rtc&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-12-18T00%3A00%3A00Z%2F2023-12-18T23%3A59%3A59Z&limit=50",
+      "sha256": "ec4792d95c00cea23c52669b9c1223a419fee16d69908626ab5d67be61a77cc1"
+    }
+  ]
+}

@@ -1,0 +1,848 @@
+[
+  {
+    "id": "workbench_f3eaf6a4b4",
+    "question": "用灾前灾后卫星影像做一份2024年瓦伦西亚 Horta Sud 洪涝遥感分析。查合适的 Sentinel-1 影像，实际下载像元、提取候选淹没范围，算各市镇的面积，说明和已有官方产品一致与不一致的范围，并出 QGIS 专题图；不要拿现成边界冒充影像分割。",
+    "project": {
+      "id": "workbench_f3eaf6a4b4",
+      "root": "/private/tmp/projects/FloodLab-f3eaf6a4b4",
+      "name": "projects",
+      "parent": "/private/tmp/projects",
+      "title": "用灾前灾后卫星影像做一份2024年瓦伦西亚 Horta Sud 洪涝遥感分析。查合适的 "
+    },
+    "status": "execution_finished_not_independently_evaluated",
+    "model": "gpt-6.1-sol",
+    "turn": {
+      "before_gis": 0,
+      "question": "用灾前灾后卫星影像做一份2024年瓦伦西亚 Horta Sud 洪涝遥感分析。查合适的 Sentinel-1 影像，实际下载像元、提取候选淹没范围，算各市镇的面积，说明和已有官方产品一致与不一致的范围，并出 QGIS 专题图；不要拿现成边界冒充影像分割。",
+      "status": "finished",
+      "calls": [
+        {
+          "name": "sar_inventory",
+          "arguments": "{}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "case": "valencia-horta-sud-2024",
+              "aoi": "Horta Sud, Valencia",
+              "flood_event_date": "2024-10-29",
+              "collection": "Sentinel-1 RTC",
+              "polarizations": [
+                "VV",
+                "VH"
+              ],
+              "relative_orbit": 110,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "before_options": [
+                "2024-10-08",
+                "2024-10-20"
+              ],
+              "after_options": [
+                "2024-11-01"
+              ],
+              "resolution_m": 20,
+              "presets": [
+                "balanced",
+                "conservative"
+              ],
+              "limit": "Only this independently prepared AOI is supported by the pixel pipeline.",
+              "downloads": [],
+              "segmentations": []
+            }
+          }
+        },
+        {
+          "name": "download_sar_pair",
+          "arguments": "{\"after\": \"2024-11-01\", \"before\": \"2024-10-20\", \"case\": \"valencia-horta-sud-2024\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "download_id": "sar-152ace0822",
+              "captures": [
+                {
+                  "date": "2024-10-20",
+                  "file": "s1-2024-10-20.tif",
+                  "relative_orbit": 110,
+                  "items": [
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_rtc",
+                      "utc": "2024-10-20T06:02:19.757291Z",
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_6472/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060207_20241020T060232_056182_06E074_6472/measurement/iw-vh.rtc.tiff"
+                      }
+                    },
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_rtc",
+                      "utc": "2024-10-20T06:02:44.757665Z",
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_07B0/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/10/20/IW/DV/S1A_IW_GRDH_1SDV_20241020T060232_20241020T060257_056182_06E074_07B0/measurement/iw-vh.rtc.tiff"
+                      }
+                    }
+                  ],
+                  "sha256": "6bb56d9c54c8804fb9125430cff9399d5ad33aed01c537ddb184b8c0c37d6076",
+                  "valid_fraction": 1
+                },
+                {
+                  "date": "2024-11-01",
+                  "file": "s1-2024-11-01.tif",
+                  "relative_orbit": 110,
+                  "items": [
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_rtc",
+                      "utc": "2024-11-01T06:02:19.665430Z",
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_9042/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060207_20241101T060232_056357_06E766_9042/measurement/iw-vh.rtc.tiff"
+                      }
+                    },
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_rtc",
+                      "utc": "2024-11-01T06:02:44.666044Z",
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_6949/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2024/11/1/IW/DV/S1A_IW_GRDH_1SDV_20241101T060232_20241101T060257_056357_06E766_6949/measurement/iw-vh.rtc.tiff"
+                      }
+                    }
+                  ],
+                  "sha256": "f65a16125e19329300e5d65e38351cd0c5f802b39dd0d8a284a321639cb2a052",
+                  "valid_fraction": 1
+                }
+              ],
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "resolution_m": 20,
+              "crs": "EPSG:32630",
+              "mode": "live_remote_window",
+              "catalog": "https://planetarycomputer.microsoft.com/api/stac/v1",
+              "units": "10 log10 calibrated power",
+              "relative_orbit": 110
+            }
+          }
+        },
+        {
+          "name": "segment_sar_flood",
+          "arguments": "{\"download_id\": \"sar-152ace0822\", \"preset\": \"balanced\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "analysis_id": "change-157ae20861",
+              "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+              "preset": "balanced",
+              "thresholds": {
+                "post_vv_db_below": -16,
+                "post_vh_db_below": -23,
+                "vv_drop_db_above": 3,
+                "min_pixels": 12
+              },
+              "dates": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "relative_orbit": 110,
+              "crs": "EPSG:32630",
+              "resolution_m": 20,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "valid_fraction": 1,
+              "valid_pixels": 366080,
+              "raw_candidate_pixels": 12680,
+              "candidate_pixels": 12561,
+              "patches": 15,
+              "candidate_km2": 5.0244,
+              "vector_area_km2": 5.0244,
+              "area_consistency_m2": 0,
+              "input": "sar-152ace0822",
+              "files": {
+                "candidate.tif": "985586e4200340e0702daae93148ba278bf808bcdc525ca8f82e48c61ba2250c",
+                "candidate.gpkg": "9f352934faf1f1f73e2bf94f29745edf0f071d8f3bb95c189d4415b13e766239"
+              }
+            }
+          }
+        },
+        {
+          "name": "publish_sar_map",
+          "arguments": "{\"analysis_id\": \"change-157ae20861\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+              "preset": "balanced",
+              "thresholds": {
+                "post_vv_db_below": -16,
+                "post_vh_db_below": -23,
+                "vv_drop_db_above": 3,
+                "min_pixels": 12
+              },
+              "dates": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "relative_orbit": 110,
+              "crs": "EPSG:32630",
+              "resolution_m": 20,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "valid_fraction": 1,
+              "valid_pixels": 366080,
+              "raw_candidate_pixels": 12680,
+              "candidate_pixels": 12561,
+              "patches": 15,
+              "candidate_km2": 5.0244,
+              "vector_area_km2": 5.0244,
+              "area_consistency_m2": 0,
+              "input": "sar-152ace0822",
+              "files": {
+                "candidate.tif": "985586e4200340e0702daae93148ba278bf808bcdc525ca8f82e48c61ba2250c",
+                "candidate.gpkg": "9f352934faf1f1f73e2bf94f29745edf0f071d8f3bb95c189d4415b13e766239"
+              },
+              "towns": [
+                {
+                  "town": "Silla",
+                  "code": "46230",
+                  "pixels": 4835,
+                  "candidate_km2": 1.9340000000000002
+                },
+                {
+                  "town": "Catarroja",
+                  "code": "46094",
+                  "pixels": 4682,
+                  "candidate_km2": 1.8728
+                },
+                {
+                  "town": "Alfafar",
+                  "code": "46022",
+                  "pixels": 1474,
+                  "candidate_km2": 0.5896
+                },
+                {
+                  "town": "Massanassa",
+                  "code": "46165",
+                  "pixels": 898,
+                  "candidate_km2": 0.3592
+                },
+                {
+                  "town": "Albal",
+                  "code": "46007",
+                  "pixels": 672,
+                  "candidate_km2": 0.26880000000000004
+                }
+              ],
+              "reference_comparison": {
+                "both": 4680,
+                "candidate_only": 21,
+                "reference_only": 56827,
+                "common_valid": 204132,
+                "iou": 0.07606293069821869,
+                "support_km2": 81.6528,
+                "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+                "observed_utc": "2024-10-31T10:22:00Z",
+                "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+              },
+              "kind": "sar_flood_change",
+              "key": "change-157ae20861",
+              "aoi": "瓦伦西亚 Horta Sud",
+              "folder": "outputs/change-157ae20861",
+              "total_km2": 5.0244,
+              "observations": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "preview_file": "map.png"
+            }
+          }
+        }
+      ],
+      "options": [],
+      "answer": "已实际下载灾前、灾后 Sentinel-1 VV/VH 像元，完成候选淹没范围提取、市镇统计和 QGIS 专题图。在本次检索框内共提取候选范围 5.0244 平方公里、15 个斑块，边界来自影像变化分割。\n\n影像与方法：采用同一相对轨道110的2024年10月20日和11月1日影像，处理分辨率20米，检索框为西经0.52°至0.36°、北纬39.37°至39.46°，框内有效像元覆盖率100%。使用 balanced 参数，结合灾后雷达暗像元、灾前后变化、持续暗区排除及最小斑块过滤提取候选范围。具体阈值为灾后VV低于−16 dB、VH低于−23 dB、VV下降超过3 dB，最小斑块12像元。\n\n各市镇在本次研究框内的候选面积：\n• Silla：1.9340平方公里\n• Catarroja：1.8728平方公里\n• Alfafar：0.5896平方公里\n• Massanassa：0.3592平方公里\n• Albal：0.2688平方公里\n这些数值只覆盖本次研究框内的候选范围，不能解释为各市镇全域受灾面积。\n\n与官方产品对照：参考为 EMSR773 AOI03 GRA v2，包含已制图的积水及洪水痕迹，观测时间为2024年10月31日10:22 UTC。在双方共同有效的81.6528平方公里范围内，两者重叠1.8720平方公里；仅影像候选存在0.0084平方公里；仅官方产品存在22.7308平方公里。空间交并比（IoU）为7.61%，说明本次分割只覆盖了官方轮廓的一小部分。这是不同观测时间、不同制图对象的空间对照，不能称为准确率；共同对照范围内的候选面积也不同于整个检索框的5.0244平方公里。\n\n灾后影像晚于10月29日事件及官方观测，可能遗漏已退水或仅留下洪水痕迹的区域；暗水体变化方法对城市建筑间积水也可能漏检。现有证据无法逐块确定差异原因，也不能据此推算水深、损失或洪峰最大范围。栅格与矢量面积差为0平方米，这是内部一致性检查，并非地面验证。\n\n已生成专题图、可携带的QGIS工程、候选栅格和矢量成果，可打开下方地图查看。",
+      "kind": "dialogue",
+      "event_outputs": [
+        {
+          "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+          "preset": "balanced",
+          "thresholds": {
+            "post_vv_db_below": -16,
+            "post_vh_db_below": -23,
+            "vv_drop_db_above": 3,
+            "min_pixels": 12
+          },
+          "dates": [
+            "2024-10-20",
+            "2024-11-01"
+          ],
+          "relative_orbit": 110,
+          "crs": "EPSG:32630",
+          "resolution_m": 20,
+          "bbox_lon_lat": [
+            -0.52,
+            39.37,
+            -0.36,
+            39.46
+          ],
+          "valid_fraction": 1,
+          "valid_pixels": 366080,
+          "raw_candidate_pixels": 12680,
+          "candidate_pixels": 12561,
+          "patches": 15,
+          "candidate_km2": 5.0244,
+          "vector_area_km2": 5.0244,
+          "area_consistency_m2": 0,
+          "input": "sar-152ace0822",
+          "files": {
+            "candidate.tif": "985586e4200340e0702daae93148ba278bf808bcdc525ca8f82e48c61ba2250c",
+            "candidate.gpkg": "9f352934faf1f1f73e2bf94f29745edf0f071d8f3bb95c189d4415b13e766239"
+          },
+          "towns": [
+            {
+              "town": "Silla",
+              "code": "46230",
+              "pixels": 4835,
+              "candidate_km2": 1.9340000000000002
+            },
+            {
+              "town": "Catarroja",
+              "code": "46094",
+              "pixels": 4682,
+              "candidate_km2": 1.8728
+            },
+            {
+              "town": "Alfafar",
+              "code": "46022",
+              "pixels": 1474,
+              "candidate_km2": 0.5896
+            },
+            {
+              "town": "Massanassa",
+              "code": "46165",
+              "pixels": 898,
+              "candidate_km2": 0.3592
+            },
+            {
+              "town": "Albal",
+              "code": "46007",
+              "pixels": 672,
+              "candidate_km2": 0.26880000000000004
+            }
+          ],
+          "reference_comparison": {
+            "both": 4680,
+            "candidate_only": 21,
+            "reference_only": 56827,
+            "common_valid": 204132,
+            "iou": 0.07606293069821869,
+            "support_km2": 81.6528,
+            "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+            "observed_utc": "2024-10-31T10:22:00Z",
+            "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+          },
+          "kind": "sar_flood_change",
+          "key": "change-157ae20861",
+          "aoi": "瓦伦西亚 Horta Sud",
+          "folder": "outputs/change-157ae20861",
+          "total_km2": 5.0244,
+          "observations": [
+            "2024-10-20",
+            "2024-11-01"
+          ],
+          "preview_file": "map.png"
+        }
+      ]
+    },
+    "event_outputs": [
+      {
+        "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+        "preset": "balanced",
+        "thresholds": {
+          "post_vv_db_below": -16,
+          "post_vh_db_below": -23,
+          "vv_drop_db_above": 3,
+          "min_pixels": 12
+        },
+        "dates": [
+          "2024-10-20",
+          "2024-11-01"
+        ],
+        "relative_orbit": 110,
+        "crs": "EPSG:32630",
+        "resolution_m": 20,
+        "bbox_lon_lat": [
+          -0.52,
+          39.37,
+          -0.36,
+          39.46
+        ],
+        "valid_fraction": 1,
+        "valid_pixels": 366080,
+        "raw_candidate_pixels": 12680,
+        "candidate_pixels": 12561,
+        "patches": 15,
+        "candidate_km2": 5.0244,
+        "vector_area_km2": 5.0244,
+        "area_consistency_m2": 0,
+        "input": "sar-152ace0822",
+        "files": {
+          "candidate.tif": "985586e4200340e0702daae93148ba278bf808bcdc525ca8f82e48c61ba2250c",
+          "candidate.gpkg": "9f352934faf1f1f73e2bf94f29745edf0f071d8f3bb95c189d4415b13e766239"
+        },
+        "towns": [
+          {
+            "town": "Silla",
+            "code": "46230",
+            "pixels": 4835,
+            "candidate_km2": 1.9340000000000002
+          },
+          {
+            "town": "Catarroja",
+            "code": "46094",
+            "pixels": 4682,
+            "candidate_km2": 1.8728
+          },
+          {
+            "town": "Alfafar",
+            "code": "46022",
+            "pixels": 1474,
+            "candidate_km2": 0.5896
+          },
+          {
+            "town": "Massanassa",
+            "code": "46165",
+            "pixels": 898,
+            "candidate_km2": 0.3592
+          },
+          {
+            "town": "Albal",
+            "code": "46007",
+            "pixels": 672,
+            "candidate_km2": 0.26880000000000004
+          }
+        ],
+        "reference_comparison": {
+          "both": 4680,
+          "candidate_only": 21,
+          "reference_only": 56827,
+          "common_valid": 204132,
+          "iou": 0.07606293069821869,
+          "support_km2": 81.6528,
+          "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+          "observed_utc": "2024-10-31T10:22:00Z",
+          "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+        },
+        "kind": "sar_flood_change",
+        "key": "change-157ae20861",
+        "aoi": "瓦伦西亚 Horta Sud",
+        "folder": "outputs/change-157ae20861",
+        "total_km2": 5.0244,
+        "observations": [
+          "2024-10-20",
+          "2024-11-01"
+        ],
+        "preview_file": "map.png"
+      }
+    ]
+  },
+  {
+    "id": "workbench_e159394d9c",
+    "question": "还是用刚才下载的两期影像，不要重新下载。换保守一点的分割规则，比较候选面积，并给我新地图，保留之前那张。",
+    "project": {
+      "id": "workbench_f3eaf6a4b4",
+      "root": "/private/tmp/projects/FloodLab-f3eaf6a4b4",
+      "name": "projects",
+      "parent": "/private/tmp/projects",
+      "title": "用灾前灾后卫星影像做一份2024年瓦伦西亚 Horta Sud 洪涝遥感分析。查合适的 "
+    },
+    "status": "execution_finished_not_independently_evaluated",
+    "model": "gpt-6.1-sol",
+    "turn": {
+      "before_gis": 0,
+      "question": "还是用刚才下载的两期影像，不要重新下载。换保守一点的分割规则，比较候选面积，并给我新地图，保留之前那张。",
+      "status": "finished",
+      "calls": [
+        {
+          "name": "sar_inventory",
+          "arguments": "{}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "case": "valencia-horta-sud-2024",
+              "aoi": "Horta Sud, Valencia",
+              "flood_event_date": "2024-10-29",
+              "collection": "Sentinel-1 RTC",
+              "polarizations": [
+                "VV",
+                "VH"
+              ],
+              "relative_orbit": 110,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "before_options": [
+                "2024-10-08",
+                "2024-10-20"
+              ],
+              "after_options": [
+                "2024-11-01"
+              ],
+              "resolution_m": 20,
+              "presets": [
+                "balanced",
+                "conservative"
+              ],
+              "limit": "Only this independently prepared AOI is supported by the pixel pipeline.",
+              "downloads": [
+                "sar-152ace0822"
+              ],
+              "segmentations": [
+                "change-157ae20861"
+              ]
+            }
+          }
+        },
+        {
+          "name": "segment_sar_flood",
+          "arguments": "{\"download_id\": \"sar-152ace0822\", \"preset\": \"conservative\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "analysis_id": "change-f2530b07a0",
+              "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+              "preset": "conservative",
+              "thresholds": {
+                "post_vv_db_below": -18,
+                "post_vh_db_below": -24,
+                "vv_drop_db_above": 4,
+                "min_pixels": 20
+              },
+              "dates": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "relative_orbit": 110,
+              "crs": "EPSG:32630",
+              "resolution_m": 20,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "valid_fraction": 1,
+              "valid_pixels": 366080,
+              "raw_candidate_pixels": 8562,
+              "candidate_pixels": 8287,
+              "patches": 32,
+              "candidate_km2": 3.3148,
+              "vector_area_km2": 3.3148,
+              "area_consistency_m2": 0,
+              "input": "sar-152ace0822",
+              "files": {
+                "candidate.tif": "d90a985ac381ba0053a193eb6eaad24b35955d2e850ed12f8c81cfe7316062fb",
+                "candidate.gpkg": "72ba879cd30e30aa04dc560b3c2092bf01424e591e6e7ca4c5a138465fc6996b"
+              }
+            }
+          }
+        },
+        {
+          "name": "publish_sar_map",
+          "arguments": "{\"analysis_id\": \"change-f2530b07a0\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+              "preset": "conservative",
+              "thresholds": {
+                "post_vv_db_below": -18,
+                "post_vh_db_below": -24,
+                "vv_drop_db_above": 4,
+                "min_pixels": 20
+              },
+              "dates": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "relative_orbit": 110,
+              "crs": "EPSG:32630",
+              "resolution_m": 20,
+              "bbox_lon_lat": [
+                -0.52,
+                39.37,
+                -0.36,
+                39.46
+              ],
+              "valid_fraction": 1,
+              "valid_pixels": 366080,
+              "raw_candidate_pixels": 8562,
+              "candidate_pixels": 8287,
+              "patches": 32,
+              "candidate_km2": 3.3148,
+              "vector_area_km2": 3.3148,
+              "area_consistency_m2": 0,
+              "input": "sar-152ace0822",
+              "files": {
+                "candidate.tif": "d90a985ac381ba0053a193eb6eaad24b35955d2e850ed12f8c81cfe7316062fb",
+                "candidate.gpkg": "72ba879cd30e30aa04dc560b3c2092bf01424e591e6e7ca4c5a138465fc6996b"
+              },
+              "towns": [
+                {
+                  "town": "Catarroja",
+                  "code": "46094",
+                  "pixels": 3239,
+                  "candidate_km2": 1.2956
+                },
+                {
+                  "town": "Silla",
+                  "code": "46230",
+                  "pixels": 3216,
+                  "candidate_km2": 1.2864
+                },
+                {
+                  "town": "Alfafar",
+                  "code": "46022",
+                  "pixels": 984,
+                  "candidate_km2": 0.3936
+                },
+                {
+                  "town": "Albal",
+                  "code": "46007",
+                  "pixels": 521,
+                  "candidate_km2": 0.2084
+                },
+                {
+                  "town": "Massanassa",
+                  "code": "46165",
+                  "pixels": 327,
+                  "candidate_km2": 0.1308
+                }
+              ],
+              "reference_comparison": {
+                "both": 2372,
+                "candidate_only": 15,
+                "reference_only": 59135,
+                "common_valid": 204132,
+                "iou": 0.038555313546373655,
+                "support_km2": 81.6528,
+                "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+                "observed_utc": "2024-10-31T10:22:00Z",
+                "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+              },
+              "kind": "sar_flood_change",
+              "key": "change-f2530b07a0",
+              "aoi": "瓦伦西亚 Horta Sud",
+              "folder": "outputs/change-f2530b07a0",
+              "total_km2": 3.3148,
+              "observations": [
+                "2024-10-20",
+                "2024-11-01"
+              ],
+              "preview_file": "map.png"
+            }
+          }
+        }
+      ],
+      "options": [],
+      "answer": "已复用刚才下载的两期影像完成保守分割，没有重新下载；新地图已生成，原图 M1 保留。候选面积由原来的5.0244平方公里降至3.3148平方公里，减少1.7096平方公里，约34.03%。\n\n两版均使用2024年10月20日与11月1日、相对轨道110的影像，分辨率20米，研究框及有效像元范围相同。保守规则将灾后VV阈值从−16降至−18 dB、VH从−23降至−24 dB，要求VV下降超过4 dB（原为3 dB），最小斑块从12增至20像元。\n\n各市镇在研究框内的候选面积对比（原版 → 保守版，平方公里）：\n• Silla：1.9340 → 1.2864\n• Catarroja：1.8728 → 1.2956\n• Alfafar：0.5896 → 0.3936\n• Massanassa：0.3592 → 0.1308\n• Albal：0.2688 → 0.2084\n\n新结果包含32个斑块。更严格的阈值可能把连片候选切分，因此面积减少时斑块数仍可能增加。候选面积变小不代表更准确，也可能遗漏浅水或建筑间积水；这些面积仅代表研究框内11月1日影像识别的候选范围，不能作为各市镇全域或洪峰受淹面积。\n\n已生成新的QGIS专题图、可携带工程及候选栅格、矢量成果，可与下方原图对照。",
+      "kind": "dialogue",
+      "event_outputs": [
+        {
+          "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+          "preset": "conservative",
+          "thresholds": {
+            "post_vv_db_below": -18,
+            "post_vh_db_below": -24,
+            "vv_drop_db_above": 4,
+            "min_pixels": 20
+          },
+          "dates": [
+            "2024-10-20",
+            "2024-11-01"
+          ],
+          "relative_orbit": 110,
+          "crs": "EPSG:32630",
+          "resolution_m": 20,
+          "bbox_lon_lat": [
+            -0.52,
+            39.37,
+            -0.36,
+            39.46
+          ],
+          "valid_fraction": 1,
+          "valid_pixels": 366080,
+          "raw_candidate_pixels": 8562,
+          "candidate_pixels": 8287,
+          "patches": 32,
+          "candidate_km2": 3.3148,
+          "vector_area_km2": 3.3148,
+          "area_consistency_m2": 0,
+          "input": "sar-152ace0822",
+          "files": {
+            "candidate.tif": "d90a985ac381ba0053a193eb6eaad24b35955d2e850ed12f8c81cfe7316062fb",
+            "candidate.gpkg": "72ba879cd30e30aa04dc560b3c2092bf01424e591e6e7ca4c5a138465fc6996b"
+          },
+          "towns": [
+            {
+              "town": "Catarroja",
+              "code": "46094",
+              "pixels": 3239,
+              "candidate_km2": 1.2956
+            },
+            {
+              "town": "Silla",
+              "code": "46230",
+              "pixels": 3216,
+              "candidate_km2": 1.2864
+            },
+            {
+              "town": "Alfafar",
+              "code": "46022",
+              "pixels": 984,
+              "candidate_km2": 0.3936
+            },
+            {
+              "town": "Albal",
+              "code": "46007",
+              "pixels": 521,
+              "candidate_km2": 0.2084
+            },
+            {
+              "town": "Massanassa",
+              "code": "46165",
+              "pixels": 327,
+              "candidate_km2": 0.1308
+            }
+          ],
+          "reference_comparison": {
+            "both": 2372,
+            "candidate_only": 15,
+            "reference_only": 59135,
+            "common_valid": 204132,
+            "iou": 0.038555313546373655,
+            "support_km2": 81.6528,
+            "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+            "observed_utc": "2024-10-31T10:22:00Z",
+            "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+          },
+          "kind": "sar_flood_change",
+          "key": "change-f2530b07a0",
+          "aoi": "瓦伦西亚 Horta Sud",
+          "folder": "outputs/change-f2530b07a0",
+          "total_km2": 3.3148,
+          "observations": [
+            "2024-10-20",
+            "2024-11-01"
+          ],
+          "preview_file": "map.png"
+        }
+      ]
+    },
+    "event_outputs": [
+      {
+        "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+        "preset": "conservative",
+        "thresholds": {
+          "post_vv_db_below": -18,
+          "post_vh_db_below": -24,
+          "vv_drop_db_above": 4,
+          "min_pixels": 20
+        },
+        "dates": [
+          "2024-10-20",
+          "2024-11-01"
+        ],
+        "relative_orbit": 110,
+        "crs": "EPSG:32630",
+        "resolution_m": 20,
+        "bbox_lon_lat": [
+          -0.52,
+          39.37,
+          -0.36,
+          39.46
+        ],
+        "valid_fraction": 1,
+        "valid_pixels": 366080,
+        "raw_candidate_pixels": 8562,
+        "candidate_pixels": 8287,
+        "patches": 32,
+        "candidate_km2": 3.3148,
+        "vector_area_km2": 3.3148,
+        "area_consistency_m2": 0,
+        "input": "sar-152ace0822",
+        "files": {
+          "candidate.tif": "d90a985ac381ba0053a193eb6eaad24b35955d2e850ed12f8c81cfe7316062fb",
+          "candidate.gpkg": "72ba879cd30e30aa04dc560b3c2092bf01424e591e6e7ca4c5a138465fc6996b"
+        },
+        "towns": [
+          {
+            "town": "Catarroja",
+            "code": "46094",
+            "pixels": 3239,
+            "candidate_km2": 1.2956
+          },
+          {
+            "town": "Silla",
+            "code": "46230",
+            "pixels": 3216,
+            "candidate_km2": 1.2864
+          },
+          {
+            "town": "Alfafar",
+            "code": "46022",
+            "pixels": 984,
+            "candidate_km2": 0.3936
+          },
+          {
+            "town": "Albal",
+            "code": "46007",
+            "pixels": 521,
+            "candidate_km2": 0.2084
+          },
+          {
+            "town": "Massanassa",
+            "code": "46165",
+            "pixels": 327,
+            "candidate_km2": 0.1308
+          }
+        ],
+        "reference_comparison": {
+          "both": 2372,
+          "candidate_only": 15,
+          "reference_only": 59135,
+          "common_valid": 204132,
+          "iou": 0.038555313546373655,
+          "support_km2": 81.6528,
+          "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+          "observed_utc": "2024-10-31T10:22:00Z",
+          "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+        },
+        "kind": "sar_flood_change",
+        "key": "change-f2530b07a0",
+        "aoi": "瓦伦西亚 Horta Sud",
+        "folder": "outputs/change-f2530b07a0",
+        "total_km2": 3.3148,
+        "observations": [
+          "2024-10-20",
+          "2024-11-01"
+        ],
+        "preview_file": "map.png"
+      }
+    ]
+  }
+]

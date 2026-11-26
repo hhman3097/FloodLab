@@ -1,0 +1,26 @@
+\subsection{扩展任务：用官方详查产品筛选需核查道路}
+瓦伦西亚案例以 Copernicus 发布的 Horta Sud 应急制图产品为基础\cite{ems}，在灾前道路快照覆盖范围内定位洪涝证据涉及的路段，按道路和市镇汇总。
+
+Pi 先检查官方观测日期、市镇编号和资料覆盖，再按用户给定的市镇、道路类别调用叠加工具。Python 完成分段和量算，QGIS 生成地图，成果随对应回复保存。
+
+\begin{table}[htbp]
+\centering
+\caption{道路核查的三种输入，不与影像分割或旧网格回归的数据来源混用。}
+\label{tab:transport-inputs}
+\small
+\begin{tabularx}{\linewidth}{@{}p{28mm}X@{}}
+\toprule
+输入 & 来源、时相与用途\\
+\midrule
+洪涝观测 & Copernicus EMSR773、AOI03 Horta Sud、GRA 第 2 版（编号 1257）。GeoEye-1 的观测时间为 2024 年 10 月 31 日 10:22 UTC；保留 flooded area 与 flood trace 两种标注。\\
+道路中心线 & OpenStreetMap 2024 年 10 月 28 日灾前快照。在原道路要素基础上从原始响应恢复道路编号，保留 OSM way ID、等级及桥隧标记。\\
+市镇边界 & 瓦伦西亚制图机构 ICV 的市镇 WFS 数据\cite{icv}；并非对 2024 年行政边界的历史重建。使用官方市镇编号约束范围。\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+如表~\ref{tab:transport-inputs} 所示，道路核查使用 Horta Sud 本地详查产品。统计范围取 EMS 产品覆盖区、道路快照查询窗和市镇边界的交集，其面积占市镇面积的比例用于说明资料覆盖。覆盖内有道路而无重叠时记为零；没有所选道路时比例留空。
+
+道路中心线统一投影到 EPSG:32630，裁剪并合并重合部分，再按市镇和证据类别分段。淹没区与扣除淹没区后的洪水痕迹分别量算。输出保留道路名称或 OSM 编号、证据类别、长度及中点坐标。
+
+路段清单按证据类型和长度筛选地图标注，短于 1 m 的片段保留在完整清单中，桥隧单列供核查。独立 PyQGIS 程序复算市镇覆盖、道路总长度和两类相交长度，再核对线图层与清单的对应关系。

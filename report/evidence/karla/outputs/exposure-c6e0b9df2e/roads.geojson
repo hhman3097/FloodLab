@@ -1,0 +1,4654 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 67.04765788695889,
+        "lon": 22.707791,
+        "lat": 39.551534,
+        "structure": "",
+        "id": 16
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.707440355846575,
+            39.5514014770916
+          ],
+          [
+            22.7078953,
+            39.55157409999999
+          ],
+          [
+            22.708145010361555,
+            39.5516605270731
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 42.22701469867149,
+        "lon": 22.707192,
+        "lat": 39.551307,
+        "structure": "",
+        "id": 18
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.706970487951263,
+            39.55122465167268
+          ],
+          [
+            22.7070451,
+            39.5512515
+          ],
+          [
+            22.707412432796417,
+            39.55139088194998
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 87.13069410704865,
+        "lon": 22.706491,
+        "lat": 39.551052,
+        "structure": "",
+        "id": 13
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.706031142266582,
+            39.5508866324859
+          ],
+          [
+            22.70695053967925,
+            39.551217473494034
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 86.91569421885887,
+        "lon": 22.705052,
+        "lat": 39.550527,
+        "structure": "",
+        "id": 14
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.704600596354684,
+            39.55035099715781
+          ],
+          [
+            22.7053159,
+            39.55062929999999
+          ],
+          [
+            22.705507060160972,
+            39.550698085373234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 267.3173807915123,
+        "lon": 22.702749,
+        "lat": 39.549656,
+        "structure": "",
+        "id": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.701333601976344,
+            39.54915771802685
+          ],
+          [
+            22.7014619,
+            39.5492001
+          ],
+          [
+            22.7017408,
+            39.54929549999999
+          ],
+          [
+            22.703577,
+            39.54995269999999
+          ],
+          [
+            22.7035949,
+            39.5499597
+          ],
+          [
+            22.704151639415986,
+            39.55017631826727
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 16.45322521696534,
+        "lon": 22.701187,
+        "lat": 39.549109,
+        "structure": "",
+        "id": 33
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.701098949201384,
+            39.54908020231587
+          ],
+          [
+            22.701275036135044,
+            39.54913837131999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 11.49873084714307,
+        "lon": 22.700691,
+        "lat": 39.548945,
+        "structure": "",
+        "id": 41
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.700629645177152,
+            39.54892516943525
+          ],
+          [
+            22.7007527071882,
+            39.54896582277695
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 91.5473768586498,
+        "lon": 22.69967,
+        "lat": 39.548609,
+        "structure": "",
+        "id": 12
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.699179610307695,
+            39.54844825226228
+          ],
+          [
+            22.6998648,
+            39.5486725
+          ],
+          [
+            22.70016034318719,
+            39.54877013460979
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 7.182020211470194,
+        "lon": 22.698087,
+        "lat": 39.548091,
+        "structure": "",
+        "id": 49
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.698048646584343,
+            39.5480780800505
+          ],
+          [
+            22.698125619947966,
+            39.54810327015589
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 1.7863128390924676,
+        "lon": 22.697589,
+        "lat": 39.547928,
+        "structure": "",
+        "id": 59
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.697579391743165,
+            39.547924511400794
+          ],
+          [
+            22.69759853647921,
+            39.54793077677071
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 64.59097563418453,
+        "lon": 22.692973,
+        "lat": 39.546227,
+        "structure": "",
+        "id": 17
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.692646753800112,
+            39.546082165135495
+          ],
+          [
+            22.6932242,
+            39.5463387
+          ],
+          [
+            22.693298596157472,
+            39.5463717611206
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 10.07683317180783,
+        "lon": 22.692462,
+        "lat": 39.546,
+        "structure": "",
+        "id": 43
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.692411464562642,
+            39.54597763471738
+          ],
+          [
+            22.692513158693398,
+            39.5460228138054
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 17.790978953995843,
+        "lon": 22.692031,
+        "lat": 39.545808,
+        "structure": "",
+        "id": 31
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69194088817265,
+            39.545768572400675
+          ],
+          [
+            22.692120431517786,
+            39.5458483382509
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 2.1904222322542313,
+        "lon": 22.691717,
+        "lat": 39.545669,
+        "structure": "",
+        "id": 57
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.691705601020132,
+            39.54566404050212
+          ],
+          [
+            22.691727706278396,
+            39.54567386132159
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "sar_only",
+        "length_m": 23.314702503929627,
+        "lon": 22.692294,
+        "lat": 39.545925,
+        "structure": "",
+        "id": 96
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69217617602015,
+            39.54587310380576
+          ],
+          [
+            22.692411464562642,
+            39.54597763471738
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 511.05953203610187,
+        "lon": 22.720085,
+        "lat": 39.555781,
+        "structure": "",
+        "id": 61
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.717366413072913,
+            39.554848078572164
+          ],
+          [
+            22.7175969,
+            39.55492859999999
+          ],
+          [
+            22.7196702,
+            39.555637899999994
+          ],
+          [
+            22.7215558,
+            39.5562914
+          ],
+          [
+            22.7226274,
+            39.5566543
+          ],
+          [
+            22.7227145,
+            39.55668639999999
+          ],
+          [
+            22.722795,
+            39.55672609999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 22.137166481990683,
+        "lon": 22.717184,
+        "lat": 39.554784,
+        "structure": "",
+        "id": 104
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.717066188643603,
+            39.55474319312264
+          ],
+          [
+            22.717300989488994,
+            39.55482522249168
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 20.730762308241466,
+        "lon": 22.716487,
+        "lat": 39.554541,
+        "structure": "",
+        "id": 106
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.716376706442368,
+            39.5545023136336
+          ],
+          [
+            22.71659658857186,
+            39.554579132921404
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 23.11164332688311,
+        "lon": 22.716004,
+        "lat": 39.554372,
+        "structure": "",
+        "id": 98
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.715881856722817,
+            39.55432942791481
+          ],
+          [
+            22.716126990658847,
+            39.55441507076929
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 3.3553578636392523,
+        "lon": 22.715405,
+        "lat": 39.554163,
+        "structure": "",
+        "id": 136
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.71538700940044,
+            39.554156540029716
+          ],
+          [
+            22.71542259783698,
+            39.55416897388326
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 74.52861934660054,
+        "lon": 22.714793,
+        "lat": 39.553949,
+        "structure": "",
+        "id": 66
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.714397321947303,
+            39.55381075776082
+          ],
+          [
+            22.715187801309074,
+            39.55408694061251
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 10.498000919774544,
+        "lon": 22.713958,
+        "lat": 39.553657,
+        "structure": "",
+        "id": 123
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.713902481816582,
+            39.553637863377084
+          ],
+          [
+            22.71401382676503,
+            39.5536767669434
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 39.80303589504538,
+        "lon": 22.709577,
+        "lat": 39.552156,
+        "structure": "",
+        "id": 78
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.70936551765179,
+            39.552082945026555
+          ],
+          [
+            22.709788348132278,
+            39.552229282549625
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 42.61751910189273,
+        "lon": 22.709092,
+        "lat": 39.551988,
+        "structure": "",
+        "id": 74
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.70886609357407,
+            39.551910096394096
+          ],
+          [
+            22.709318820383537,
+            39.55206678342178
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 44.198880944578384,
+        "lon": 22.70838,
+        "lat": 39.551742,
+        "structure": "",
+        "id": 70
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.708145010361555,
+            39.5516605270731
+          ],
+          [
+            22.708614532767502,
+            39.55182303107468
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 2.6724102506268905,
+        "lon": 22.707426,
+        "lat": 39.551396,
+        "structure": "",
+        "id": 141
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.707412432796417,
+            39.55139088194998
+          ],
+          [
+            22.707440355846575,
+            39.5514014770916
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 1.8904757861997632,
+        "lon": 22.706961,
+        "lat": 39.551221,
+        "structure": "",
+        "id": 144
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.70695053967925,
+            39.551217473494034
+          ],
+          [
+            22.706970487951263,
+            39.55122465167268
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 49.66512072469709,
+        "lon": 22.705769,
+        "lat": 39.550792,
+        "structure": "",
+        "id": 68
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.705507060160972,
+            39.550698085373234
+          ],
+          [
+            22.7057386,
+            39.5507814
+          ],
+          [
+            22.7059588,
+            39.5508606
+          ],
+          [
+            22.706031142266582,
+            39.5508866324859
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 43.182031397947895,
+        "lon": 22.704376,
+        "lat": 39.550264,
+        "structure": "",
+        "id": 73
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.704151639415986,
+            39.55017631826727
+          ],
+          [
+            22.704600596354684,
+            39.55035099715781
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 5.472273908340695,
+        "lon": 22.701304,
+        "lat": 39.549148,
+        "structure": "",
+        "id": 130
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.701275036135044,
+            39.54913837131999
+          ],
+          [
+            22.701333601976344,
+            39.54915771802685
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 32.35226740385065,
+        "lon": 22.700926,
+        "lat": 39.549023,
+        "structure": "",
+        "id": 83
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.7007527071882,
+            39.54896582277695
+          ],
+          [
+            22.701098949201384,
+            39.54908020231587
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 43.850998250612065,
+        "lon": 22.700395,
+        "lat": 39.548848,
+        "structure": "",
+        "id": 71
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.70016034318719,
+            39.54877013460979
+          ],
+          [
+            22.700629645177152,
+            39.54892516943525
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 98.34506517807394,
+        "lon": 22.698653,
+        "lat": 39.548276,
+        "structure": "",
+        "id": 63
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.698125619947966,
+            39.54810327015589
+          ],
+          [
+            22.6986131,
+            39.548262799999996
+          ],
+          [
+            22.6988791,
+            39.5483499
+          ],
+          [
+            22.699179610307695,
+            39.54844825226228
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 41.99774458069393,
+        "lon": 22.697824,
+        "lat": 39.548004,
+        "structure": "",
+        "id": 75
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69759853647921,
+            39.54793077677071
+          ],
+          [
+            22.698048646584343,
+            39.5480780800505
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 43.78405742016515,
+        "lon": 22.697345,
+        "lat": 39.547848,
+        "structure": "",
+        "id": 72
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.697110138916102,
+            39.54777094080723
+          ],
+          [
+            22.697579391743165,
+            39.547924511400794
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 40.174662886348116,
+        "lon": 22.696856,
+        "lat": 39.547688,
+        "structure": "",
+        "id": 77
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.696640888103172,
+            39.54761736826986
+          ],
+          [
+            22.69707145555156,
+            39.54775828093306
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 12.886926804562284,
+        "lon": 22.696475,
+        "lat": 39.547563,
+        "structure": "",
+        "id": 116
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69640626345202,
+            39.54754058127224
+          ],
+          [
+            22.69654437716507,
+            39.54758578264296
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 29.580139155861612,
+        "lon": 22.695859,
+        "lat": 39.547361,
+        "structure": "",
+        "id": 85
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69570228947187,
+            39.54730598496581
+          ],
+          [
+            22.695871,
+            39.5473654
+          ],
+          [
+            22.696017301319756,
+            39.54741328190052
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 26.74920571621395,
+        "lon": 22.695374,
+        "lat": 39.547191,
+        "structure": "",
+        "id": 86
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.6952327580221,
+            39.54714062754006
+          ],
+          [
+            22.695516065261494,
+            39.547240401705224
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 2.527166803921453,
+        "lon": 22.695011,
+        "lat": 39.547063,
+        "structure": "",
+        "id": 142
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.694997993113287,
+            39.54705794809591
+          ],
+          [
+            22.695024758845797,
+            39.54706737447887
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 34.113898704898595,
+        "lon": 22.693525,
+        "lat": 39.546471,
+        "structure": "",
+        "id": 81
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.693352626124256,
+            39.54639577160135
+          ],
+          [
+            22.6934355,
+            39.546432599999996
+          ],
+          [
+            22.693698797224545,
+            39.546546123697915
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 425625350,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 10.963048143461066,
+        "lon": 22.691289,
+        "lat": 39.545474,
+        "structure": "",
+        "id": 119
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69123485407665,
+            39.54544777951964
+          ],
+          [
+            22.69134371345985,
+            39.54549925594235
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 22.427361296410776,
+        "lon": 22.832172,
+        "lat": 39.457887,
+        "structure": "",
+        "id": 155
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.832070534843368,
+            39.457824288866284
+          ],
+          [
+            22.83227393652752,
+            39.457950589057305
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 17.27647648697605,
+        "lon": 22.831913,
+        "lat": 39.457726,
+        "structure": "",
+        "id": 158
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.8318342363484,
+            39.45767756069626
+          ],
+          [
+            22.831990922115082,
+            39.457774853932776
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 74.66430524023481,
+        "lon": 22.831381,
+        "lat": 39.45738,
+        "structure": "",
+        "id": 153
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.831122183092845,
+            39.45711666186724
+          ],
+          [
+            22.8312381,
+            39.4572814
+          ],
+          [
+            22.831482100000002,
+            39.45745010000001
+          ],
+          [
+            22.831710624998127,
+            39.45759907529244
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 21.532192411327685,
+        "lon": 22.831028,
+        "lat": 39.456983,
+        "structure": "",
+        "id": 156
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.830995675445372,
+            39.456889556798096
+          ],
+          [
+            22.8310275,
+            39.45698209999999
+          ],
+          [
+            22.831088150519026,
+            39.45706829547132
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 9.075642744704147,
+        "lon": 22.829365,
+        "lat": 39.453345,
+        "structure": "",
+        "id": 159
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.82933386637182,
+            39.45331181308265
+          ],
+          [
+            22.82939713039503,
+            39.45337721991312
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 65.26644794868889,
+        "lon": 22.828688,
+        "lat": 39.452653,
+        "structure": "",
+        "id": 154
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.82844909453772,
+            39.452424754528806
+          ],
+          [
+            22.8285733,
+            39.452537700000015
+          ],
+          [
+            22.828919394636138,
+            39.4528857865656
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Ριζόμυλος - Κανάλια",
+        "osm_way": 453737441,
+        "highway": "secondary",
+        "evidence": "unknown",
+        "length_m": 270.3203753186576,
+        "lon": 22.80855,
+        "lat": 39.439768,
+        "structure": "",
+        "id": 152
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.8074806273096,
+            39.43887753918148
+          ],
+          [
+            22.8084017,
+            39.439623399999995
+          ],
+          [
+            22.8086552,
+            39.439871
+          ],
+          [
+            22.8088604,
+            39.440121600000005
+          ],
+          [
+            22.8090495,
+            39.440400200000006
+          ],
+          [
+            22.809305342981613,
+            39.440831316448275
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 22.579296977812753,
+        "lon": 22.728499,
+        "lat": 39.559972,
+        "structure": "",
+        "id": 27
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.728394099620168,
+            39.5599101930984
+          ],
+          [
+            22.72860362146781,
+            39.56003294233559
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 126.55178880435238,
+        "lon": 22.72778,
+        "lat": 39.559551,
+        "structure": "",
+        "id": 10
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.727192380378213,
+            39.55920728688849
+          ],
+          [
+            22.7272488,
+            39.5592392
+          ],
+          [
+            22.72836739026604,
+            39.55989454525393
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 100.51237731143543,
+        "lon": 22.726714,
+        "lat": 39.558937,
+        "structure": "",
+        "id": 11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.726241864196325,
+            39.55866962964462
+          ],
+          [
+            22.72718628009499,
+            39.55920383632985
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 269.34473460362886,
+        "lon": 22.724743,
+        "lat": 39.557818,
+        "structure": "",
+        "id": 4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.72347929653663,
+            39.55710009308622
+          ],
+          [
+            22.7237606,
+            39.55725609999998
+          ],
+          [
+            22.7253807,
+            39.558182499999994
+          ],
+          [
+            22.726005762466514,
+            39.55853607671676
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 2.2227324059128715,
+        "lon": 22.723162,
+        "lat": 39.556924,
+        "structure": "",
+        "id": 56
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.7231515,
+            39.5569183
+          ],
+          [
+            22.72317252657592,
+            39.55692996121199
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 3.252245148438913,
+        "lon": 22.730746,
+        "lat": 39.561308,
+        "structure": "",
+        "id": 137
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.730730280161787,
+            39.56130004892142
+          ],
+          [
+            22.730761595776425,
+            39.56131650287481
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 46.76570548788726,
+        "lon": 22.730234,
+        "lat": 39.56101,
+        "structure": "",
+        "id": 69
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.730021412015326,
+            39.56087875591896
+          ],
+          [
+            22.73044735681875,
+            39.56114098943039
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 76.37297556029296,
+        "lon": 22.728958,
+        "lat": 39.560241,
+        "structure": "",
+        "id": 65
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.72860362146781,
+            39.56003294233559
+          ],
+          [
+            22.72931232066529,
+            39.56044813055584
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 2.8783615428611182,
+        "lon": 22.728381,
+        "lat": 39.559902,
+        "structure": "",
+        "id": 139
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.72836739026604,
+            39.55989454525393
+          ],
+          [
+            22.728394099620168,
+            39.5599101930984
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 0.6492365028714883,
+        "lon": 22.727189,
+        "lat": 39.559206,
+        "structure": "",
+        "id": 149
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.72718628009499,
+            39.55920383632985
+          ],
+          [
+            22.727192380378213,
+            39.55920728688849
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 25.1280943277179,
+        "lon": 22.726124,
+        "lat": 39.558603,
+        "structure": "",
+        "id": 88
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.726005762466514,
+            39.55853607671676
+          ],
+          [
+            22.726241864196325,
+            39.55866962964462
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717499,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 32.42875927899146,
+        "lon": 22.723326,
+        "lat": 39.557015,
+        "structure": "",
+        "id": 82
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.72317252657592,
+            39.55692996121199
+          ],
+          [
+            22.72347929653663,
+            39.55710009308622
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717500,
+        "highway": "secondary",
+        "evidence": "both",
+        "length_m": 32.842544699076825,
+        "lon": 22.722995,
+        "lat": 39.556834,
+        "structure": "bridge",
+        "id": 20
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.722837878151108,
+            39.5567492170323
+          ],
+          [
+            22.7231515,
+            39.5569183
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "Κιλελέρ - Καλαμάκι",
+        "osm_way": 906717500,
+        "highway": "secondary",
+        "evidence": "optical_only",
+        "length_m": 4.490221097185552,
+        "lon": 22.722816,
+        "lat": 39.556738,
+        "structure": "bridge",
+        "id": 133
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.722795,
+            39.55672609999999
+          ],
+          [
+            22.722837878151108,
+            39.5567492170323
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 164731510",
+        "osm_way": 164731510,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 10.91924977652866,
+        "lon": 22.648866,
+        "lat": 39.543015,
+        "structure": "",
+        "id": 120
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64881647634498,
+            39.542984595953754
+          ],
+          [
+            22.648916008061683,
+            39.543045726959555
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 169155643",
+        "osm_way": 169155643,
+        "highway": "tertiary",
+        "evidence": "unknown",
+        "length_m": 387.17515106210055,
+        "lon": 22.715405,
+        "lat": 39.595497,
+        "structure": "",
+        "id": 151
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.7140426420984,
+            39.59472001967677
+          ],
+          [
+            22.7140876,
+            39.59474860000001
+          ],
+          [
+            22.714386,
+            39.594889099999996
+          ],
+          [
+            22.7147578,
+            39.59506650000001
+          ],
+          [
+            22.7150528,
+            39.5951751
+          ],
+          [
+            22.7154444,
+            39.5953032
+          ],
+          [
+            22.7156603,
+            39.595393099999995
+          ],
+          [
+            22.7156892,
+            39.59541480000001
+          ],
+          [
+            22.7156945,
+            39.595441699999995
+          ],
+          [
+            22.7156818,
+            39.59547939999999
+          ],
+          [
+            22.7156402,
+            39.5955032
+          ],
+          [
+            22.7155745,
+            39.5955047
+          ],
+          [
+            22.7152754,
+            39.5954902
+          ],
+          [
+            22.7150635,
+            39.595475799999996
+          ],
+          [
+            22.714566,
+            39.5954251
+          ],
+          [
+            22.7138472,
+            39.5953549
+          ],
+          [
+            22.7132437,
+            39.59526389999999
+          ],
+          [
+            22.713175048256907,
+            39.59525378749612
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 210947270",
+        "osm_way": 210947270,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 3.6614378603668944,
+        "lon": 22.761289,
+        "lat": 39.47239,
+        "structure": "",
+        "id": 53
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.7612703779657,
+            39.4723824143334
+          ],
+          [
+            22.76130760936357,
+            39.47239838953984
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 210947270",
+        "osm_way": 210947270,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 95.53873264636377,
+        "lon": 22.761793,
+        "lat": 39.472607,
+        "structure": "",
+        "id": 64
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.76130760936357,
+            39.47239838953984
+          ],
+          [
+            22.7621343,
+            39.472753100000006
+          ],
+          [
+            22.7622744,
+            39.47282140000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 210947270",
+        "osm_way": 210947270,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 19.453568449995906,
+        "lon": 22.761171,
+        "lat": 39.47234,
+        "structure": "",
+        "id": 109
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.761072564279583,
+            39.47229753633129
+          ],
+          [
+            22.7612703779657,
+            39.4723824143334
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 210947270",
+        "osm_way": 210947270,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 2.6770791076885008,
+        "lon": 22.760851,
+        "lat": 39.472203,
+        "structure": "",
+        "id": 140
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.7608375198624,
+            39.47219668263052
+          ],
+          [
+            22.760864741646422,
+            39.472208363091006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 210947270",
+        "osm_way": 210947270,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 0.8166852632499422,
+        "lon": 22.758021,
+        "lat": 39.470988,
+        "structure": "",
+        "id": 148
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.758017038866942,
+            39.47098639982965
+          ],
+          [
+            22.75802534301844,
+            39.470989963347975
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 9.069310827326493,
+        "lon": 22.656692,
+        "lat": 39.647773,
+        "structure": "",
+        "id": 46
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.656663625960537,
+            39.647738678892416
+          ],
+          [
+            22.6567047,
+            39.6477885
+          ],
+          [
+            22.656719843748697,
+            39.64780785250245
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 12.162809685236487,
+        "lon": 22.656226,
+        "lat": 39.647229,
+        "structure": "",
+        "id": 38
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.65618422495899,
+            39.647184757892575
+          ],
+          [
+            22.656266925406428,
+            39.64727373464404
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 128.67972359742456,
+        "lon": 22.655664,
+        "lat": 39.646625,
+        "structure": "",
+        "id": 9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.65522728988053,
+            39.6461542142633
+          ],
+          [
+            22.6553012,
+            39.646234699999994
+          ],
+          [
+            22.65610163446308,
+            39.64709589914277
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 532.0615427610948,
+        "lon": 22.653013,
+        "lat": 39.644287,
+        "structure": "",
+        "id": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.650771405073563,
+            39.64266696685751
+          ],
+          [
+            22.6507817,
+            39.64270489999999
+          ],
+          [
+            22.6508152,
+            39.6427917
+          ],
+          [
+            22.650864900000002,
+            39.642852600000005
+          ],
+          [
+            22.6510934,
+            39.643032600000005
+          ],
+          [
+            22.653204000000002,
+            39.64441140000001
+          ],
+          [
+            22.6540899,
+            39.644997999999994
+          ],
+          [
+            22.6542968,
+            39.6451596
+          ],
+          [
+            22.6544842,
+            39.645345
+          ],
+          [
+            22.655112166834822,
+            39.64602884850052
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 15.710242692443261,
+        "lon": 22.656951,
+        "lat": 39.648104,
+        "structure": "",
+        "id": 114
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.656903986728377,
+            39.648043171483906
+          ],
+          [
+            22.656998741266168,
+            39.64816425892216
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 23.120595903159263,
+        "lon": 22.65679,
+        "lat": 39.647897,
+        "structure": "",
+        "id": 97
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.656719843748697,
+            39.64780785250245
+          ],
+          [
+            22.65685929214421,
+            39.64798605580614
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 24.064593695993505,
+        "lon": 22.656349,
+        "lat": 39.647362,
+        "structure": "",
+        "id": 94
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.656266925406428,
+            39.64727373464404
+          ],
+          [
+            22.656385400000005,
+            39.647401200000004
+          ],
+          [
+            22.65642698747051,
+            39.64745164448538
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 12.146670456327584,
+        "lon": 22.656143,
+        "lat": 39.64714,
+        "structure": "",
+        "id": 118
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.65610163446308,
+            39.64709589914277
+          ],
+          [
+            22.65618422495899,
+            39.647184757892575
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 314193055",
+        "osm_way": 314193055,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 17.067338174157452,
+        "lon": 22.65517,
+        "lat": 39.646092,
+        "structure": "",
+        "id": 112
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.655112166834822,
+            39.64602884850052
+          ],
+          [
+            22.65522728988053,
+            39.6461542142633
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784695",
+        "osm_way": 538784695,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 12.32179756194458,
+        "lon": 22.691951,
+        "lat": 39.592312,
+        "structure": "bridge",
+        "id": 37
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69201261872612,
+            39.592340089238505
+          ],
+          [
+            22.6918892,
+            39.59228350000001
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784695",
+        "osm_way": 538784695,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 10.780547158257255,
+        "lon": 22.692067,
+        "lat": 39.592365,
+        "structure": "bridge",
+        "id": 121
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.6921206,
+            39.5923896
+          ],
+          [
+            22.69201261872612,
+            39.592340089238505
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 72.65633510397093,
+        "lon": 22.692573,
+        "lat": 39.592063,
+        "structure": "",
+        "id": 15
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.692802065215755,
+            39.591788006271486
+          ],
+          [
+            22.6924448,
+            39.592217600000005
+          ],
+          [
+            22.6923442,
+            39.5923299
+          ],
+          [
+            22.692338462370614,
+            39.592335342665365
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 15.875102107486825,
+        "lon": 22.69401,
+        "lat": 39.590387,
+        "structure": "",
+        "id": 34
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.694061944841657,
+            39.590328089277534
+          ],
+          [
+            22.693959020150693,
+            39.590446869736475
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 8.644568717772243,
+        "lon": 22.694667,
+        "lat": 39.58963,
+        "structure": "",
+        "id": 47
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69469466664247,
+            39.589598085076894
+          ],
+          [
+            22.694638605023435,
+            39.58966275703004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 11.968690304383452,
+        "lon": 22.69513,
+        "lat": 39.589095,
+        "structure": "",
+        "id": 40
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695169273755248,
+            39.589050578707756
+          ],
+          [
+            22.695091655777123,
+            39.58914011945074
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 24.394642814306486,
+        "lon": 22.695407,
+        "lat": 39.588777,
+        "structure": "",
+        "id": 24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695485674391517,
+            39.58868557344559
+          ],
+          [
+            22.695327474483932,
+            39.58886807617827
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 40.0112480211199,
+        "lon": 22.695674,
+        "lat": 39.588468,
+        "structure": "",
+        "id": 19
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695808096685237,
+            39.58832047941907
+          ],
+          [
+            22.6957828,
+            39.588342799999985
+          ],
+          [
+            22.695544699796848,
+            39.58861748020485
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 252.30605995677126,
+        "lon": 22.6974,
+        "lat": 39.588532,
+        "structure": "",
+        "id": 6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69881082420047,
+            39.58884847699036
+          ],
+          [
+            22.6967153,
+            39.5883781
+          ],
+          [
+            22.696357,
+            39.588290799999996
+          ],
+          [
+            22.6961868,
+            39.58822549999999
+          ],
+          [
+            22.6960768,
+            39.5882066
+          ],
+          [
+            22.6960225,
+            39.58821009999999
+          ],
+          [
+            22.69600066889848,
+            39.588215058870674
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 24.078295457693425,
+        "lon": 22.692878,
+        "lat": 39.591697,
+        "structure": "",
+        "id": 93
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.692953757583602,
+            39.59160560181306
+          ],
+          [
+            22.692802065215755,
+            39.591788006271486
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 8.946615296048844,
+        "lon": 22.693082,
+        "lat": 39.591457,
+        "structure": "",
+        "id": 126
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.693111074408183,
+            39.591423115180255
+          ],
+          [
+            22.693052824507518,
+            39.59148992822454
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 12.58099823258556,
+        "lon": 22.693547,
+        "lat": 39.590923,
+        "structure": "",
+        "id": 117
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69358752680427,
+            39.590875588371176
+          ],
+          [
+            22.69350595787601,
+            39.590969721426696
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 2.0324198852301776,
+        "lon": 22.693739,
+        "lat": 39.590701,
+        "structure": "",
+        "id": 143
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.693745666970887,
+            39.590693088876364
+          ],
+          [
+            22.693732489855513,
+            39.590708295789945
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 5.326523760131441,
+        "lon": 22.694203,
+        "lat": 39.590166,
+        "structure": "",
+        "id": 131
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.694220082545822,
+            39.59014558917352
+          ],
+          [
+            22.694185548761578,
+            39.59018544326634
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 1.4334296905024861,
+        "lon": 22.695323,
+        "lat": 39.588873,
+        "structure": "",
+        "id": 146
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695327474483932,
+            39.58886807617827
+          ],
+          [
+            22.695318178628717,
+            39.58887880003611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 9.101830923311825,
+        "lon": 22.695515,
+        "lat": 39.588652,
+        "structure": "",
+        "id": 125
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695544699796848,
+            39.58861748020485
+          ],
+          [
+            22.695485674391517,
+            39.58868557344559
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 22.318596176574758,
+        "lon": 22.692245,
+        "lat": 39.592402,
+        "structure": "",
+        "id": 103
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.692338462370614,
+            39.592335342665365
+          ],
+          [
+            22.6922839,
+            39.59238710000001
+          ],
+          [
+            22.6922276,
+            39.592409
+          ],
+          [
+            22.6921826,
+            39.59240539999999
+          ],
+          [
+            22.6921206,
+            39.5923896
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 23.026019762396377,
+        "lon": 22.693354,
+        "lat": 39.591144,
+        "structure": "",
+        "id": 99
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69342931461788,
+            39.59105808870085
+          ],
+          [
+            22.693279397425982,
+            39.591230046630685
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 24.39126057024241,
+        "lon": 22.693825,
+        "lat": 39.590602,
+        "structure": "",
+        "id": 91
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69390380631668,
+            39.590510589178486
+          ],
+          [
+            22.693745666970887,
+            39.590693088876364
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 24.393147416466004,
+        "lon": 22.694299,
+        "lat": 39.590054,
+        "structure": "",
+        "id": 90
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69437825779493,
+            39.58996308830684
+          ],
+          [
+            22.69429,
+            39.590064899999994
+          ],
+          [
+            22.694220082545822,
+            39.59014558917352
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 19.179829331586554,
+        "lon": 22.694474,
+        "lat": 39.589852,
+        "structure": "",
+        "id": 110
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.694536462629276,
+            39.58978058679348
+          ],
+          [
+            22.69441207712128,
+            39.589924075194695
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 24.39464281423983,
+        "lon": 22.694774,
+        "lat": 39.589507,
+        "structure": "",
+        "id": 89
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.694852869834524,
+            39.58941558315706
+          ],
+          [
+            22.69469466664247,
+            39.589598085076894
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 22.503950918197763,
+        "lon": 22.694938,
+        "lat": 39.589317,
+        "structure": "",
+        "id": 101
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695011072205446,
+            39.58923308103402
+          ],
+          [
+            22.694865131242036,
+            39.58940143844872
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 22.96121312373734,
+        "lon": 22.695244,
+        "lat": 39.588965,
+        "structure": "",
+        "id": 100
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.695318178628717,
+            39.58887880003611
+          ],
+          [
+            22.695169273755248,
+            39.589050578707756
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 20.735473687530725,
+        "lon": 22.695893,
+        "lat": 39.588255,
+        "structure": "",
+        "id": 105
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.69600066889848,
+            39.588215058870674
+          ],
+          [
+            22.6959503,
+            39.5882265
+          ],
+          [
+            22.6958695,
+            39.5882663
+          ],
+          [
+            22.695808096685237,
+            39.58832047941907
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 123.1065095007738,
+        "lon": 22.699499,
+        "lat": 39.589003,
+        "structure": "",
+        "id": 62
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.700187349143626,
+            39.58915743780675
+          ],
+          [
+            22.69881082420047,
+            39.58884847699036
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 41.88627016364708,
+        "lon": 22.70045,
+        "lat": 39.589216,
+        "structure": "",
+        "id": 76
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.700684245332372,
+            39.58926896136056
+          ],
+          [
+            22.700215888018032,
+            39.58916384314944
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784696",
+        "osm_way": 538784696,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 18.868619742984382,
+        "lon": 22.701047,
+        "lat": 39.58935,
+        "structure": "",
+        "id": 111
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.70115256548227,
+            39.58937250304378
+          ],
+          [
+            22.7009923,
+            39.5893381
+          ],
+          [
+            22.700941051921777,
+            39.589326598139415
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 1.7952029027904053,
+        "lon": 22.675833,
+        "lat": 39.582118,
+        "structure": "",
+        "id": 58
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.675841090861134,
+            39.582123244115124
+          ],
+          [
+            22.675825055704237,
+            39.582112873060716
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 5.822434599653372,
+        "lon": 22.676088,
+        "lat": 39.582283,
+        "structure": "",
+        "id": 50
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.676113619969197,
+            39.582299506870655
+          ],
+          [
+            22.676061612426185,
+            39.58226587024366
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 9.84966629651634,
+        "lon": 22.676342,
+        "lat": 39.582447,
+        "structure": "",
+        "id": 44
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.676386150451922,
+            39.58247576895233
+          ],
+          [
+            22.67629817018384,
+            39.582418866918886
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 349.48538781477373,
+        "lon": 22.678099,
+        "lat": 39.583578,
+        "structure": "",
+        "id": 3
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.679656453383302,
+            39.5845908638265
+          ],
+          [
+            22.6779195,
+            39.5834618
+          ],
+          [
+            22.6771143,
+            39.5829467
+          ],
+          [
+            22.676534728977227,
+            39.582571863086415
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 182.2876675272187,
+        "lon": 22.680739,
+        "lat": 39.585296,
+        "structure": "",
+        "id": 8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.68155072455797,
+            39.585824819721715
+          ],
+          [
+            22.67992739319047,
+            39.584767140408275
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 865.5015700827701,
+        "lon": 22.685619,
+        "lat": 39.588435,
+        "structure": "",
+        "id": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.689484154454078,
+            39.5909353391361
+          ],
+          [
+            22.6873889,
+            39.5895923
+          ],
+          [
+            22.6855292,
+            39.5883765
+          ],
+          [
+            22.6835993,
+            39.587139300000004
+          ],
+          [
+            22.681739523377487,
+            39.58594753014101
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 251.59373183889258,
+        "lon": 22.690675,
+        "lat": 39.591698,
+        "structure": "",
+        "id": 7
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.6918892,
+            39.59228350000001
+          ],
+          [
+            22.691826900000002,
+            39.5922625
+          ],
+          [
+            22.6917514,
+            39.592253299999996
+          ],
+          [
+            22.6915918,
+            39.5922385
+          ],
+          [
+            22.6915143,
+            39.59222069999999
+          ],
+          [
+            22.6914401,
+            39.592189
+          ],
+          [
+            22.68954680576119,
+            39.59097549664876
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 0.08804170810257958,
+        "lon": 22.673933,
+        "lat": 39.580889,
+        "structure": "",
+        "id": 150
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.673933425594534,
+            39.58088938595948
+          ],
+          [
+            22.67393263921381,
+            39.58088887732078
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 20.661026084134228,
+        "lon": 22.676206,
+        "lat": 39.582359,
+        "structure": "",
+        "id": 107
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.67629817018384,
+            39.582418866918886
+          ],
+          [
+            22.676113619969197,
+            39.582299506870655
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 16.633794387271262,
+        "lon": 22.67646,
+        "lat": 39.582524,
+        "structure": "",
+        "id": 113
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.676534728977227,
+            39.582571863086415
+          ],
+          [
+            22.676386150451922,
+            39.58247576895233
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 1.6202288792534059,
+        "lon": 22.666844,
+        "lat": 39.576301,
+        "structure": "",
+        "id": 145
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.666851096413662,
+            39.57630615656108
+          ],
+          [
+            22.666836624391347,
+            39.576296797187055
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 0.9083229796945131,
+        "lon": 22.670389,
+        "lat": 39.578595,
+        "structure": "",
+        "id": 147
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.67039261826834,
+            39.57859782133202
+          ],
+          [
+            22.67038450750892,
+            39.57859257182822
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 4.920398023986915,
+        "lon": 22.670643,
+        "lat": 39.57876,
+        "structure": "",
+        "id": 132
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.670664978686652,
+            39.57877409958837
+          ],
+          [
+            22.670621042384717,
+            39.57874566305577
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 4.115273405576036,
+        "lon": 22.674188,
+        "lat": 39.581054,
+        "structure": "",
+        "id": 134
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.674205945080207,
+            39.58106565343167
+          ],
+          [
+            22.67416918765023,
+            39.581041878565074
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 30.406470914033164,
+        "lon": 22.679792,
+        "lat": 39.584679,
+        "structure": "",
+        "id": 84
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.67992739319047,
+            39.584767140408275
+          ],
+          [
+            22.6798222,
+            39.5846986
+          ],
+          [
+            22.679656453383302,
+            39.5845908638265
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 6.9877755397635815,
+        "lon": 22.689515,
+        "lat": 39.590955,
+        "structure": "",
+        "id": 128
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.68954680576119,
+            39.59097549664876
+          ],
+          [
+            22.689484154454078,
+            39.5909353391361
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 538784698",
+        "osm_way": 538784698,
+        "highway": "tertiary",
+        "evidence": "unknown",
+        "length_m": 21.17912840461171,
+        "lon": 22.681645,
+        "lat": 39.585886,
+        "structure": "",
+        "id": 157
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.681739523377487,
+            39.58594753014101
+          ],
+          [
+            22.6817117,
+            39.58592970000001
+          ],
+          [
+            22.68155072455797,
+            39.585824819721715
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 25.387202245260447,
+        "lon": 22.649878,
+        "lat": 39.642061,
+        "structure": "",
+        "id": 23
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.649767226947848,
+            39.64198539455376
+          ],
+          [
+            22.649988092747737,
+            39.642137519622686
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 23.159763650917753,
+        "lon": 22.649631,
+        "lat": 39.641892,
+        "structure": "",
+        "id": 25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.649530276833016,
+            39.64182218990683
+          ],
+          [
+            22.64973176318466,
+            39.64196096818152
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 20.932325056489574,
+        "lon": 22.649384,
+        "lat": 39.641722,
+        "structure": "",
+        "id": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.649293327829206,
+            39.641658984748794
+          ],
+          [
+            22.649475434921765,
+            39.64178441614223
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 18.70488646214688,
+        "lon": 22.649138,
+        "lat": 39.641552,
+        "structure": "",
+        "id": 29
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.6490563799364,
+            39.64149577907963
+          ],
+          [
+            22.649219107959045,
+            39.64160786350478
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 16.477447867086518,
+        "lon": 22.648891,
+        "lat": 39.641382,
+        "structure": "",
+        "id": 32
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.648819433154607,
+            39.641332572899366
+          ],
+          [
+            22.648962782296483,
+            39.64143131026921
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 14.250009272743826,
+        "lon": 22.648644,
+        "lat": 39.641212,
+        "structure": "",
+        "id": 35
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.648582487483807,
+            39.641169366208004
+          ],
+          [
+            22.64870645793408,
+            39.641254756435515
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 12.022570678315647,
+        "lon": 22.648398,
+        "lat": 39.641042,
+        "structure": "",
+        "id": 39
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.648345542923998,
+            39.641006159005556
+          ],
+          [
+            22.648450134871815,
+            39.64107820200371
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 9.795132083972957,
+        "lon": 22.648151,
+        "lat": 39.640872,
+        "structure": "",
+        "id": 45
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.648108599475165,
+            39.640842951292036
+          ],
+          [
+            22.64819381310969,
+            39.640901646973816
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 7.567693489544778,
+        "lon": 22.647905,
+        "lat": 39.640702,
+        "structure": "",
+        "id": 48
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.647871657137312,
+            39.64067974306744
+          ],
+          [
+            22.64793749264768,
+            39.64072509134584
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 5.340254895202086,
+        "lon": 22.647658,
+        "lat": 39.640533,
+        "structure": "",
+        "id": 51
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64763471591042,
+            39.640516534331766
+          ],
+          [
+            22.64768117348579,
+            39.64054853511977
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 3.1128163007739076,
+        "lon": 22.647411,
+        "lat": 39.640363,
+        "structure": "",
+        "id": 54
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.647397775794488,
+            39.64035332508505
+          ],
+          [
+            22.647424855624,
+            39.640371978295654
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 0.885377706431215,
+        "lon": 22.647165,
+        "lat": 39.640193,
+        "structure": "",
+        "id": 60
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.647160836789503,
+            39.640190115327286
+          ],
+          [
+            22.647168539062307,
+            39.64019542087346
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 18.249819778188144,
+        "lon": 22.645561,
+        "lat": 39.638891,
+        "structure": "",
+        "id": 30
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64549702157479,
+            39.63882516396403
+          ],
+          [
+            22.645625871853447,
+            39.63895593841839
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 27.27333638551251,
+        "lon": 22.645354,
+        "lat": 39.638681,
+        "structure": "",
+        "id": 22
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64525821618772,
+            39.63858279067031
+          ],
+          [
+            22.645450774558654,
+            39.63877822616258
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 11.49678050703303,
+        "lon": 22.64506,
+        "lat": 39.638382,
+        "structure": "",
+        "id": 42
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.645019412480824,
+            39.63834041684116
+          ],
+          [
+            22.64510058267892,
+            39.6384228007874
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 29.543813723252722,
+        "lon": 22.644646,
+        "lat": 39.637962,
+        "structure": "",
+        "id": 21
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.644541810107455,
+            39.63785566757658
+          ],
+          [
+            22.64475039441226,
+            39.63806737426084
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 13.767257844773246,
+        "lon": 22.644352,
+        "lat": 39.637663,
+        "structure": "",
+        "id": 36
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.644303011440936,
+            39.637613292141175
+          ],
+          [
+            22.644400209758597,
+            39.637711946582925
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 22.790774452097608,
+        "lon": 22.644145,
+        "lat": 39.637453,
+        "structure": "",
+        "id": 26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64406421445449,
+            39.63737091617042
+          ],
+          [
+            22.64422511878661,
+            39.63753423231221
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 2.2322550960167993,
+        "lon": 22.641454,
+        "lat": 39.635043,
+        "structure": "",
+        "id": 55
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.641445388637365,
+            39.63503594797946
+          ],
+          [
+            22.64146320779959,
+            39.63505059465985
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "both",
+        "length_m": 5.006981236683322,
+        "lon": 22.641228,
+        "lat": 39.634857,
+        "structure": "",
+        "id": 52
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.641207722274693,
+            39.63484059430638
+          ],
+          [
+            22.641247690704592,
+            39.63487344711088
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 20.05633124985709,
+        "lon": 22.644471,
+        "lat": 39.637784,
+        "structure": "",
+        "id": 108
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.644400209758597,
+            39.637711946582925
+          ],
+          [
+            22.644541810107455,
+            39.63785566757658
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 3.2204683415215127,
+        "lon": 22.643358,
+        "lat": 39.636634,
+        "structure": "",
+        "id": 138
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64334731924077,
+            39.63662205614327
+          ],
+          [
+            22.643369641508787,
+            39.63664537413731
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 13.14192092026366,
+        "lon": 22.643154,
+        "lat": 39.63642,
+        "structure": "",
+        "id": 115
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.643108357607773,
+            39.63637243390148
+          ],
+          [
+            22.643199448601006,
+            39.636467588942985
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "sar_only",
+        "length_m": 7.781707377506247,
+        "lon": 22.641001,
+        "lat": 39.634671,
+        "structure": "",
+        "id": 127
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64097005725192,
+            39.63464524011288
+          ],
+          [
+            22.641032174711395,
+            39.634696299133935
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 39.03888103355608,
+        "lon": 22.650176,
+        "lat": 39.642236,
+        "structure": "",
+        "id": 79
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.649988092747737,
+            39.642137519622686
+          ],
+          [
+            22.6500428,
+            39.642175199999976
+          ],
+          [
+            22.6501809,
+            39.6422382
+          ],
+          [
+            22.6502627,
+            39.64227329999999
+          ],
+          [
+            22.650380096562,
+            39.64231214240705
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 4.076357735126854,
+        "lon": 22.649749,
+        "lat": 39.641973,
+        "structure": "",
+        "id": 135
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64973176318466,
+            39.64196096818152
+          ],
+          [
+            22.649767226947848,
+            39.64198539455376
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 10.758673518325903,
+        "lon": 22.64901,
+        "lat": 39.641464,
+        "structure": "",
+        "id": 122
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.648962782296483,
+            39.64143131026921
+          ],
+          [
+            22.6490563799364,
+            39.64149577907963
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 24.1233050852707,
+        "lon": 22.64753,
+        "lat": 39.640444,
+        "structure": "",
+        "id": 92
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.647424855624,
+            39.640371978295654
+          ],
+          [
+            22.64763471591042,
+            39.640516534331766
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 26.350743679613394,
+        "lon": 22.647283,
+        "lat": 39.640274,
+        "structure": "",
+        "id": 87
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.647168539062307,
+            39.64019542087346
+          ],
+          [
+            22.647397775794488,
+            39.64035332508505
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 54.47224277208922,
+        "lon": 22.646924,
+        "lat": 39.640027,
+        "structure": "",
+        "id": 67
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64668696211236,
+            39.63986369427865
+          ],
+          [
+            22.647160836789503,
+            39.640190115327286
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 23.666621903704954,
+        "lon": 22.646553,
+        "lat": 39.639771,
+        "structure": "",
+        "id": 95
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64645002644018,
+            39.63970048298778
+          ],
+          [
+            22.646655909839165,
+            39.63984230423499
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 9.226303170112718,
+        "lon": 22.645768,
+        "lat": 39.639101,
+        "structure": "",
+        "id": 124
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.645735828642056,
+            39.63906753672234
+          ],
+          [
+            22.645800970051535,
+            39.63913365038632
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 6.550252708366761,
+        "lon": 22.645474,
+        "lat": 39.638802,
+        "structure": "",
+        "id": 129
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.645450774558654,
+            39.63877822616258
+          ],
+          [
+            22.64549702157479,
+            39.63882516396403
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 22.326808587597306,
+        "lon": 22.645179,
+        "lat": 39.638503,
+        "structure": "",
+        "id": 102
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64510058267892,
+            39.6384228007874
+          ],
+          [
+            22.64525821618772,
+            39.63858279067031
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "road": "OSM 556384802",
+        "osm_way": 556384802,
+        "highway": "tertiary",
+        "evidence": "optical_only",
+        "length_m": 38.103364466007946,
+        "lon": 22.644885,
+        "lat": 39.638204,
+        "structure": "",
+        "id": 80
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            22.64475039441226,
+            39.63806737426084
+          ],
+          [
+            22.645019412480824,
+            39.63834041684116
+          ]
+        ]
+      }
+    }
+  ]
+}

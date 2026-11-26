@@ -1,0 +1,9 @@
+{
+  "activation": "EMSN184",
+  "source": "https://mapping.emergency.copernicus.eu/download/EMSN184/Geospatial_data.zip",
+  "archive_sha256": "fad7413f79fe00b8351827b59209b5d821857e537e2e86e6a071ec2388858bc1",
+  "archive_database": "Geospatial_data/GDB/EMSN184_STD_UTM34_v01.gdb",
+  "exported_layers": ["P00_aoi", "P04FLDEL01_FloodExtent", "P04FLDEL02_FloodExtent"],
+  "gpkg_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+  "role": "Post-segmentation comparison only; not classification input or independent ground truth."
+}

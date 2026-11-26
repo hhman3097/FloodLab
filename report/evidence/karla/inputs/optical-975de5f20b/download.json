@@ -1,0 +1,93 @@
+{
+  "sensor": "optical",
+  "bbox": [
+    22.55,
+    39.43,
+    22.85,
+    39.65
+  ],
+  "resolution_m": 20,
+  "crs": "EPSG:32634",
+  "captures": [
+    {
+      "file": "optical-2023-08-31.tif",
+      "date": "2023-08-31",
+      "sensor": "optical",
+      "valid_pct": 99.860452152142,
+      "scenes": [
+        {
+          "id": "S2B_MSIL2A_20230831T091559_R093_T34SFJ_20241017T232234",
+          "datetime": "2023-08-31T09:15:59.024000Z",
+          "relative_orbit": 93,
+          "assets": {
+            "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R10m/T34SFJ_20230831T091559_B03_10m.tif",
+            "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R20m/T34SFJ_20230831T091559_B11_20m.tif",
+            "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R20m/T34SFJ_20230831T091559_SCL_20m.tif"
+          },
+          "stac_raster_bands": {
+            "B03": [],
+            "B11": [],
+            "SCL": []
+          }
+        },
+        {
+          "id": "S2B_MSIL2A_20230831T091559_R093_T34TFK_20241017T232234",
+          "datetime": "2023-08-31T09:15:59.024000Z",
+          "relative_orbit": 93,
+          "assets": {
+            "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R10m/T34TFK_20230831T091559_B03_10m.tif",
+            "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R20m/T34TFK_20230831T091559_B11_20m.tif",
+            "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R20m/T34TFK_20230831T091559_SCL_20m.tif"
+          },
+          "stac_raster_bands": {
+            "B03": [],
+            "B11": [],
+            "SCL": []
+          }
+        }
+      ],
+      "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-2-l2a&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-08-31T00%3A00%3A00Z%2F2023-08-31T23%3A59%3A59Z&limit=50",
+      "sha256": "eea4dfa189ca5a649ae0e1c0c3bdb43fb5957a3882236b3e9fd29a80aa69c321"
+    },
+    {
+      "file": "optical-2023-12-19.tif",
+      "date": "2023-12-19",
+      "sensor": "optical",
+      "valid_pct": 96.56766084066118,
+      "scenes": [
+        {
+          "id": "S2B_MSIL2A_20231219T092319_R093_T34SFJ_20231220T125310",
+          "datetime": "2023-12-19T09:23:19.024000Z",
+          "relative_orbit": 93,
+          "assets": {
+            "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R10m/T34SFJ_20231219T092319_B03_10m.tif",
+            "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R20m/T34SFJ_20231219T092319_B11_20m.tif",
+            "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R20m/T34SFJ_20231219T092319_SCL_20m.tif"
+          },
+          "stac_raster_bands": {
+            "B03": [],
+            "B11": [],
+            "SCL": []
+          }
+        },
+        {
+          "id": "S2B_MSIL2A_20231219T092319_R093_T34TFK_20231220T125336",
+          "datetime": "2023-12-19T09:23:19.024000Z",
+          "relative_orbit": 93,
+          "assets": {
+            "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R10m/T34TFK_20231219T092319_B03_10m.tif",
+            "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R20m/T34TFK_20231219T092319_B11_20m.tif",
+            "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R20m/T34TFK_20231219T092319_SCL_20m.tif"
+          },
+          "stac_raster_bands": {
+            "B03": [],
+            "B11": [],
+            "SCL": []
+          }
+        }
+      ],
+      "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-2-l2a&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-12-19T00%3A00%3A00Z%2F2023-12-19T23%3A59%3A59Z&limit=50",
+      "sha256": "db264c57e0b32772dd77856c4d086753634ab499ae26291e6d0fc56f19ab7389"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "key": "EMSR933:2962",
+  "event": "Flood in Crete, Greece",
+  "code": "EMSR933",
+  "event_date": "2026-10-01",
+  "aoi": "Kastelli",
+  "aoi_number": 1,
+  "product_id": 2962,
+  "source": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR933/AOI01/DEL_MONIT01/EMSR933_AOI01_DEL_MONIT01_observedEventA_v1.json",
+  "catalog": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR933",
+  "observations": [
+    "2026-10-06T10:47:00"
+  ],
+  "version": {
+    "uuid": "9d7a0e69-f9ef-4477-953f-58fc0a6c7c2b",
+    "number": 1,
+    "reason": "",
+    "deliveryTime": "2026-10-06T19:57:29.888334",
+    "lastUpdateTime": null,
+    "statusCode": "F"
+  },
+  "file": "inputs/EMSR933-2962/observed.geojson",
+  "features": 88,
+  "sha256": "ec223ce86495772a5488f16d976934339e5d3d886c1d2d86cced0bc96e60b043",
+  "retrieved_utc": "2026-11-25T13:20:20.741015+00:00",
+  "notation": [
+    "Flood trace",
+    "Flooded area"
+  ]
+}

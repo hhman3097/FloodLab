@@ -1,0 +1,82 @@
+\clearpage
+\section{FloodLab 工作台与实跑截图}
+\label{app:workbench-shots}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+\begingroup
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{D-\arabic{figure}}
+\newcommand{\benchshot}[4][.98\linewidth]{%
+  \par\medskip\noindent
+  \begin{minipage}{\linewidth}
+    \centering
+    \begingroup
+    \setlength{\fboxsep}{0pt}%
+    \fcolorbox{black!18}{white}{\includegraphics[width=#1]{#2}}%
+    \endgroup\par
+    \captionsetup{hypcap=false,skip=4pt}
+    \captionof{figure}{#3}\label{#4}
+  \end{minipage}\par
+}
+
+本附录展示从进入工作台、提出问题到查看与下载成果的实际界面。对话截图来自已归档的成功运行，补拍时打开同一工作台中的历史记录并展开工具列表，未重写问题或回复。原始工具参数及返回值见 \code{report/evidence/karla/karla.json}；图件与清单可按附录~\ref{app:evidence} 的材料索引查阅。
+
+\subsection{工作台与对话工作区}
+\benchshot{figures/workbench-appendix/workbench-home.png}
+  {FloodLab 首页。左侧为历史对话，中间可提交任务或查看案例，输入框内提供工作区和模型设置入口，右上方是对话、地图、成果三个视图入口。}
+  {fig:bench-home}
+\benchshot[.62\linewidth]{figures/workbench-appendix/workspace-picker.png}
+  {新对话的工作区选择窗口（浏览器版）。选定保存位置后，每次新对话在其中创建独立子目录。}
+  {fig:bench-folder}
+
+\clearpage
+\subsection{主案例：同一对话内的三轮操作}
+\benchshot[.93\linewidth]{figures/workbench-appendix/karla-turn-1.png}
+  {第一轮的原始提问、回复与工具记录。工具依次核对观测、读取像元、提取积水，生成 12 月 18 日雷达初报，候选积水面积为 71.19~\km。}
+  {fig:bench-karla-turn1}
+\benchshot[.79\linewidth]{figures/workbench-appendix/karla-radar-map.png}
+  {打开首轮回复下的雷达初报。窗口显示 QGIS 导出的地图，并提供 PDF、证据栅格、统计与工程包。}
+  {fig:bench-karla-radar}
+
+\clearpage
+\benchshot[.88\linewidth]{figures/workbench-appendix/karla-turn-2.png}
+  {第二轮的原始提问、回复与工具记录。模型根据可用光学像元改用 MNDWI，生成 12 月 19 日更新图，再引用首轮掩膜生成证据对照。}
+  {fig:bench-karla-turn2}
+\benchshot[.65\linewidth]{evidence/karla/karla-2-map.png}
+  {运行时打开的两期证据对照图。图例区分两期检出、仅雷达检出、仅光学检出和不可比等类别。}
+  {fig:bench-karla-agreement}
+
+\clearpage
+\benchshot{figures/workbench-appendix/karla-turn-3.png}
+  {第三轮的原始提问、核查简报与工具记录。两次暴露核查分别对应全窗和北部片区，本轮没有下载和分割调用。宽表可横向滚动，右侧列见图~\ref{fig:bench-karla-table}。}
+  {fig:bench-karla-turn3}
+
+\clearpage
+\subsection{从对话查看与下载成果}
+\benchshot{figures/workbench-appendix/karla-north-exports.png}
+  {第三轮北部片区核查窗口。下方可分别下载核查图 PDF、农田核查 CSV、路段清单 CSV 和包含地图工程及关联图层的 QGIS 工程包。}
+  {fig:bench-karla-exports}
+\benchshot[.91\linewidth]{figures/workbench-appendix/karla-table-scroll.png}
+  {同一回复中的统计表向右滚动后的画面，可查看北部主要道路一列，单位为公里。}
+  {fig:bench-karla-table}
+Karla 归档的 \code{outputs/exposure-4fa28e86a4/} 目录保存北部核查文件。其中 \code{roads.csv} 给出路段编号、坐标、证据类别和重叠长度。
+
+\clearpage
+\subsection{其他任务的工作台界面}
+\benchshot{figures/workbench-appendix/valencia-map.jpg}
+  {瓦伦西亚道路暴露实验的交互地图。顶部可切换成果版本以及暴露长度和暴露率；右侧可控制灾前影像、洪涝轮廓及道路图层。图中显示 2 km 网格的暴露率。}
+  {fig:bench-valencia}
+\benchshot{evidence/monitoring/runs/putian-1-map.png}
+  {莆田--仙游的卫星影像覆盖查询。蓝色边界是 Sentinel-2 影像足迹，虚线框是所查询的区域；下方可下载足迹和元数据。}
+  {fig:bench-putian}
+
+\clearpage
+\benchshot[.94\linewidth]{figures/workbench-appendix/kastelli-catalog.png}
+  {Kastelli 首轮只查询可用的官方产品及观测日期。工具记录显示本轮仅查询产品目录，未下载或执行量算。}
+  {fig:bench-kastelli-catalog}
+\benchshot[.89\linewidth]{figures/workbench-appendix/kastelli-downloads.png}
+  {Kastelli 第二轮下载产品后生成的积水及洪水痕迹图与统计网格。成果窗口提供专题图、网格数据、面积和排名以及 QGIS 工程。}
+  {fig:bench-kastelli-map}
+
+\endgroup
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}

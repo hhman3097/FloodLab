@@ -43,10 +43,16 @@ def payload():
         "event/products/ems-reference.geojson", "event/cartography_data",
         "event/runs/gis-agent-pilot-v2", "event/runs/workbench_d0e0a1f802",
         "workbench/server.py", "workbench/projects.py", "workbench/public",
-        "event/ems_project.py", "event/footprint_worker.py", "event/skills/event-workspace/SKILL.md",
+        "event/ems_project.py", "event/footprint_worker.py", "event/satellite_catalog.py", "event/skills/event-workspace/SKILL.md",
+        "event/transport_case.py", "event/transport_layout.py",
+        "event/sar_project.py", "event/sar_acquire.py", "event/sar_analysis.py", "event/sar_layout.py",
+        "event/karla_project.py", "event/karla_data.py", "event/karla_analysis.py", "event/karla_layout.py",
+        "event/skills/flood-method-selection/SKILL.md", "event/skills/flood-change-analysis/SKILL.md",
+        "event/skills/flood-evidence-review/SKILL.md",
         "event/skills/question-to-measure/SKILL.md", "event/skills/result-interpretation/SKILL.md",
         "workbench/node_modules/leaflet/dist", "workbench/node_modules/lucide/dist/umd",
         "workbench/node_modules/leaflet/LICENSE", "workbench/node_modules/lucide/LICENSE",
+        "workbench/node_modules/markdown-it/dist", "workbench/node_modules/markdown-it/LICENSE",
         "desktop/THIRD_PARTY.md", "desktop/QGIS-COPYING",
     ]
     for name in selections:
@@ -55,7 +61,7 @@ def payload():
         if source.is_dir():
             if dest.exists():
                 shutil.rmtree(dest)
-            shutil.copytree(source, dest, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+            shutil.copytree(source, dest, ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".DS_Store"))
         else:
             shutil.copy2(source, dest)
     # Keep the large research archive separate; the app carries its live case only.

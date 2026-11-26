@@ -1,0 +1,338 @@
+{
+  "products": {},
+  "catalog": {},
+  "outputs": [
+    {
+      "algorithm": "sar_change",
+      "dates": [
+        "2023-09-01",
+        "2023-12-18"
+      ],
+      "input_id": "sar-5cc15dc79a",
+      "patches": 333,
+      "candidate_km2": 71.1892,
+      "candidate_pixels": 177973,
+      "valid_pixels": 1635998,
+      "valid_pct": 100.0,
+      "baseline_km2": 11.078,
+      "evidence_sha256": "d2293930409f74bae7e49c678d2c701415ffea18651761ea527313be60407a30",
+      "method_reason": "截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。",
+      "key": "sar-mask-3497eeb209",
+      "kind": "karla_evidence",
+      "aoi": "Karla 湖 · 雷达初报",
+      "observations": [
+        "2023-09-01",
+        "2023-12-18"
+      ],
+      "preview_file": "map.png",
+      "folder": "outputs/sar-mask-3497eeb209"
+    },
+    {
+      "algorithm": "optical_mndwi",
+      "dates": [
+        "2023-08-31",
+        "2023-12-19"
+      ],
+      "input_id": "optical-975de5f20b",
+      "patches": 126,
+      "candidate_km2": 95.426,
+      "candidate_pixels": 238565,
+      "valid_pixels": 1577871,
+      "valid_pct": 96.44700054645543,
+      "baseline_km2": 32.9328,
+      "evidence_sha256": "b1e70f87315fce45272fbb8782d30782b7a4bb4890ee67b67768a68e2f2f4f73",
+      "method_reason": "已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。",
+      "key": "optical-mask-244ef38415",
+      "kind": "karla_evidence",
+      "aoi": "Karla 湖 · 光学更新",
+      "observations": [
+        "2023-08-31",
+        "2023-12-19"
+      ],
+      "preview_file": "map.png",
+      "folder": "outputs/optical-mask-244ef38415"
+    },
+    {
+      "both_km2": 66.9064,
+      "sar_only_km2": 1.1196,
+      "optical_only_km2": 28.5196,
+      "unknown_km2": 23.2508,
+      "joint_pct": 96.44700054645543,
+      "sar_candidate_outside_joint_km2": 3.1632,
+      "dates": [
+        "2023-12-18",
+        "2023-12-19"
+      ],
+      "interpretation": "Cross-date cross-sensor evidence; never infer expansion or recession from these differences.",
+      "sar_id": "sar-mask-3497eeb209",
+      "optical_id": "optical-mask-244ef38415",
+      "official_reference": {
+        "sar": {
+          "pixels": {
+            "common": 960635,
+            "both": 172673,
+            "official_only": 56520,
+            "candidate_only": 5300
+          },
+          "iou": 0.7363673968945769,
+          "layer": "P04FLDEL01_FloodExtent",
+          "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+          "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+        },
+        "optical": {
+          "pixels": {
+            "common": 936434,
+            "both": 229629,
+            "official_only": 8184,
+            "candidate_only": 7906
+          },
+          "iou": 0.9345186981877673,
+          "layer": "P04FLDEL02_FloodExtent",
+          "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+          "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+        }
+      },
+      "key": "comparison-ce8daf32d0",
+      "kind": "karla_evidence",
+      "aoi": "Karla 湖 · 两期证据对照",
+      "observations": [
+        "2023-12-18",
+        "2023-12-19"
+      ],
+      "preview_file": "map.png",
+      "folder": "outputs/comparison-ce8daf32d0"
+    },
+    {
+      "scope": "study",
+      "bbox": [
+        22.55,
+        39.43,
+        22.85,
+        39.65
+      ],
+      "input_comparison_id": "comparison-ce8daf32d0",
+      "cropland_total_km2": 344.1032,
+      "cropland_km2": {
+        "both": 60.9252,
+        "sar_only": 0.2036,
+        "optical_only": 22.6412,
+        "unknown": 3.1832
+      },
+      "road_m": {
+        "both": 4405.954221585096,
+        "sar_only": 218.14819419022115,
+        "optical_only": 2382.17638284996,
+        "unknown": 888.9170809137122
+      },
+      "segments": 159,
+      "road_shortlist": [
+        {
+          "road": "OSM 538784698",
+          "osm_way": 538784698,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 865.5015700827701,
+          "lon": 22.685619,
+          "lat": 39.588435,
+          "structure": "",
+          "id": 1
+        },
+        {
+          "road": "OSM 314193055",
+          "osm_way": 314193055,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 532.0615427610948,
+          "lon": 22.653013,
+          "lat": 39.644287,
+          "structure": "",
+          "id": 2
+        },
+        {
+          "road": "OSM 538784698",
+          "osm_way": 538784698,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 349.48538781477373,
+          "lon": 22.678099,
+          "lat": 39.583578,
+          "structure": "",
+          "id": 3
+        },
+        {
+          "road": "Κιλελέρ - Καλαμάκι",
+          "osm_way": 906717499,
+          "highway": "secondary",
+          "evidence": "both",
+          "length_m": 269.34473460362886,
+          "lon": 22.724743,
+          "lat": 39.557818,
+          "structure": "",
+          "id": 4
+        },
+        {
+          "road": "Κιλελέρ - Καλαμάκι",
+          "osm_way": 425625350,
+          "highway": "secondary",
+          "evidence": "both",
+          "length_m": 267.3173807915123,
+          "lon": 22.702749,
+          "lat": 39.549656,
+          "structure": "",
+          "id": 5
+        },
+        {
+          "road": "OSM 538784696",
+          "osm_way": 538784696,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 252.30605995677126,
+          "lon": 22.6974,
+          "lat": 39.588532,
+          "structure": "",
+          "id": 6
+        }
+      ],
+      "cropland_source": "landcover.tif",
+      "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+      "boundary": "Centerline overlap is not an observation of road closure or passability.",
+      "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+      "key": "exposure-c6e0b9df2e",
+      "kind": "karla_exposure",
+      "aoi": "Karla 湖 · 农田与道路核查",
+      "observations": [
+        "2023-12-18",
+        "2023-12-19"
+      ],
+      "preview_file": "map.png",
+      "folder": "outputs/exposure-c6e0b9df2e"
+    },
+    {
+      "scope": "north",
+      "bbox": [
+        22.63,
+        39.49,
+        22.78,
+        39.6
+      ],
+      "input_comparison_id": "comparison-ce8daf32d0",
+      "cropland_total_km2": 114.9956,
+      "cropland_km2": {
+        "both": 43.676,
+        "sar_only": 0.1336,
+        "optical_only": 9.1388,
+        "unknown": 2.5608
+      },
+      "road_m": {
+        "both": 3432.3228981212037,
+        "sar_only": 135.11692770547012,
+        "optical_only": 1951.7181603964116,
+        "unknown": 408.3542794667123
+      },
+      "segments": 103,
+      "road_shortlist": [
+        {
+          "road": "OSM 538784698",
+          "osm_way": 538784698,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 865.5015700827701,
+          "lon": 22.685619,
+          "lat": 39.588435,
+          "structure": "",
+          "id": 1
+        },
+        {
+          "road": "OSM 538784698",
+          "osm_way": 538784698,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 349.48538781477373,
+          "lon": 22.678099,
+          "lat": 39.583578,
+          "structure": "",
+          "id": 2
+        },
+        {
+          "road": "Κιλελέρ - Καλαμάκι",
+          "osm_way": 906717499,
+          "highway": "secondary",
+          "evidence": "both",
+          "length_m": 269.34473460362886,
+          "lon": 22.724743,
+          "lat": 39.557818,
+          "structure": "",
+          "id": 3
+        },
+        {
+          "road": "Κιλελέρ - Καλαμάκι",
+          "osm_way": 425625350,
+          "highway": "secondary",
+          "evidence": "both",
+          "length_m": 267.3173807915123,
+          "lon": 22.702749,
+          "lat": 39.549656,
+          "structure": "",
+          "id": 4
+        },
+        {
+          "road": "OSM 538784696",
+          "osm_way": 538784696,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 252.30605995677126,
+          "lon": 22.6974,
+          "lat": 39.588532,
+          "structure": "",
+          "id": 5
+        },
+        {
+          "road": "OSM 538784698",
+          "osm_way": 538784698,
+          "highway": "tertiary",
+          "evidence": "both",
+          "length_m": 251.59373183889258,
+          "lon": 22.690675,
+          "lat": 39.591698,
+          "structure": "",
+          "id": 6
+        }
+      ],
+      "cropland_source": "landcover.tif",
+      "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+      "boundary": "Centerline overlap is not an observation of road closure or passability.",
+      "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+      "key": "exposure-4fa28e86a4",
+      "kind": "karla_exposure",
+      "aoi": "Karla 湖 · 北部片区核查",
+      "observations": [
+        "2023-12-18",
+        "2023-12-19"
+      ],
+      "preview_file": "map.png",
+      "folder": "outputs/exposure-4fa28e86a4"
+    }
+  ],
+  "karla": {
+    "sar-5cc15dc79a": {
+      "kind": "sar",
+      "path": "inputs/sar-5cc15dc79a"
+    },
+    "sar-mask-3497eeb209": {
+      "kind": "sar_mask",
+      "path": "outputs/sar-mask-3497eeb209"
+    },
+    "optical-975de5f20b": {
+      "kind": "optical",
+      "path": "inputs/optical-975de5f20b"
+    },
+    "optical-mask-244ef38415": {
+      "kind": "optical_mask",
+      "path": "outputs/optical-mask-244ef38415"
+    },
+    "comparison-ce8daf32d0": {
+      "kind": "comparison",
+      "path": "outputs/comparison-ce8daf32d0"
+    }
+  }
+}

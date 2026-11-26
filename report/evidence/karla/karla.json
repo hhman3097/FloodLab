@@ -1,0 +1,1413 @@
+[
+  {
+    "id": "workbench_3b3b8e4acb",
+    "question": "给希腊 Karla 湖做一份截至 2023 年 12 月 18 日的洪灾恢复监测初报。实际获取合适的灾前和本次观测像元，由你判断可用的方法，提取候选积水和不可判读区，出一张初报图。",
+    "project": {
+      "id": "workbench_3b3b8e4acb",
+      "root": "/private/tmp/projects/FloodLab-3b3b8e4acb",
+      "name": "projects",
+      "parent": "/private/tmp/projects",
+      "title": "给希腊 Karla 湖做一份截至 2023 年 12 月 18 日的洪灾恢复监测初报。实"
+    },
+    "status": "execution_finished_not_independently_evaluated",
+    "model": "gpt-6.1-sol",
+    "turn": {
+      "before_gis": 0,
+      "question": "给希腊 Karla 湖做一份截至 2023 年 12 月 18 日的洪灾恢复监测初报。实际获取合适的灾前和本次观测像元，由你判断可用的方法，提取候选积水和不可判读区，出一张初报图。",
+      "status": "finished",
+      "calls": [
+        {
+          "name": "karla_inventory",
+          "arguments": "{}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "case": "Karla Lake / EMSN184, Greece",
+              "grid": "20 m, UTM 34N",
+              "window": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "focus_options": {
+                "study": "full study window",
+                "north": "north basin, [22.63,39.49,22.78,39.60]"
+              },
+              "observation_options": {
+                "sar": {
+                  "dates": [
+                    "2023-09-01",
+                    "2023-12-18"
+                  ],
+                  "orbit": 7,
+                  "method": "sar_change"
+                },
+                "optical": {
+                  "dates": [
+                    "2023-08-31",
+                    "2023-12-19"
+                  ],
+                  "method": "optical_mndwi"
+                }
+              },
+              "active_workspace_ids": {
+                "sar-5cc15dc79a": {
+                  "kind": "sar",
+                  "path": "inputs/sar-5cc15dc79a"
+                },
+                "sar-mask-3497eeb209": {
+                  "kind": "sar_mask",
+                  "path": "outputs/sar-mask-3497eeb209"
+                }
+              },
+              "rules": "Decide from the available observation date and interpretability. New optical evidence does not imply detected expansion or recession."
+            }
+          }
+        },
+        {
+          "name": "karla_acquire",
+          "arguments": "{\"sensor\": \"sar\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "download_id": "sar-5cc15dc79a",
+              "mode": "live_remote_window",
+              "sensor": "sar",
+              "bbox": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "resolution_m": 20,
+              "crs": "EPSG:32634",
+              "captures": [
+                {
+                  "file": "sar-2023-09-01.tif",
+                  "date": "2023-09-01",
+                  "sensor": "sar",
+                  "valid_pct": 100,
+                  "scenes": [
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_rtc",
+                      "datetime": "2023-09-01T04:32:09.898447Z",
+                      "relative_orbit": 7,
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/9/1/IW/DV/S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_5360/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/9/1/IW/DV/S1A_IW_GRDH_1SDV_20230901T043157_20230901T043222_050129_060869_5360/measurement/iw-vh.rtc.tiff"
+                      },
+                      "stac_raster_bands": {
+                        "vv": [
+                          {
+                            "nodata": -32768,
+                            "data_type": "float32",
+                            "spatial_resolution": 10
+                          }
+                        ],
+                        "vh": [
+                          {
+                            "nodata": -32768,
+                            "data_type": "float32",
+                            "spatial_resolution": 10
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-1-rtc&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-09-01T00%3A00%3A00Z%2F2023-09-01T23%3A59%3A59Z&limit=50",
+                  "sha256": "ca16d931058c6b1197c55f743d6c56ef4caacf1f462669085a466d05ebeb3a23"
+                },
+                {
+                  "file": "sar-2023-12-18.tif",
+                  "date": "2023-12-18",
+                  "sensor": "sar",
+                  "valid_pct": 100,
+                  "scenes": [
+                    {
+                      "id": "S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_rtc",
+                      "datetime": "2023-12-18T04:32:08.861032Z",
+                      "relative_orbit": 7,
+                      "assets": {
+                        "vv": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/12/18/IW/DV/S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_2E3F/measurement/iw-vv.rtc.tiff",
+                        "vh": "https://sentinel1euwestrtc.blob.core.windows.net/sentinel1-grd-rtc/GRD/2023/12/18/IW/DV/S1A_IW_GRDH_1SDV_20231218T043156_20231218T043221_051704_063E7D_2E3F/measurement/iw-vh.rtc.tiff"
+                      },
+                      "stac_raster_bands": {
+                        "vv": [
+                          {
+                            "nodata": -32768,
+                            "data_type": "float32",
+                            "spatial_resolution": 10
+                          }
+                        ],
+                        "vh": [
+                          {
+                            "nodata": -32768,
+                            "data_type": "float32",
+                            "spatial_resolution": 10
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-1-rtc&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-12-18T00%3A00%3A00Z%2F2023-12-18T23%3A59%3A59Z&limit=50",
+                  "sha256": "ec4792d95c00cea23c52669b9c1223a419fee16d69908626ab5d67be61a77cc1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "karla_segment",
+          "arguments": "{\"algorithm\": \"sar_change\", \"download_id\": \"sar-5cc15dc79a\", \"reason\": \"截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "algorithm": "sar_change",
+              "dates": [
+                "2023-09-01",
+                "2023-12-18"
+              ],
+              "input_id": "sar-5cc15dc79a",
+              "patches": 333,
+              "candidate_km2": 71.1892,
+              "candidate_pixels": 177973,
+              "valid_pixels": 1635998,
+              "valid_pct": 100,
+              "baseline_km2": 11.078,
+              "evidence_sha256": "d2293930409f74bae7e49c678d2c701415ffea18651761ea527313be60407a30",
+              "method_reason": "截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。",
+              "key": "sar-mask-3497eeb209",
+              "kind": "karla_evidence",
+              "aoi": "Karla 湖 · 雷达初报",
+              "observations": [
+                "2023-09-01",
+                "2023-12-18"
+              ],
+              "preview_file": "map.png",
+              "folder": "outputs/sar-mask-3497eeb209"
+            }
+          }
+        }
+      ],
+      "options": [],
+      "answer": "已完成初报：Karla 湖研究窗口内，2023年12月18日雷达观测提取出候选积水约71.19平方公里，共333个斑块，并生成初报图及候选积水、观测有效性掩膜。\n\n实际获取了2023年9月1日灾前和12月18日的 Sentinel-1 雷达 VV/VH 像元。两期相对轨道均为7，研究窗口有效像元覆盖率均为100%；采用同轨雷达变化法，利用两期回波差异识别候选积水，处理网格为20米。\n\n研究范围为卡拉湖周边固定窗口（东经22.55°—22.85°、北纬39.43°—39.65°），并非整个行政区。观测有效性掩膜未显示缺测范围；有效像元齐全仍不代表每处都能可靠判读，植被、湿土和雷达散射特征可能影响结果。\n\n这份初报反映截至12月18日的候选积水状况。仅凭灾前与本次观测，尚不能量化相对洪峰的退水幅度、恢复速度或灾损。可打开下方初报图查看空间分布；本次未使用12月18日之后的观测。",
+      "kind": "dialogue",
+      "event_outputs": [
+        {
+          "algorithm": "sar_change",
+          "dates": [
+            "2023-09-01",
+            "2023-12-18"
+          ],
+          "input_id": "sar-5cc15dc79a",
+          "patches": 333,
+          "candidate_km2": 71.1892,
+          "candidate_pixels": 177973,
+          "valid_pixels": 1635998,
+          "valid_pct": 100,
+          "baseline_km2": 11.078,
+          "evidence_sha256": "d2293930409f74bae7e49c678d2c701415ffea18651761ea527313be60407a30",
+          "method_reason": "截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。",
+          "key": "sar-mask-3497eeb209",
+          "kind": "karla_evidence",
+          "aoi": "Karla 湖 · 雷达初报",
+          "observations": [
+            "2023-09-01",
+            "2023-12-18"
+          ],
+          "preview_file": "map.png",
+          "folder": "outputs/sar-mask-3497eeb209"
+        }
+      ]
+    },
+    "event_outputs": [
+      {
+        "algorithm": "sar_change",
+        "dates": [
+          "2023-09-01",
+          "2023-12-18"
+        ],
+        "input_id": "sar-5cc15dc79a",
+        "patches": 333,
+        "candidate_km2": 71.1892,
+        "candidate_pixels": 177973,
+        "valid_pixels": 1635998,
+        "valid_pct": 100,
+        "baseline_km2": 11.078,
+        "evidence_sha256": "d2293930409f74bae7e49c678d2c701415ffea18651761ea527313be60407a30",
+        "method_reason": "截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。",
+        "key": "sar-mask-3497eeb209",
+        "kind": "karla_evidence",
+        "aoi": "Karla 湖 · 雷达初报",
+        "observations": [
+          "2023-09-01",
+          "2023-12-18"
+        ],
+        "preview_file": "map.png",
+        "folder": "outputs/sar-mask-3497eeb209"
+      }
+    ]
+  },
+  {
+    "id": "workbench_ec27928da8",
+    "question": "现在更新到 12 月 19 日。实际取得当天可用的新影像，说明你为什么选这次的算法。和昨天的初报比较，分开两期都有证据、单期有证据和不可判读，保留初报并出差异图。",
+    "project": {
+      "id": "workbench_3b3b8e4acb",
+      "root": "/private/tmp/projects/FloodLab-3b3b8e4acb",
+      "name": "projects",
+      "parent": "/private/tmp/projects",
+      "title": "给希腊 Karla 湖做一份截至 2023 年 12 月 18 日的洪灾恢复监测初报。实"
+    },
+    "status": "execution_finished_not_independently_evaluated",
+    "model": "gpt-6.1-sol",
+    "turn": {
+      "before_gis": 0,
+      "question": "现在更新到 12 月 19 日。实际取得当天可用的新影像，说明你为什么选这次的算法。和昨天的初报比较，分开两期都有证据、单期有证据和不可判读，保留初报并出差异图。",
+      "status": "finished",
+      "calls": [
+        {
+          "name": "karla_inventory",
+          "arguments": "{}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "case": "Karla Lake / EMSN184, Greece",
+              "grid": "20 m, UTM 34N",
+              "window": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "focus_options": {
+                "study": "full study window",
+                "north": "north basin, [22.63,39.49,22.78,39.60]"
+              },
+              "observation_options": {
+                "sar": {
+                  "dates": [
+                    "2023-09-01",
+                    "2023-12-18"
+                  ],
+                  "orbit": 7,
+                  "method": "sar_change"
+                },
+                "optical": {
+                  "dates": [
+                    "2023-08-31",
+                    "2023-12-19"
+                  ],
+                  "method": "optical_mndwi"
+                }
+              },
+              "active_workspace_ids": {
+                "sar-5cc15dc79a": {
+                  "kind": "sar",
+                  "path": "inputs/sar-5cc15dc79a"
+                },
+                "sar-mask-3497eeb209": {
+                  "kind": "sar_mask",
+                  "path": "outputs/sar-mask-3497eeb209"
+                },
+                "optical-975de5f20b": {
+                  "kind": "optical",
+                  "path": "inputs/optical-975de5f20b"
+                },
+                "optical-mask-244ef38415": {
+                  "kind": "optical_mask",
+                  "path": "outputs/optical-mask-244ef38415"
+                },
+                "comparison-ce8daf32d0": {
+                  "kind": "comparison",
+                  "path": "outputs/comparison-ce8daf32d0"
+                }
+              },
+              "rules": "Decide from the available observation date and interpretability. New optical evidence does not imply detected expansion or recession."
+            }
+          }
+        },
+        {
+          "name": "karla_acquire",
+          "arguments": "{\"sensor\": \"optical\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "download_id": "optical-975de5f20b",
+              "mode": "live_remote_window",
+              "sensor": "optical",
+              "bbox": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "resolution_m": 20,
+              "crs": "EPSG:32634",
+              "captures": [
+                {
+                  "file": "optical-2023-08-31.tif",
+                  "date": "2023-08-31",
+                  "sensor": "optical",
+                  "valid_pct": 99.860452152142,
+                  "scenes": [
+                    {
+                      "id": "S2B_MSIL2A_20230831T091559_R093_T34SFJ_20241017T232234",
+                      "datetime": "2023-08-31T09:15:59.024000Z",
+                      "relative_orbit": 93,
+                      "assets": {
+                        "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R10m/T34SFJ_20230831T091559_B03_10m.tif",
+                        "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R20m/T34SFJ_20230831T091559_B11_20m.tif",
+                        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34SFJ_20241017T232234.SAFE/GRANULE/L2A_T34SFJ_A033867_20230831T092417/IMG_DATA/R20m/T34SFJ_20230831T091559_SCL_20m.tif"
+                      },
+                      "stac_raster_bands": {
+                        "B03": [],
+                        "B11": [],
+                        "SCL": []
+                      }
+                    },
+                    {
+                      "id": "S2B_MSIL2A_20230831T091559_R093_T34TFK_20241017T232234",
+                      "datetime": "2023-08-31T09:15:59.024000Z",
+                      "relative_orbit": 93,
+                      "assets": {
+                        "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R10m/T34TFK_20230831T091559_B03_10m.tif",
+                        "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R20m/T34TFK_20230831T091559_B11_20m.tif",
+                        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/08/31/S2B_MSIL2A_20230831T091559_N0510_R093_T34TFK_20241017T232234.SAFE/GRANULE/L2A_T34TFK_A033867_20230831T092417/IMG_DATA/R20m/T34TFK_20230831T091559_SCL_20m.tif"
+                      },
+                      "stac_raster_bands": {
+                        "B03": [],
+                        "B11": [],
+                        "SCL": []
+                      }
+                    }
+                  ],
+                  "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-2-l2a&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-08-31T00%3A00%3A00Z%2F2023-08-31T23%3A59%3A59Z&limit=50",
+                  "sha256": "eea4dfa189ca5a649ae0e1c0c3bdb43fb5957a3882236b3e9fd29a80aa69c321"
+                },
+                {
+                  "file": "optical-2023-12-19.tif",
+                  "date": "2023-12-19",
+                  "sensor": "optical",
+                  "valid_pct": 96.56766084066118,
+                  "scenes": [
+                    {
+                      "id": "S2B_MSIL2A_20231219T092319_R093_T34SFJ_20231220T125310",
+                      "datetime": "2023-12-19T09:23:19.024000Z",
+                      "relative_orbit": 93,
+                      "assets": {
+                        "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R10m/T34SFJ_20231219T092319_B03_10m.tif",
+                        "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R20m/T34SFJ_20231219T092319_B11_20m.tif",
+                        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/S/FJ/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34SFJ_20231220T125310.SAFE/GRANULE/L2A_T34SFJ_A035440_20231219T092315/IMG_DATA/R20m/T34SFJ_20231219T092319_SCL_20m.tif"
+                      },
+                      "stac_raster_bands": {
+                        "B03": [],
+                        "B11": [],
+                        "SCL": []
+                      }
+                    },
+                    {
+                      "id": "S2B_MSIL2A_20231219T092319_R093_T34TFK_20231220T125336",
+                      "datetime": "2023-12-19T09:23:19.024000Z",
+                      "relative_orbit": 93,
+                      "assets": {
+                        "B03": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R10m/T34TFK_20231219T092319_B03_10m.tif",
+                        "B11": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R20m/T34TFK_20231219T092319_B11_20m.tif",
+                        "SCL": "https://sentinel2l2a01.blob.core.windows.net/sentinel2-l2/34/T/FK/2023/12/19/S2B_MSIL2A_20231219T092319_N0510_R093_T34TFK_20231220T125336.SAFE/GRANULE/L2A_T34TFK_A035440_20231219T092315/IMG_DATA/R20m/T34TFK_20231219T092319_SCL_20m.tif"
+                      },
+                      "stac_raster_bands": {
+                        "B03": [],
+                        "B11": [],
+                        "SCL": []
+                      }
+                    }
+                  ],
+                  "catalog_request": "https://planetarycomputer.microsoft.com/api/stac/v1/search?collections=sentinel-2-l2a&bbox=22.55%2C39.43%2C22.85%2C39.65&datetime=2023-12-19T00%3A00%3A00Z%2F2023-12-19T23%3A59%3A59Z&limit=50",
+                  "sha256": "db264c57e0b32772dd77856c4d086753634ab499ae26291e6d0fc56f19ab7389"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "karla_segment",
+          "arguments": "{\"algorithm\": \"optical_mndwi\", \"download_id\": \"optical-975de5f20b\", \"reason\": \"已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "algorithm": "optical_mndwi",
+              "dates": [
+                "2023-08-31",
+                "2023-12-19"
+              ],
+              "input_id": "optical-975de5f20b",
+              "patches": 126,
+              "candidate_km2": 95.426,
+              "candidate_pixels": 238565,
+              "valid_pixels": 1577871,
+              "valid_pct": 96.44700054645543,
+              "baseline_km2": 32.9328,
+              "evidence_sha256": "b1e70f87315fce45272fbb8782d30782b7a4bb4890ee67b67768a68e2f2f4f73",
+              "method_reason": "已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。",
+              "key": "optical-mask-244ef38415",
+              "kind": "karla_evidence",
+              "aoi": "Karla 湖 · 光学更新",
+              "observations": [
+                "2023-08-31",
+                "2023-12-19"
+              ],
+              "preview_file": "map.png",
+              "folder": "outputs/optical-mask-244ef38415"
+            }
+          }
+        },
+        {
+          "name": "karla_compare",
+          "arguments": "{\"optical_id\": \"optical-mask-244ef38415\", \"sar_id\": \"sar-mask-3497eeb209\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "both_km2": 66.9064,
+              "sar_only_km2": 1.1196,
+              "optical_only_km2": 28.5196,
+              "unknown_km2": 23.2508,
+              "joint_pct": 96.44700054645543,
+              "sar_candidate_outside_joint_km2": 3.1632,
+              "dates": [
+                "2023-12-18",
+                "2023-12-19"
+              ],
+              "interpretation": "Cross-date cross-sensor evidence; never infer expansion or recession from these differences.",
+              "sar_id": "sar-mask-3497eeb209",
+              "optical_id": "optical-mask-244ef38415",
+              "official_reference": {
+                "sar": {
+                  "pixels": {
+                    "common": 960635,
+                    "both": 172673,
+                    "official_only": 56520,
+                    "candidate_only": 5300
+                  },
+                  "iou": 0.7363673968945769,
+                  "layer": "P04FLDEL01_FloodExtent",
+                  "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+                  "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+                },
+                "optical": {
+                  "pixels": {
+                    "common": 936434,
+                    "both": 229629,
+                    "official_only": 8184,
+                    "candidate_only": 7906
+                  },
+                  "iou": 0.9345186981877673,
+                  "layer": "P04FLDEL02_FloodExtent",
+                  "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+                  "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+                }
+              },
+              "key": "comparison-ce8daf32d0",
+              "kind": "karla_evidence",
+              "aoi": "Karla 湖 · 两期证据对照",
+              "observations": [
+                "2023-12-18",
+                "2023-12-19"
+              ],
+              "preview_file": "map.png",
+              "folder": "outputs/comparison-ce8daf32d0"
+            }
+          }
+        }
+      ],
+      "options": [],
+      "answer": "已更新至2023年12月19日：光学影像提取的候选积水为95.43平方公里，已生成光学更新图和两期证据差异图，并保留12月18日雷达初报。\n\n本次实际获取了2023年8月31日灾前及12月19日的 Sentinel-2 L2A 像元，研究窗口有效覆盖率分别为99.86%和96.57%。选择改进归一化水体指数法（MNDWI），利用绿光与短波红外对水体的响应差异，结合灾前参照识别候选积水；同时用场景分类和有效性掩膜排除云、阴影及缺测。两期光学处理后的可判读范围占研究窗口的96.45%，处理网格为20米。\n\n与12月18日雷达初报对照，结果为：\n• 两期都有积水证据：66.91平方公里。\n• 仅雷达有积水证据：1.12平方公里。\n• 仅光学有积水证据：28.52平方公里。\n• 无法开展双期比较：23.25平方公里；其中包含雷达初报已识别、但光学无法判读的3.16平方公里，因此这部分没有计入“仅雷达”类别。\n\n统计范围仍为东经22.55°—22.85°、北纬39.43°—39.65°的固定研究窗口。两期相差一天，且传感器和识别方法不同，单期证据差异不能直接解释为新增淹没或退水。另已与官方对应日期产品作事后空间对照：雷达与光学的交并比分别为0.736和0.935，仅表示官方研究区及有效像元内的空间一致性，不是地面真值精度，官方边界也未参与参数选择。\n\n下方可查看原雷达初报、12月19日光学更新图及两期证据差异图。",
+      "kind": "dialogue",
+      "event_outputs": [
+        {
+          "algorithm": "optical_mndwi",
+          "dates": [
+            "2023-08-31",
+            "2023-12-19"
+          ],
+          "input_id": "optical-975de5f20b",
+          "patches": 126,
+          "candidate_km2": 95.426,
+          "candidate_pixels": 238565,
+          "valid_pixels": 1577871,
+          "valid_pct": 96.44700054645543,
+          "baseline_km2": 32.9328,
+          "evidence_sha256": "b1e70f87315fce45272fbb8782d30782b7a4bb4890ee67b67768a68e2f2f4f73",
+          "method_reason": "已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。",
+          "key": "optical-mask-244ef38415",
+          "kind": "karla_evidence",
+          "aoi": "Karla 湖 · 光学更新",
+          "observations": [
+            "2023-08-31",
+            "2023-12-19"
+          ],
+          "preview_file": "map.png",
+          "folder": "outputs/optical-mask-244ef38415"
+        },
+        {
+          "both_km2": 66.9064,
+          "sar_only_km2": 1.1196,
+          "optical_only_km2": 28.5196,
+          "unknown_km2": 23.2508,
+          "joint_pct": 96.44700054645543,
+          "sar_candidate_outside_joint_km2": 3.1632,
+          "dates": [
+            "2023-12-18",
+            "2023-12-19"
+          ],
+          "interpretation": "Cross-date cross-sensor evidence; never infer expansion or recession from these differences.",
+          "sar_id": "sar-mask-3497eeb209",
+          "optical_id": "optical-mask-244ef38415",
+          "official_reference": {
+            "sar": {
+              "pixels": {
+                "common": 960635,
+                "both": 172673,
+                "official_only": 56520,
+                "candidate_only": 5300
+              },
+              "iou": 0.7363673968945769,
+              "layer": "P04FLDEL01_FloodExtent",
+              "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+              "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+            },
+            "optical": {
+              "pixels": {
+                "common": 936434,
+                "both": 229629,
+                "official_only": 8184,
+                "candidate_only": 7906
+              },
+              "iou": 0.9345186981877673,
+              "layer": "P04FLDEL02_FloodExtent",
+              "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+              "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+            }
+          },
+          "key": "comparison-ce8daf32d0",
+          "kind": "karla_evidence",
+          "aoi": "Karla 湖 · 两期证据对照",
+          "observations": [
+            "2023-12-18",
+            "2023-12-19"
+          ],
+          "preview_file": "map.png",
+          "folder": "outputs/comparison-ce8daf32d0"
+        }
+      ]
+    },
+    "event_outputs": [
+      {
+        "algorithm": "optical_mndwi",
+        "dates": [
+          "2023-08-31",
+          "2023-12-19"
+        ],
+        "input_id": "optical-975de5f20b",
+        "patches": 126,
+        "candidate_km2": 95.426,
+        "candidate_pixels": 238565,
+        "valid_pixels": 1577871,
+        "valid_pct": 96.44700054645543,
+        "baseline_km2": 32.9328,
+        "evidence_sha256": "b1e70f87315fce45272fbb8782d30782b7a4bb4890ee67b67768a68e2f2f4f73",
+        "method_reason": "已实际取得2023-08-31灾前和2023-12-19 Sentinel-2 L2A绿光、短波红外及场景分类像元，有效覆盖分别为99.86%和96.57%，具备光学判读条件。选择optical_mndwi，用绿光与短波红外的水体光谱差异结合灾前参照提取候选积水，并依据场景分类及两期有效性屏蔽云、阴影和缺测；不沿用雷达回波变化算法处理光学影像，也不使用官方参考边界选择参数。",
+        "key": "optical-mask-244ef38415",
+        "kind": "karla_evidence",
+        "aoi": "Karla 湖 · 光学更新",
+        "observations": [
+          "2023-08-31",
+          "2023-12-19"
+        ],
+        "preview_file": "map.png",
+        "folder": "outputs/optical-mask-244ef38415"
+      },
+      {
+        "both_km2": 66.9064,
+        "sar_only_km2": 1.1196,
+        "optical_only_km2": 28.5196,
+        "unknown_km2": 23.2508,
+        "joint_pct": 96.44700054645543,
+        "sar_candidate_outside_joint_km2": 3.1632,
+        "dates": [
+          "2023-12-18",
+          "2023-12-19"
+        ],
+        "interpretation": "Cross-date cross-sensor evidence; never infer expansion or recession from these differences.",
+        "sar_id": "sar-mask-3497eeb209",
+        "optical_id": "optical-mask-244ef38415",
+        "official_reference": {
+          "sar": {
+            "pixels": {
+              "common": 960635,
+              "both": 172673,
+              "official_only": 56520,
+              "candidate_only": 5300
+            },
+            "iou": 0.7363673968945769,
+            "layer": "P04FLDEL01_FloodExtent",
+            "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+            "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+          },
+          "optical": {
+            "pixels": {
+              "common": 936434,
+              "both": 229629,
+              "official_only": 8184,
+              "candidate_only": 7906
+            },
+            "iou": 0.9345186981877673,
+            "layer": "P04FLDEL02_FloodExtent",
+            "reference_sha256": "9411558d9bfed94b5f8a41596c83c724448a9035827022411415aaa4494203fc",
+            "boundary": "Agreement inside official AOI and valid pixels; not ground truth."
+          }
+        },
+        "key": "comparison-ce8daf32d0",
+        "kind": "karla_evidence",
+        "aoi": "Karla 湖 · 两期证据对照",
+        "observations": [
+          "2023-12-18",
+          "2023-12-19"
+        ],
+        "preview_file": "map.png",
+        "folder": "outputs/comparison-ce8daf32d0"
+      }
+    ]
+  },
+  {
+    "id": "workbench_5afe22f6a8",
+    "question": "请用刚才的证据图做核查简报：统计整个研究窗及北部片区的农田和主要道路，区分两期都有证据、仅一期和未知，给地图与可复核清单。不重新下载或分割，保留前面的图。",
+    "project": {
+      "id": "workbench_3b3b8e4acb",
+      "root": "/private/tmp/projects/FloodLab-3b3b8e4acb",
+      "name": "projects",
+      "parent": "/private/tmp/projects",
+      "title": "给希腊 Karla 湖做一份截至 2023 年 12 月 18 日的洪灾恢复监测初报。实"
+    },
+    "status": "execution_finished_not_independently_evaluated",
+    "model": "gpt-6.1-sol",
+    "turn": {
+      "before_gis": 0,
+      "question": "请用刚才的证据图做核查简报：统计整个研究窗及北部片区的农田和主要道路，区分两期都有证据、仅一期和未知，给地图与可复核清单。不重新下载或分割，保留前面的图。",
+      "status": "finished",
+      "calls": [
+        {
+          "name": "karla_inventory",
+          "arguments": "{}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "case": "Karla Lake / EMSN184, Greece",
+              "grid": "20 m, UTM 34N",
+              "window": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "focus_options": {
+                "study": "full study window",
+                "north": "north basin, [22.63,39.49,22.78,39.60]"
+              },
+              "observation_options": {
+                "sar": {
+                  "dates": [
+                    "2023-09-01",
+                    "2023-12-18"
+                  ],
+                  "orbit": 7,
+                  "method": "sar_change"
+                },
+                "optical": {
+                  "dates": [
+                    "2023-08-31",
+                    "2023-12-19"
+                  ],
+                  "method": "optical_mndwi"
+                }
+              },
+              "active_workspace_ids": {
+                "sar-5cc15dc79a": {
+                  "kind": "sar",
+                  "path": "inputs/sar-5cc15dc79a"
+                },
+                "sar-mask-3497eeb209": {
+                  "kind": "sar_mask",
+                  "path": "outputs/sar-mask-3497eeb209"
+                },
+                "optical-975de5f20b": {
+                  "kind": "optical",
+                  "path": "inputs/optical-975de5f20b"
+                },
+                "optical-mask-244ef38415": {
+                  "kind": "optical_mask",
+                  "path": "outputs/optical-mask-244ef38415"
+                },
+                "comparison-ce8daf32d0": {
+                  "kind": "comparison",
+                  "path": "outputs/comparison-ce8daf32d0"
+                }
+              },
+              "rules": "Decide from the available observation date and interpretability. New optical evidence does not imply detected expansion or recession."
+            }
+          }
+        },
+        {
+          "name": "karla_exposure",
+          "arguments": "{\"comparison_id\": \"comparison-ce8daf32d0\", \"scope\": \"study\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "scope": "study",
+              "bbox": [
+                22.55,
+                39.43,
+                22.85,
+                39.65
+              ],
+              "input_comparison_id": "comparison-ce8daf32d0",
+              "cropland_total_km2": 344.1032,
+              "cropland_km2": {
+                "both": 60.9252,
+                "sar_only": 0.2036,
+                "optical_only": 22.6412,
+                "unknown": 3.1832
+              },
+              "road_m": {
+                "both": 4405.954221585096,
+                "sar_only": 218.14819419022115,
+                "optical_only": 2382.17638284996,
+                "unknown": 888.9170809137122
+              },
+              "segments": 159,
+              "road_shortlist": [
+                {
+                  "road": "OSM 538784698",
+                  "osm_way": 538784698,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 865.5015700827701,
+                  "lon": 22.685619,
+                  "lat": 39.588435,
+                  "structure": "",
+                  "id": 1
+                },
+                {
+                  "road": "OSM 314193055",
+                  "osm_way": 314193055,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 532.0615427610948,
+                  "lon": 22.653013,
+                  "lat": 39.644287,
+                  "structure": "",
+                  "id": 2
+                },
+                {
+                  "road": "OSM 538784698",
+                  "osm_way": 538784698,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 349.48538781477373,
+                  "lon": 22.678099,
+                  "lat": 39.583578,
+                  "structure": "",
+                  "id": 3
+                },
+                {
+                  "road": "Κιλελέρ - Καλαμάκι",
+                  "osm_way": 906717499,
+                  "highway": "secondary",
+                  "evidence": "both",
+                  "length_m": 269.34473460362886,
+                  "lon": 22.724743,
+                  "lat": 39.557818,
+                  "structure": "",
+                  "id": 4
+                },
+                {
+                  "road": "Κιλελέρ - Καλαμάκι",
+                  "osm_way": 425625350,
+                  "highway": "secondary",
+                  "evidence": "both",
+                  "length_m": 267.3173807915123,
+                  "lon": 22.702749,
+                  "lat": 39.549656,
+                  "structure": "",
+                  "id": 5
+                },
+                {
+                  "road": "OSM 538784696",
+                  "osm_way": 538784696,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 252.30605995677126,
+                  "lon": 22.6974,
+                  "lat": 39.588532,
+                  "structure": "",
+                  "id": 6
+                }
+              ],
+              "cropland_source": "landcover.tif",
+              "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+              "boundary": "Centerline overlap is not an observation of road closure or passability.",
+              "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+              "key": "exposure-c6e0b9df2e",
+              "kind": "karla_exposure",
+              "aoi": "Karla 湖 · 农田与道路核查",
+              "observations": [
+                "2023-12-18",
+                "2023-12-19"
+              ],
+              "preview_file": "map.png",
+              "folder": "outputs/exposure-c6e0b9df2e"
+            }
+          }
+        },
+        {
+          "name": "karla_exposure",
+          "arguments": "{\"comparison_id\": \"comparison-ce8daf32d0\", \"scope\": \"north\"}",
+          "response": {
+            "status": "ok",
+            "result": {
+              "scope": "north",
+              "bbox": [
+                22.63,
+                39.49,
+                22.78,
+                39.6
+              ],
+              "input_comparison_id": "comparison-ce8daf32d0",
+              "cropland_total_km2": 114.9956,
+              "cropland_km2": {
+                "both": 43.676,
+                "sar_only": 0.1336,
+                "optical_only": 9.1388,
+                "unknown": 2.5608
+              },
+              "road_m": {
+                "both": 3432.3228981212037,
+                "sar_only": 135.11692770547012,
+                "optical_only": 1951.7181603964116,
+                "unknown": 408.3542794667123
+              },
+              "segments": 103,
+              "road_shortlist": [
+                {
+                  "road": "OSM 538784698",
+                  "osm_way": 538784698,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 865.5015700827701,
+                  "lon": 22.685619,
+                  "lat": 39.588435,
+                  "structure": "",
+                  "id": 1
+                },
+                {
+                  "road": "OSM 538784698",
+                  "osm_way": 538784698,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 349.48538781477373,
+                  "lon": 22.678099,
+                  "lat": 39.583578,
+                  "structure": "",
+                  "id": 2
+                },
+                {
+                  "road": "Κιλελέρ - Καλαμάκι",
+                  "osm_way": 906717499,
+                  "highway": "secondary",
+                  "evidence": "both",
+                  "length_m": 269.34473460362886,
+                  "lon": 22.724743,
+                  "lat": 39.557818,
+                  "structure": "",
+                  "id": 3
+                },
+                {
+                  "road": "Κιλελέρ - Καλαμάκι",
+                  "osm_way": 425625350,
+                  "highway": "secondary",
+                  "evidence": "both",
+                  "length_m": 267.3173807915123,
+                  "lon": 22.702749,
+                  "lat": 39.549656,
+                  "structure": "",
+                  "id": 4
+                },
+                {
+                  "road": "OSM 538784696",
+                  "osm_way": 538784696,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 252.30605995677126,
+                  "lon": 22.6974,
+                  "lat": 39.588532,
+                  "structure": "",
+                  "id": 5
+                },
+                {
+                  "road": "OSM 538784698",
+                  "osm_way": 538784698,
+                  "highway": "tertiary",
+                  "evidence": "both",
+                  "length_m": 251.59373183889258,
+                  "lon": 22.690675,
+                  "lat": 39.591698,
+                  "structure": "",
+                  "id": 6
+                }
+              ],
+              "cropland_source": "landcover.tif",
+              "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+              "boundary": "Centerline overlap is not an observation of road closure or passability.",
+              "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+              "key": "exposure-4fa28e86a4",
+              "kind": "karla_exposure",
+              "aoi": "Karla 湖 · 北部片区核查",
+              "observations": [
+                "2023-12-18",
+                "2023-12-19"
+              ],
+              "preview_file": "map.png",
+              "folder": "outputs/exposure-4fa28e86a4"
+            }
+          }
+        }
+      ],
+      "options": [],
+      "answer": "已完成两套核查：整个研究窗中，两期都有积水证据的农田为60.9252平方公里、主要道路重叠长度为4.406公里；北部片区分别为43.6760平方公里和3.432公里。已生成两套地图与可复核清单，保留原雷达初报、光学更新图和证据对照图，未重新下载或分割影像。\n\n|证据类别|全窗农田（平方公里）|北部农田（平方公里）|全窗主要道路（公里）|北部主要道路（公里）|\n|---|---:|---:|---:|---:|\n|两期都有证据|60.9252|43.6760|4.406|3.432|\n|仅12月18日雷达有证据|0.2036|0.1336|0.218|0.135|\n|仅12月19日光学有证据|22.6412|9.1388|2.382|1.952|\n|未知／无法双期判读|3.1832|2.5608|0.889|0.408|\n\n全窗范围为东经22.55°—22.85°、北纬39.43°—39.65°，农田总面积344.1032平方公里；北部范围为东经22.63°—22.78°、北纬39.49°—39.60°，农田总面积114.9956平方公里。北部是全窗的子集，不能把两套统计相加。表内只列积水证据及未知类别，未列其余未检出候选积水的范围。\n\n全窗与北部道路清单分别含159段和103段，附道路名称或OSM编号、证据类别、重叠长度、定位坐标及桥隧标记，便于逐段复核。优先核查两期一致路段，例如北部OSM 538784698的一段长865.50米，定位约为东经22.685619°、北纬39.588435°；Κιλελέρ - Καλαμάκι道路（OSM 906717499）的一段长269.34米，定位约为东经22.724743°、北纬39.557818°。完整清单和地图由下方成果提供。\n\n农田数据来自WorldCover土地分类，统计的是与遥感证据的相交面积，不能解释为农田损失面积。道路采用2026年11月25日获取的OpenStreetMap现状快照，表示现状道路与2023年遥感证据的空间重叠，不能证明这些道路在灾时存在、通车或封闭；桥隧段还需结合高程和通行记录核查。\n\n两期观测分别为2023年12月18日雷达和12月19日光学。单期证据差异受观测日期、传感器和判读条件影响，不能直接解释为新增淹没或退水；未知也不等于没有积水。下方保留前三张图，并附全窗和北部核查成果。",
+      "kind": "dialogue",
+      "event_outputs": [
+        {
+          "scope": "study",
+          "bbox": [
+            22.55,
+            39.43,
+            22.85,
+            39.65
+          ],
+          "input_comparison_id": "comparison-ce8daf32d0",
+          "cropland_total_km2": 344.1032,
+          "cropland_km2": {
+            "both": 60.9252,
+            "sar_only": 0.2036,
+            "optical_only": 22.6412,
+            "unknown": 3.1832
+          },
+          "road_m": {
+            "both": 4405.954221585096,
+            "sar_only": 218.14819419022115,
+            "optical_only": 2382.17638284996,
+            "unknown": 888.9170809137122
+          },
+          "segments": 159,
+          "road_shortlist": [
+            {
+              "road": "OSM 538784698",
+              "osm_way": 538784698,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 865.5015700827701,
+              "lon": 22.685619,
+              "lat": 39.588435,
+              "structure": "",
+              "id": 1
+            },
+            {
+              "road": "OSM 314193055",
+              "osm_way": 314193055,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 532.0615427610948,
+              "lon": 22.653013,
+              "lat": 39.644287,
+              "structure": "",
+              "id": 2
+            },
+            {
+              "road": "OSM 538784698",
+              "osm_way": 538784698,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 349.48538781477373,
+              "lon": 22.678099,
+              "lat": 39.583578,
+              "structure": "",
+              "id": 3
+            },
+            {
+              "road": "Κιλελέρ - Καλαμάκι",
+              "osm_way": 906717499,
+              "highway": "secondary",
+              "evidence": "both",
+              "length_m": 269.34473460362886,
+              "lon": 22.724743,
+              "lat": 39.557818,
+              "structure": "",
+              "id": 4
+            },
+            {
+              "road": "Κιλελέρ - Καλαμάκι",
+              "osm_way": 425625350,
+              "highway": "secondary",
+              "evidence": "both",
+              "length_m": 267.3173807915123,
+              "lon": 22.702749,
+              "lat": 39.549656,
+              "structure": "",
+              "id": 5
+            },
+            {
+              "road": "OSM 538784696",
+              "osm_way": 538784696,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 252.30605995677126,
+              "lon": 22.6974,
+              "lat": 39.588532,
+              "structure": "",
+              "id": 6
+            }
+          ],
+          "cropland_source": "landcover.tif",
+          "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+          "boundary": "Centerline overlap is not an observation of road closure or passability.",
+          "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+          "key": "exposure-c6e0b9df2e",
+          "kind": "karla_exposure",
+          "aoi": "Karla 湖 · 农田与道路核查",
+          "observations": [
+            "2023-12-18",
+            "2023-12-19"
+          ],
+          "preview_file": "map.png",
+          "folder": "outputs/exposure-c6e0b9df2e"
+        },
+        {
+          "scope": "north",
+          "bbox": [
+            22.63,
+            39.49,
+            22.78,
+            39.6
+          ],
+          "input_comparison_id": "comparison-ce8daf32d0",
+          "cropland_total_km2": 114.9956,
+          "cropland_km2": {
+            "both": 43.676,
+            "sar_only": 0.1336,
+            "optical_only": 9.1388,
+            "unknown": 2.5608
+          },
+          "road_m": {
+            "both": 3432.3228981212037,
+            "sar_only": 135.11692770547012,
+            "optical_only": 1951.7181603964116,
+            "unknown": 408.3542794667123
+          },
+          "segments": 103,
+          "road_shortlist": [
+            {
+              "road": "OSM 538784698",
+              "osm_way": 538784698,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 865.5015700827701,
+              "lon": 22.685619,
+              "lat": 39.588435,
+              "structure": "",
+              "id": 1
+            },
+            {
+              "road": "OSM 538784698",
+              "osm_way": 538784698,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 349.48538781477373,
+              "lon": 22.678099,
+              "lat": 39.583578,
+              "structure": "",
+              "id": 2
+            },
+            {
+              "road": "Κιλελέρ - Καλαμάκι",
+              "osm_way": 906717499,
+              "highway": "secondary",
+              "evidence": "both",
+              "length_m": 269.34473460362886,
+              "lon": 22.724743,
+              "lat": 39.557818,
+              "structure": "",
+              "id": 3
+            },
+            {
+              "road": "Κιλελέρ - Καλαμάκι",
+              "osm_way": 425625350,
+              "highway": "secondary",
+              "evidence": "both",
+              "length_m": 267.3173807915123,
+              "lon": 22.702749,
+              "lat": 39.549656,
+              "structure": "",
+              "id": 4
+            },
+            {
+              "road": "OSM 538784696",
+              "osm_way": 538784696,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 252.30605995677126,
+              "lon": 22.6974,
+              "lat": 39.588532,
+              "structure": "",
+              "id": 5
+            },
+            {
+              "road": "OSM 538784698",
+              "osm_way": 538784698,
+              "highway": "tertiary",
+              "evidence": "both",
+              "length_m": 251.59373183889258,
+              "lon": 22.690675,
+              "lat": 39.591698,
+              "structure": "",
+              "id": 6
+            }
+          ],
+          "cropland_source": "landcover.tif",
+          "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+          "boundary": "Centerline overlap is not an observation of road closure or passability.",
+          "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+          "key": "exposure-4fa28e86a4",
+          "kind": "karla_exposure",
+          "aoi": "Karla 湖 · 北部片区核查",
+          "observations": [
+            "2023-12-18",
+            "2023-12-19"
+          ],
+          "preview_file": "map.png",
+          "folder": "outputs/exposure-4fa28e86a4"
+        }
+      ]
+    },
+    "event_outputs": [
+      {
+        "scope": "study",
+        "bbox": [
+          22.55,
+          39.43,
+          22.85,
+          39.65
+        ],
+        "input_comparison_id": "comparison-ce8daf32d0",
+        "cropland_total_km2": 344.1032,
+        "cropland_km2": {
+          "both": 60.9252,
+          "sar_only": 0.2036,
+          "optical_only": 22.6412,
+          "unknown": 3.1832
+        },
+        "road_m": {
+          "both": 4405.954221585096,
+          "sar_only": 218.14819419022115,
+          "optical_only": 2382.17638284996,
+          "unknown": 888.9170809137122
+        },
+        "segments": 159,
+        "road_shortlist": [
+          {
+            "road": "OSM 538784698",
+            "osm_way": 538784698,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 865.5015700827701,
+            "lon": 22.685619,
+            "lat": 39.588435,
+            "structure": "",
+            "id": 1
+          },
+          {
+            "road": "OSM 314193055",
+            "osm_way": 314193055,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 532.0615427610948,
+            "lon": 22.653013,
+            "lat": 39.644287,
+            "structure": "",
+            "id": 2
+          },
+          {
+            "road": "OSM 538784698",
+            "osm_way": 538784698,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 349.48538781477373,
+            "lon": 22.678099,
+            "lat": 39.583578,
+            "structure": "",
+            "id": 3
+          },
+          {
+            "road": "Κιλελέρ - Καλαμάκι",
+            "osm_way": 906717499,
+            "highway": "secondary",
+            "evidence": "both",
+            "length_m": 269.34473460362886,
+            "lon": 22.724743,
+            "lat": 39.557818,
+            "structure": "",
+            "id": 4
+          },
+          {
+            "road": "Κιλελέρ - Καλαμάκι",
+            "osm_way": 425625350,
+            "highway": "secondary",
+            "evidence": "both",
+            "length_m": 267.3173807915123,
+            "lon": 22.702749,
+            "lat": 39.549656,
+            "structure": "",
+            "id": 5
+          },
+          {
+            "road": "OSM 538784696",
+            "osm_way": 538784696,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 252.30605995677126,
+            "lon": 22.6974,
+            "lat": 39.588532,
+            "structure": "",
+            "id": 6
+          }
+        ],
+        "cropland_source": "landcover.tif",
+        "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+        "boundary": "Centerline overlap is not an observation of road closure or passability.",
+        "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+        "key": "exposure-c6e0b9df2e",
+        "kind": "karla_exposure",
+        "aoi": "Karla 湖 · 农田与道路核查",
+        "observations": [
+          "2023-12-18",
+          "2023-12-19"
+        ],
+        "preview_file": "map.png",
+        "folder": "outputs/exposure-c6e0b9df2e"
+      },
+      {
+        "scope": "north",
+        "bbox": [
+          22.63,
+          39.49,
+          22.78,
+          39.6
+        ],
+        "input_comparison_id": "comparison-ce8daf32d0",
+        "cropland_total_km2": 114.9956,
+        "cropland_km2": {
+          "both": 43.676,
+          "sar_only": 0.1336,
+          "optical_only": 9.1388,
+          "unknown": 2.5608
+        },
+        "road_m": {
+          "both": 3432.3228981212037,
+          "sar_only": 135.11692770547012,
+          "optical_only": 1951.7181603964116,
+          "unknown": 408.3542794667123
+        },
+        "segments": 103,
+        "road_shortlist": [
+          {
+            "road": "OSM 538784698",
+            "osm_way": 538784698,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 865.5015700827701,
+            "lon": 22.685619,
+            "lat": 39.588435,
+            "structure": "",
+            "id": 1
+          },
+          {
+            "road": "OSM 538784698",
+            "osm_way": 538784698,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 349.48538781477373,
+            "lon": 22.678099,
+            "lat": 39.583578,
+            "structure": "",
+            "id": 2
+          },
+          {
+            "road": "Κιλελέρ - Καλαμάκι",
+            "osm_way": 906717499,
+            "highway": "secondary",
+            "evidence": "both",
+            "length_m": 269.34473460362886,
+            "lon": 22.724743,
+            "lat": 39.557818,
+            "structure": "",
+            "id": 3
+          },
+          {
+            "road": "Κιλελέρ - Καλαμάκι",
+            "osm_way": 425625350,
+            "highway": "secondary",
+            "evidence": "both",
+            "length_m": 267.3173807915123,
+            "lon": 22.702749,
+            "lat": 39.549656,
+            "structure": "",
+            "id": 4
+          },
+          {
+            "road": "OSM 538784696",
+            "osm_way": 538784696,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 252.30605995677126,
+            "lon": 22.6974,
+            "lat": 39.588532,
+            "structure": "",
+            "id": 5
+          },
+          {
+            "road": "OSM 538784698",
+            "osm_way": 538784698,
+            "highway": "tertiary",
+            "evidence": "both",
+            "length_m": 251.59373183889258,
+            "lon": 22.690675,
+            "lat": 39.591698,
+            "structure": "",
+            "id": 6
+          }
+        ],
+        "cropland_source": "landcover.tif",
+        "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+        "boundary": "Centerline overlap is not an observation of road closure or passability.",
+        "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network",
+        "key": "exposure-4fa28e86a4",
+        "kind": "karla_exposure",
+        "aoi": "Karla 湖 · 北部片区核查",
+        "observations": [
+          "2023-12-18",
+          "2023-12-19"
+        ],
+        "preview_file": "map.png",
+        "folder": "outputs/exposure-4fa28e86a4"
+      }
+    ]
+  }
+]

@@ -1,0 +1,846 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365293-0a2e443931",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365293",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 376.967862795479,
+        "longitude": -0.405092,
+        "latitude": 39.417115,
+        "review_order": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40498370000000067,
+            39.41879979999999
+          ],
+          [
+            -0.40491900000000003,
+            39.41861149999999
+          ],
+          [
+            -0.40528726389372055,
+            39.4154244861976
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-323441847-8452774760",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Carretera de Picanya-Paiporta-Sedaví",
+        "road_ref": "CV-407",
+        "osm_way": "323441847",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 333.72459343582364,
+        "longitude": -0.418166,
+        "latitude": 39.435623,
+        "review_order": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.41624550000000005,
+            39.4358252
+          ],
+          [
+            -0.4166411000000009,
+            39.4357801
+          ],
+          [
+            -0.4170650999999988,
+            39.4357376
+          ],
+          [
+            -0.4179670000000001,
+            39.4356444
+          ],
+          [
+            -0.41931940000000034,
+            39.43549780000001
+          ],
+          [
+            -0.42008449999999947,
+            39.435413800000006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365294-72cadeacea",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365294",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 180.49271709492047,
+        "longitude": -0.404035,
+        "latitude": 39.424041,
+        "review_order": 3
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4041312883171324,
+            39.42323145671054
+          ],
+          [
+            -0.4039396233040136,
+            39.4248500108234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365292-4b70ee5188",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365292",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 152.5899820437348,
+        "longitude": -0.40472,
+        "latitude": 39.418087,
+        "review_order": 4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4048015712225659,
+            39.41740293496435
+          ],
+          [
+            -0.40466039999999903,
+            39.41858499999999
+          ],
+          [
+            -0.4045802872393488,
+            39.418761345783814
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365294-f7bede4d5a",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365294",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 118.34417115095323,
+        "longitude": -0.404336,
+        "latitude": 39.4215,
+        "review_order": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40439915401976084,
+            39.42096925415261
+          ],
+          [
+            -0.40427349572007953,
+            39.42203049715812
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365295-3155648a99",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365295",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 116.16393986128445,
+        "longitude": -0.404684,
+        "latitude": 39.420651,
+        "review_order": 6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4046240171841951,
+            39.42117186900142
+          ],
+          [
+            -0.4047445063159632,
+            39.42012997592974
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23377163-a8bd020603",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-407",
+        "osm_way": "23377163",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 84.66386506216428,
+        "longitude": -0.406707,
+        "latitude": 39.435196,
+        "review_order": 7
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40698658792163206,
+            39.435481156394644
+          ],
+          [
+            -0.40698669999999937,
+            39.435457899999996
+          ],
+          [
+            -0.40694959999999997,
+            39.43536040000001
+          ],
+          [
+            -0.4068749000000007,
+            39.43527669999999
+          ],
+          [
+            -0.40677010000000025,
+            39.43521530000001
+          ],
+          [
+            -0.4067209999999991,
+            39.4351982
+          ],
+          [
+            -0.4066262999999995,
+            39.43518019999999
+          ],
+          [
+            -0.4065286999999998,
+            39.435179700000006
+          ],
+          [
+            -0.4064501000000004,
+            39.4351926
+          ],
+          [
+            -0.4063311000000002,
+            39.435239
+          ],
+          [
+            -0.40626262980431926,
+            39.4352923032321
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23377164-b2a066a1c6",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-407",
+        "osm_way": "23377164",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 80.73530274820854,
+        "longitude": -0.40716,
+        "latitude": 39.435971,
+        "review_order": 8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4067248243666359,
+            39.435837220379156
+          ],
+          [
+            -0.40682020000000063,
+            39.4358558
+          ],
+          [
+            -0.4069779999999999,
+            39.4359065
+          ],
+          [
+            -0.40758580000000016,
+            39.4361222
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23377168-f62274828e",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-407",
+        "osm_way": "23377168",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 77.11754211547203,
+        "longitude": -0.407215,
+        "latitude": 39.435928,
+        "review_order": 9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40758580000000016,
+            39.4361222
+          ],
+          [
+            -0.40719610000000095,
+            39.4359179
+          ],
+          [
+            -0.4070325000000011,
+            39.43580829999999
+          ],
+          [
+            -0.4069773000000002,
+            39.4357313
+          ],
+          [
+            -0.4069651,
+            39.4356886
+          ],
+          [
+            -0.4069620708885588,
+            39.435658487080474
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365186-0aa4cf3162",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-400",
+        "osm_way": "23365186",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 67.2260507930761,
+        "longitude": -0.40515,
+        "latitude": 39.419056,
+        "review_order": 10
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4049826337083376,
+            39.419311380019685
+          ],
+          [
+            -0.4050856000000006,
+            39.4192452
+          ],
+          [
+            -0.40515750000000084,
+            39.41908960000001
+          ],
+          [
+            -0.40512029999999993,
+            39.4189269
+          ],
+          [
+            -0.40498370000000067,
+            39.41879979999999
+          ],
+          [
+            -0.40497687451253256,
+            39.41879779291859
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365294-b6dea01c83",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365294",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 62.82797838891473,
+        "longitude": -0.404547,
+        "latitude": 39.41972,
+        "review_order": 11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40453767280769115,
+            39.41943970959941
+          ],
+          [
+            -0.40456600000000054,
+            39.4195601
+          ],
+          [
+            -0.4045137219239138,
+            39.420001639775556
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-1328574968-a293ef891f",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Carretera de Picanya-Paiporta-Sedaví",
+        "road_ref": "CV-407",
+        "osm_way": "1328574968",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 58.77281007721804,
+        "longitude": -0.415907,
+        "latitude": 39.435859,
+        "review_order": 12
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4155673428840481,
+            39.43588394207936
+          ],
+          [
+            -0.4158104000000005,
+            39.4358683
+          ],
+          [
+            -0.41624550000000005,
+            39.4358252
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365294-bc902d14c8",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365294",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 53.94914228409702,
+        "longitude": -0.40384,
+        "latitude": 39.425691,
+        "review_order": 13
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40386863060273615,
+            39.425449499432716
+          ],
+          [
+            -0.40381200000000017,
+            39.4259277
+          ],
+          [
+            -0.40381017280327125,
+            39.425933125256236
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365295-213c04a582",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365295",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 52.16480316845108,
+        "longitude": -0.404775,
+        "latitude": 39.41987,
+        "review_order": 14
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40474752726537633,
+            39.42010385269106
+          ],
+          [
+            -0.4048016328530589,
+            39.419635978037576
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-44143134-807f64e502",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Calle de los Carpinteros",
+        "road_ref": "",
+        "osm_way": "44143134",
+        "highway": "secondary_link",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 42.85472548213856,
+        "longitude": -0.404428,
+        "latitude": 39.424532,
+        "review_order": 15
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4043285969263183,
+            39.42470877026717
+          ],
+          [
+            -0.40443839999999986,
+            39.42451419999998
+          ],
+          [
+            -0.40463360000000126,
+            39.42442939999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23377178-83bd2f56ef",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Carretera de Picanya-Paiporta-Sedaví",
+        "road_ref": "CV-407",
+        "osm_way": "23377178",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 31.673570169588185,
+        "longitude": -0.407756,
+        "latitude": 39.436177,
+        "review_order": 16
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40758580000000016,
+            39.4361222
+          ],
+          [
+            -0.4079259065259803,
+            39.43623082499234
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365293-93ba57e302",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Avinguda del Sud",
+        "road_ref": "CV-400",
+        "osm_way": "23365293",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 26.908652649945783,
+        "longitude": -0.405364,
+        "latitude": 39.414757,
+        "review_order": 17
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4053504600418525,
+            39.41487754026632
+          ],
+          [
+            -0.4053783461027336,
+            39.41463619039177
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-44142133-278eb08f18",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "44142133",
+        "highway": "secondary_link",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 24.38861207189345,
+        "longitude": -0.403932,
+        "latitude": 39.428192,
+        "review_order": 18
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4040673000000005,
+            39.42822429999999
+          ],
+          [
+            -0.40389990000000003,
+            39.42818389999999
+          ],
+          [
+            -0.4038397141504683,
+            39.428114472155684
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23377166-9a7128a232",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-407",
+        "osm_way": "23377166",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 18.995252544654473,
+        "longitude": -0.40634,
+        "latitude": 39.435184,
+        "review_order": 19
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4064501000000004,
+            39.4351926
+          ],
+          [
+            -0.4063120999999987,
+            39.4351813
+          ],
+          [
+            -0.40623277772983135,
+            39.435165738322446
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365186-b3ad0f263d",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-400",
+        "osm_way": "23365186",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 16.642661356494035,
+        "longitude": -0.404389,
+        "latitude": 39.419236,
+        "review_order": 20
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4043554791455764,
+            39.419165585167136
+          ],
+          [
+            -0.40438890000000055,
+            39.41923549999999
+          ],
+          [
+            -0.4044571907438887,
+            39.41928902672026
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-23365186-afb2c6334a",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "",
+        "road_ref": "CV-400",
+        "osm_way": "23365186",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 11.654409980919192,
+        "longitude": -0.404504,
+        "latitude": 39.41881,
+        "review_order": 21
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4045580589854741,
+            39.418777621960345
+          ],
+          [
+            -0.40445076283246634,
+            39.41884156356105
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-1128298613-f2c87781f3",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Carretera de Picanya-Paiporta-Sedaví",
+        "road_ref": "CV-407",
+        "osm_way": "1128298613",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 8.620965597165712,
+        "longitude": -0.420132,
+        "latitude": 39.435402,
+        "review_order": 22
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4201801046864412,
+            39.4353907610854
+          ],
+          [
+            -0.42008449999999947,
+            39.435413800000006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46186-1128298612-5307ff94be",
+        "town_code": "46186",
+        "town": "Paiporta",
+        "road_name": "Carretera de Picanya-Paiporta-Sedaví",
+        "road_ref": "CV-407",
+        "osm_way": "1128298612",
+        "highway": "secondary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 5.191268599255321,
+        "longitude": -0.420115,
+        "latitude": 39.435413,
+        "review_order": 23
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.42008449999999947,
+            39.435413800000006
+          ],
+          [
+            -0.42014477659783933,
+            39.43541297787024
+          ]
+        ]
+      }
+    }
+  ]
+}

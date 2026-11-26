@@ -1,0 +1,12 @@
+{
+  "analysis_id": "horta_sud_paiporta_benetusser_major_roads_02",
+  "top_n": 10,
+  "files": {
+    "north.svg": "805d10765445da987da106ea0e625167a29b91d7e5210a4cc6e8faa15a88db29",
+    "review_points.geojson": "6c91a320c0372bf9378dbd711d1c013470a78f49d1884004c84088dcc29be3d5",
+    "transport.pdf": "9ff3b40d66635025d5e97320ce7e73fb39719d3f7bc3b70441de0d868310a713",
+    "transport.png": "16137ab5c325c893fe05a7c9d9e1246c9671e2c55f0a9b6dff07e4acb5b30470",
+    "transport.qgz": "873e0a07259cd9a10d7e2dc45f3928d9168b9a6105392d4a068937bee74f9f00"
+  },
+  "map_title": "Paiporta and Benetusser Major Road Review, 31 Oct 2024"
+}

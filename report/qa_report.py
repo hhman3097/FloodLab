@@ -3,7 +3,7 @@ import json
 import re
 from pathlib import Path
 
-import fitz
+import pymupdf
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parent
@@ -29,7 +29,7 @@ def main():
     for pattern in ("page-*.png", "report-*.jpg"):
         for previous in OUT.glob(pattern):
             previous.unlink()
-    document = fitz.open(ROOT / "build/main.pdf")
+    document = pymupdf.open(ROOT / "build/main.pdf")
     paths, overflow = [], []
     for index, page in enumerate(document):
         path = OUT / f"page-{index+1:02d}.png"
@@ -38,13 +38,13 @@ def main():
         for block in page.get_text("dict")["blocks"]:
             for line in block.get("lines", []):
                 for span in line["spans"]:
-                    box = fitz.Rect(span["bbox"])
+                    box = pymupdf.Rect(span["bbox"]) * page.rotation_matrix
                     if not page.rect.contains(box):
                         overflow.append({"page": index+1, "text": span["text"], "bbox": list(box)})
     contact(paths, "report")
-    source = (ROOT / "main.tex").read_text().split("\\section{引言}", 1)[1].split("\\appendix", 1)[0]
-    source = source.replace("\\input{comparison-results.tex}",
-                            (ROOT / "comparison-results.tex").read_text())
+    source = (ROOT / "agent-study.tex").read_text(encoding="utf-8").split(r"\section{引言}", 1)[1]
+    for name in ("karla-method.tex", "karla-results.tex", "karla-visuals.tex", "transport-method.tex", "transport-results.tex"):
+        source = source.replace(r"\input{" + name + "}", (ROOT / name).read_text(encoding="utf-8"))
     audit = {
         "pages": len(document), "main_chinese_characters": len(re.findall(r"[\u4e00-\u9fff]", source)),
         "text_outside_page": overflow, "visual_review": "requires inspection of rendered pages",

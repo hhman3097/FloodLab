@@ -1,0 +1,28 @@
+{
+  "analysis_id": "horta_sud_major_roads_by_town_01",
+  "segments": 241,
+  "municipalities": 18,
+  "qgis_project_reopened": true,
+  "independent_method": "PyQGIS reproject and intersect raw sources; shared GEOS, not survey truth",
+  "max_errors": {
+    "segment_geometry_m": 2.795145448430958e-09,
+    "segment_csv_m": 0.0,
+    "assessed_m": 9.440555004402995e-10,
+    "flooded_area_m": 1.3833094669735146e-09,
+    "flood_trace_m": 4.28781277150847e-09,
+    "exposed_m": 4.28781277150847e-09,
+    "coverage_pct": 1.495550350227859e-10,
+    "segment_sum_m": 1.8189894035458565e-12
+  },
+  "thresholds": {
+    "segment_geometry_m": 0.05,
+    "segment_csv_m": 0.05,
+    "assessed_m": 0.05,
+    "flooded_area_m": 0.05,
+    "flood_trace_m": 0.05,
+    "exposed_m": 0.05,
+    "coverage_pct": 0.001,
+    "segment_sum_m": 0.05
+  },
+  "passed": true
+}

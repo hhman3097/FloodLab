@@ -2,7 +2,30 @@
 
 FloodLab 是一个可以用中文对话的洪涝遥感工作台。你可以从“最近哪里发生了洪涝？”开始，选定事件后再追问“那片区域有多大，哪里最集中？”。Pi 查找资料、确认研究区和观测时间；QGIS 从实际下载的空间数据计算结果，并导出可编辑地图。
 
-**[下载桌面版 0.6.1](https://github.com/hhman3097/FloodLab/releases/tag/v0.6.1) · [课程报告 PDF](report/build/main.pdf) · [LaTeX 源码](report/main.tex) · [实验复现](docs/REPRODUCTION.md) · [回归验收](docs/ACCEPTANCE.md)**
+**[下载桌面版 0.7.0](https://github.com/hhman3097/FloodLab/releases/tag/v0.7.0) · [课程报告 PDF](report/build/main.pdf) · [LaTeX 源码](report/main.tex) · [实验复现](docs/REPRODUCTION.md) · [回归验收](docs/ACCEPTANCE.md)**
+
+## 当前源码：Karla 湖洪灾恢复监测
+
+主案例参照 Copernicus EMSN184，三轮在同一个 Pi 工作区完成：用同轨雷达做初报，等新光学观测后切换到 MNDWI 并更新证据，再复用结果出农田和道路核查图。两类影像均下载了实际像元。两期共同检出约 66.91 km²；另有约 28.52 km² 只有光学检出，不作为洪水新增面积。
+
+[Karla 三轮日志、QGIS 工程及独立复核](report/evidence/karla)
+
+### 瓦伦西亚影像与其他补充案例
+
+主案例与道路核查在 0.7.0 安装包中共用工作台、Pi、Responses 和对话工作区。报告附录 D 收录实跑截图，不安装应用也能查看三轮分析、工具记录和成果下载界面。
+
+> 用灾前灾后 Sentinel-1 做一份 2024 年瓦伦西亚 Horta Sud 洪涝分析。实际下载影像，提取候选淹没区，统计市镇面积并出图。
+
+浏览器实跑下载了两期 VV/VH 像元，得到 5.0244 km² 候选区；追问改用保守参数，原影像复用且原图保留，新候选区为 3.3148 km²。更早的 EMS 产品只用于异时相对照，不参与分割。
+
+| 实跑案例 | 输入与成果 |
+|---|---|
+| 瓦伦西亚影像分割 | Sentinel-1 像元 → 掩膜、候选矢量、市镇面积、QGIS 图 |
+| 瓦伦西亚道路核查 | EMS 观测、路网和市镇边界 → 具名候选路段、清单和地图 |
+| 克里特岛 Kastelli | 在线下载 EMS 产品 → 合并面积及地图 |
+| 莆田—仙游 | Sentinel 目录元数据 → 影像覆盖图，不估计淹没面积 |
+
+[本轮实跑与核验材料](report/evidence/monitoring) · [浏览器复测脚本](workbench/check_monitoring.mjs)
 
 ![瓦伦西亚案例的实际地图视图：可切换灾前影像、洪涝轮廓和道路](docs/demo/valencia.jpg)
 
@@ -23,7 +46,7 @@ FloodLab 是一个可以用中文对话的洪涝遥感工作台。你可以从�
 
 ![Kastelli 实际导出的 QGIS 专题图及文件下载入口](docs/demo/kastelli.jpg)
 
-[查看专题图 PDF](report/figures/kastelli-observed.pdf) · [核对数值、来源和工具调用顺序](desktop/qa/project-check.json)
+[查看专题图 PDF](report/evidence/monitoring/crete/outputs/EMSR933-2962-07ce5273/map.pdf) · [核对数值、来源和工具调用顺序](report/evidence/monitoring/runs/crete.json)
 
 ## 演示二：同一场洪涝，换一个问题
 

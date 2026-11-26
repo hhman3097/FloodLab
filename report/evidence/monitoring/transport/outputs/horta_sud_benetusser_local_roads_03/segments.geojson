@@ -1,0 +1,1623 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-397264186-ebf9532318",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Mont Alt",
+        "road_ref": "",
+        "osm_way": "397264186",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 376.4106641356848,
+        "longitude": -0.400807,
+        "latitude": 39.427298,
+        "review_order": 1
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4010882000000005,
+            39.42617559999999
+          ],
+          [
+            -0.40104610000000035,
+            39.4263014
+          ],
+          [
+            -0.4009962000000009,
+            39.4264506
+          ],
+          [
+            -0.4009211000000003,
+            39.4266519
+          ],
+          [
+            -0.40081009999999956,
+            39.426949300000004
+          ],
+          [
+            -0.40067819999999943,
+            39.427302700000006
+          ],
+          [
+            -0.40060680000000004,
+            39.4274939
+          ],
+          [
+            -0.40072480000000027,
+            39.427518799999994
+          ],
+          [
+            -0.4007946000000003,
+            39.4273303
+          ],
+          [
+            -0.4009246999999997,
+            39.426979
+          ],
+          [
+            -0.40103760000000016,
+            39.426674299999995
+          ],
+          [
+            -0.40116720000000117,
+            39.426324100000016
+          ],
+          [
+            -0.40120889999999954,
+            39.426204399999996
+          ],
+          [
+            -0.4013790000000009,
+            39.4257542
+          ],
+          [
+            -0.40141059995670514,
+            39.425669218417895
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42020390-6172a2b07e",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Moll de l'Estació",
+        "road_ref": "",
+        "osm_way": "42020390",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 261.8773636300878,
+        "longitude": -0.393183,
+        "latitude": 39.421016,
+        "review_order": 2
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3929941000000005,
+            39.4221855
+          ],
+          [
+            -0.393099600000001,
+            39.4215601
+          ],
+          [
+            -0.39324730000000063,
+            39.4206012
+          ],
+          [
+            -0.3934447000000005,
+            39.4206145
+          ],
+          [
+            -0.39355369999999895,
+            39.42001230000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022132-daf2b86919",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Moll de l'Estació",
+        "road_ref": "",
+        "osm_way": "42022132",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 224.55629593350625,
+        "longitude": -0.393363,
+        "latitude": 39.418308,
+        "review_order": 3
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39330120000000124,
+            39.41729779999999
+          ],
+          [
+            -0.3933606000000005,
+            39.418277800000006
+          ],
+          [
+            -0.39343669999999986,
+            39.419317199999995
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375945-73f6f9f300",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Doctor Vicente Navarro",
+        "road_ref": "",
+        "osm_way": "23375945",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 140.3279054565127,
+        "longitude": -0.402443,
+        "latitude": 39.420723,
+        "review_order": 4
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4016449623717249,
+            39.42059608155773
+          ],
+          [
+            -0.40167700000000117,
+            39.4206009
+          ],
+          [
+            -0.40211670000000044,
+            39.4206724
+          ],
+          [
+            -0.4023299000000003,
+            39.4207053
+          ],
+          [
+            -0.40322679999999966,
+            39.4208422
+          ],
+          [
+            -0.40324238930718825,
+            39.42084458021469
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375980-f7f42ed29e",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "23375980",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 136.20277054362242,
+        "longitude": -0.394216,
+        "latitude": 39.419481,
+        "review_order": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3949913000000002,
+            39.41960089999999
+          ],
+          [
+            -0.3939336000000004,
+            39.4194377
+          ],
+          [
+            -0.3934336000000001,
+            39.41939579999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399489296-a4e5838543",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de l'Esport",
+        "road_ref": "",
+        "osm_way": "399489296",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 102.9152276680028,
+        "longitude": -0.401695,
+        "latitude": 39.419312,
+        "review_order": 6
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4015885429058257,
+            39.41976790989743
+          ],
+          [
+            -0.40179890000000107,
+            39.4188698
+          ],
+          [
+            -0.4018018239699653,
+            39.418856027681954
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022134-8534ff5efc",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "42022134",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 99.15244281055098,
+        "longitude": -0.39468,
+        "latitude": 39.419492,
+        "review_order": 7
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39524910000000046,
+            39.419553400000005
+          ],
+          [
+            -0.3948819000000004,
+            39.41952549999999
+          ],
+          [
+            -0.3941174000000007,
+            39.419397100000005
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022134-f65adf87a1",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "42022134",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 60.61502776094122,
+        "longitude": -0.393601,
+        "latitude": 39.419484,
+        "review_order": 8
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39333679607633165,
+            39.41939151931446
+          ],
+          [
+            -0.3933337999999992,
+            39.41944240000001
+          ],
+          [
+            -0.39337949999999944,
+            39.419478100000006
+          ],
+          [
+            -0.3936985000000005,
+            39.4194862
+          ],
+          [
+            -0.3939493885411409,
+            39.41951718667677
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-41807318-c2fa742745",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda de l'Orba",
+        "road_ref": "",
+        "osm_way": "41807318",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 59.78387765301523,
+        "longitude": -0.393612,
+        "latitude": 39.417308,
+        "review_order": 9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39330319999999996,
+            39.4171847
+          ],
+          [
+            -0.3939206614842089,
+            39.41743057724516
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022134-5d5ba1ae58",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "42022134",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 59.318303433305196,
+        "longitude": -0.393778,
+        "latitude": 39.419351,
+        "review_order": 10
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3941174000000007,
+            39.419397100000005
+          ],
+          [
+            -0.39372009999999985,
+            39.4193434
+          ],
+          [
+            -0.39343669999999986,
+            39.419317199999995
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022134-1cf463f103",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "42022134",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 58.05808290409719,
+        "longitude": -0.394872,
+        "latitude": 39.419638,
+        "review_order": 11
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39453997796693896,
+            39.41959393725465
+          ],
+          [
+            -0.39490599999999976,
+            39.41964260000001
+          ],
+          [
+            -0.3952000000000001,
+            39.419698499999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42020805-d80109912c",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Molí",
+        "road_ref": "",
+        "osm_way": "42020805",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 53.56855376180985,
+        "longitude": -0.402502,
+        "latitude": 39.423058,
+        "review_order": 12
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4021917771556794,
+            39.42307386490314
+          ],
+          [
+            -0.4028124376704679,
+            39.42304253642472
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-397264186-a39a6713a4",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Mont Alt",
+        "road_ref": "",
+        "osm_way": "397264186",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 43.0733216744125,
+        "longitude": -0.401162,
+        "latitude": 39.42599,
+        "review_order": 13
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40123637103179,
+            39.42580513166502
+          ],
+          [
+            -0.4010882000000005,
+            39.42617559999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375941-9ceabee1ff",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda de Paiporta",
+        "road_ref": "CV-4061",
+        "osm_way": "23375941",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 37.174230613637874,
+        "longitude": -0.401685,
+        "latitude": 39.425717,
+        "review_order": 14
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4018892735223781,
+            39.4257705225066
+          ],
+          [
+            -0.40172959999999985,
+            39.4257284
+          ],
+          [
+            -0.40166789999999913,
+            39.425713099999996
+          ],
+          [
+            -0.40147904355326575,
+            39.425666451160815
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-989695964-57cb79e888",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer d’Ausiàs March",
+        "road_ref": "",
+        "osm_way": "989695964",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 27.26680827966998,
+        "longitude": -0.401815,
+        "latitude": 39.422366,
+        "review_order": 15
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40197079999999946,
+            39.4223889
+          ],
+          [
+            -0.4018434000000013,
+            39.422370400000005
+          ],
+          [
+            -0.4016595999999998,
+            39.422343800000014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-397264184-efed82d6ad",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Mestre Atanasio García Zapater",
+        "road_ref": "",
+        "osm_way": "397264184",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 26.55497298264767,
+        "longitude": -0.40094,
+        "latitude": 39.426142,
+        "review_order": 16
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40079199563440215,
+            39.42610917768577
+          ],
+          [
+            -0.40100290000000083,
+            39.4261565
+          ],
+          [
+            -0.4010882000000005,
+            39.42617559999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42021462-25ea1a5b42",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer d’Ausiàs March",
+        "road_ref": "",
+        "osm_way": "42021462",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 25.635933997556734,
+        "longitude": -0.401513,
+        "latitude": 39.422322,
+        "review_order": 17
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4013672073862383,
+            39.422300600960625
+          ],
+          [
+            -0.4016595999999998,
+            39.422343800000014
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-99884454-66e75df118",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avenida de Orba",
+        "road_ref": "",
+        "osm_way": "99884454",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 22.78577756475465,
+        "longitude": -0.401031,
+        "latitude": 39.41874,
+        "review_order": 18
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4011614098412927,
+            39.418754950825345
+          ],
+          [
+            -0.4009462000000004,
+            39.4187298
+          ],
+          [
+            -0.4009004813718714,
+            39.41872166761591
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-675153659-ac6cb63342",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de l’Almirall Císcar",
+        "road_ref": "",
+        "osm_way": "675153659",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 22.424978153971946,
+        "longitude": -0.393489,
+        "latitude": 39.418294,
+        "review_order": 19
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39361748442772143,
+            39.41831065327528
+          ],
+          [
+            -0.3933606000000005,
+            39.418277800000006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375975-d8cb56f8b6",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda dels Reis Catòlics",
+        "road_ref": "",
+        "osm_way": "23375975",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 20.206140948840073,
+        "longitude": -0.395107,
+        "latitude": 39.419585,
+        "review_order": 20
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.395222400000001,
+            39.419569599999996
+          ],
+          [
+            -0.3949913000000002,
+            39.41960089999999
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375978-32dd714052",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "23375978",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 18.612378716071113,
+        "longitude": -0.395089,
+        "latitude": 39.419637,
+        "review_order": 21
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3949913000000002,
+            39.41960089999999
+          ],
+          [
+            -0.3951865,
+            39.4196728
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399489299-d3859ac03a",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda de l'Orba",
+        "road_ref": "",
+        "osm_way": "399489299",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 17.260004867737404,
+        "longitude": -0.401046,
+        "latitude": 39.418806,
+        "review_order": 22
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.40094589135833164,
+            39.41880067707163
+          ],
+          [
+            -0.4009586000000003,
+            39.418802199999995
+          ],
+          [
+            -0.40114586364628435,
+            39.41880995897791
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022134-e56198d2dd",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "42022134",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 14.80651481420271,
+        "longitude": -0.393358,
+        "latitude": 39.419331,
+        "review_order": 23
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39343669999999986,
+            39.419317199999995
+          ],
+          [
+            -0.39337310000000103,
+            39.4193179
+          ],
+          [
+            -0.3933394999999991,
+            39.41934559999999
+          ],
+          [
+            -0.39333679607633165,
+            39.41939151931446
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-4f46fe76f1",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 12.363584508192396,
+        "longitude": -0.395189,
+        "latitude": 39.419618,
+        "review_order": 24
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.395222400000001,
+            39.419569599999996
+          ],
+          [
+            -0.3951949000000004,
+            39.4196
+          ],
+          [
+            -0.3951825000000009,
+            39.41963580000001
+          ],
+          [
+            -0.3951865,
+            39.4196728
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-a73afc86ca",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 11.755544149229184,
+        "longitude": -0.395419,
+        "latitude": 39.419571,
+        "review_order": 25
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3954545999999996,
+            39.419615300000004
+          ],
+          [
+            -0.39543490000000076,
+            39.4195836
+          ],
+          [
+            -0.3954029000000002,
+            39.419558499999994
+          ],
+          [
+            -0.3953621000000012,
+            39.4195427
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-397264188-7f1fbfd1d0",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Mestre Atanasio García Zapater",
+        "road_ref": "",
+        "osm_way": "397264188",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 10.875896343031604,
+        "longitude": -0.401149,
+        "latitude": 39.42619,
+        "review_order": 26
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4010882000000005,
+            39.42617559999999
+          ],
+          [
+            -0.40120889999999954,
+            39.426204399999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-ec762b4942",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 10.67787511916087,
+        "longitude": -0.395457,
+        "latitude": 39.419663,
+        "review_order": 27
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39543480000000053,
+            39.4197073
+          ],
+          [
+            -0.3954534000000011,
+            39.41967859999998
+          ],
+          [
+            -0.3954601999999997,
+            39.419647100000006
+          ],
+          [
+            -0.3954545999999996,
+            39.419615300000004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375976-0a4ab8d145",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "23375976",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 10.249217494078058,
+        "longitude": -0.395493,
+        "latitude": 39.419698,
+        "review_order": 28
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39543480000000053,
+            39.4197073
+          ],
+          [
+            -0.3955511195066654,
+            39.41968783680833
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-d5da7df651",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 10.06689646985123,
+        "longitude": -0.395304,
+        "latitude": 39.41954,
+        "review_order": 29
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3953621000000012,
+            39.4195427
+          ],
+          [
+            -0.39532360000000044,
+            39.419537899999995
+          ],
+          [
+            -0.39528500000000105,
+            39.419541599999995
+          ],
+          [
+            -0.39524910000000046,
+            39.419553400000005
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-23375977-8e13cc251b",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda d'Alfafar",
+        "road_ref": "",
+        "osm_way": "23375977",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 9.879567559560039,
+        "longitude": -0.395503,
+        "latitude": 39.41964,
+        "review_order": 30
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39555075040370685,
+            39.419663812276
+          ],
+          [
+            -0.3954545999999996,
+            39.419615300000004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42021458-04a474db44",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de l’Horta",
+        "road_ref": "",
+        "osm_way": "42021458",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 8.609379984435748,
+        "longitude": -0.402329,
+        "latitude": 39.420744,
+        "review_order": 31
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4023273972309009,
+            39.42078280451711
+          ],
+          [
+            -0.40232820000000064,
+            39.42075839999999
+          ],
+          [
+            -0.4023299000000003,
+            39.4207053
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42020399-cd9d15006d",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de Federico García Lorca",
+        "road_ref": "",
+        "osm_way": "42020399",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 7.91841043178708,
+        "longitude": -0.393145,
+        "latitude": 39.421567,
+        "review_order": 32
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39318956716229264,
+            39.42157478044911
+          ],
+          [
+            -0.393099600000001,
+            39.4215601
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42020162-a11a6d39f9",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de la Constitució",
+        "road_ref": "",
+        "osm_way": "42020162",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 6.8373980149831555,
+        "longitude": -0.393033,
+        "latitude": 39.422191,
+        "review_order": 33
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3929941000000005,
+            39.4221855
+          ],
+          [
+            -0.39307233957522175,
+            39.42219592740858
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-1292692348-14c01dd303",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de les Amèriques",
+        "road_ref": "",
+        "osm_way": "1292692348",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 6.394076280629749,
+        "longitude": -0.39359,
+        "latitude": 39.420017,
+        "review_order": 34
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39355369999999895,
+            39.42001230000002
+          ],
+          [
+            -0.3936268220418017,
+            39.42002224079548
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022140-03f0fb5cee",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Pintor Sorolla",
+        "road_ref": "",
+        "osm_way": "42022140",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 6.128273760208942,
+        "longitude": -0.395368,
+        "latitude": 39.419515,
+        "review_order": 35
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3953621000000012,
+            39.4195427
+          ],
+          [
+            -0.3953740381344192,
+            39.41948829645972
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42021465-9dd758e1d3",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Palleter",
+        "road_ref": "",
+        "osm_way": "42021465",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 6.088561391750815,
+        "longitude": -0.401665,
+        "latitude": 39.422317,
+        "review_order": 36
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4016595999999998,
+            39.422343800000014
+          ],
+          [
+            -0.40166900000000016,
+            39.422298700000006
+          ],
+          [
+            -0.40167088243045357,
+            39.422289674370354
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-36ab2493d6",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 4.175733440543048,
+        "longitude": -0.395418,
+        "latitude": 39.419721,
+        "review_order": 37
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39539990740507863,
+            39.419733087899466
+          ],
+          [
+            -0.39540690000000056,
+            39.41973
+          ],
+          [
+            -0.39543480000000053,
+            39.4197073
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42022129-76a4cb7872",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Mestre Serrano",
+        "road_ref": "",
+        "osm_way": "42022129",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 3.833458170626334,
+        "longitude": -0.39412,
+        "latitude": 39.41938,
+        "review_order": 38
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3941174000000007,
+            39.419397100000005
+          ],
+          [
+            -0.3941233409122763,
+            39.419362888152435
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-f661c350b3",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 3.081711916663797,
+        "longitude": -0.395193,
+        "latitude": 39.419686,
+        "review_order": 39
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3951865,
+            39.4196728
+          ],
+          [
+            -0.3952000000000001,
+            39.419698499999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-0f534a16d4",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 2.9197537521220025,
+        "longitude": -0.395236,
+        "latitude": 39.419562,
+        "review_order": 40
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39524910000000046,
+            39.419553400000005
+          ],
+          [
+            -0.395222400000001,
+            39.419569599999996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42020386-f4a691ee95",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Moll de l'Estació",
+        "road_ref": "",
+        "osm_way": "42020386",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 2.4625771203107627,
+        "longitude": -0.392992,
+        "latitude": 39.422196,
+        "review_order": 41
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39298892262754953,
+            39.422207309200104
+          ],
+          [
+            -0.3929941000000005,
+            39.4221855
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42021458-a09928c664",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer de l’Horta",
+        "road_ref": "",
+        "osm_way": "42021458",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 2.186756441967753,
+        "longitude": -0.402371,
+        "latitude": 39.421996,
+        "review_order": 42
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4023718999999998,
+            39.4220057
+          ],
+          [
+            -0.40237016580772533,
+            39.42198605390509
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-399695768-f56fad9fab",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "",
+        "road_ref": "",
+        "osm_way": "399695768",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 1.65694805744746,
+        "longitude": -0.395206,
+        "latitude": 39.419704,
+        "review_order": 43
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3952000000000001,
+            39.419698499999996
+          ],
+          [
+            -0.3952118208538103,
+            39.419710271807226
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-41725785-9ffb2767ef",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avinguda dels Reis Catòlics",
+        "road_ref": "",
+        "osm_way": "41725785",
+        "highway": "tertiary",
+        "evidence": "flood_trace",
+        "structure": "tunnel",
+        "overlap_m": 27.900274949377824,
+        "longitude": -0.393272,
+        "latitude": 39.419389,
+        "review_order": 44
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.3934336000000001,
+            39.41939579999999
+          ],
+          [
+            -0.39311019921231477,
+            39.41938149884696
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-41807317-1b69aa7d2c",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Avenida de Orba",
+        "road_ref": "",
+        "osm_way": "41807317",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "tunnel",
+        "overlap_m": 16.00452208113726,
+        "longitude": -0.393222,
+        "latitude": 39.41715,
+        "review_order": 45
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.39314025161449573,
+            39.417115442133706
+          ],
+          [
+            -0.39330319999999996,
+            39.4171847
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "segment_id": "46054-42021476-039e9ce4e8",
+        "town_code": "46054",
+        "town": "Benetússer",
+        "road_name": "Carrer del Rector Eduardo Ballester",
+        "road_ref": "",
+        "osm_way": "42021476",
+        "highway": "residential",
+        "evidence": "flood_trace",
+        "structure": "",
+        "overlap_m": 0.38408778162554347,
+        "longitude": -0.401677,
+        "latitude": 39.420603,
+        "review_order": 46
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -0.4016761587405383,
+            39.42060429666693
+          ],
+          [
+            -0.40167700000000117,
+            39.4206009
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+\appendix
+\section{组队介绍与任务分工}
+本组共六人，由史森担任组长。表~\ref{tab:team} 列出各成员的任务分工，报告与提交材料由组长汇总。
+
+\begin{table}[H]
+\centering
+\caption{小组成员与任务分工。}
+\label{tab:team}
+\small
+\begin{tabularx}{\linewidth}{@{}p{28mm}p{37mm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+成员 & 分工方向 & 负责事项\\
+\midrule
+史森（组长） & 选题与整体方案 & 组织讨论，确定 Karla 三轮任务与核验口径，统筹智能体演示、报告和课程提交。\\
+王申杰 & 遥感数据与资料核对 & 整理 Sentinel-1、Sentinel-2 及 EMSN184 资料，核对观测日期、影像覆盖和参考产品。\\
+尹胜 & 方法与数值复核 & 归纳 SAR 变化法和 MNDWI 的参数与适用条件，核对掩膜面积和证据分类。\\
+李广鹏 & GIS 分析与专题制图 & 核对耕地和道路叠加的口径，检查专题图、路段坐标和 QGIS 工程。\\
+刘士涵 & 智能体验证与演示 & 核对 Karla 三轮工具调用、成果复用和旧图回看，整理工作台截图与演示材料。\\
+石倚臣 & 领域 Skills 与扩展案例 & 梳理灾情检索、任务拆解和结果解释规则，核对 Kastelli 与莆田案例的工具调用和成果索引。\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{代码结构与运行说明}
+表~\ref{tab:implementation-files} 按主案例的执行顺序列出代码入口。领域 Skills 存放在 \code{event/skills/}，每份规则可和相应的工具调用记录对照。环境配置和详细运行步骤随成果包提供。
+
+\begin{table}[htbp]
+\centering
+\caption{主案例各环节的实现位置。}
+\label{tab:implementation-files}
+\small
+\begin{tabularx}{\linewidth}{@{}p{42mm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+环节 & 代码入口与职责\\
+\midrule
+对话与成果展示 & \code{workbench/server.py}：读取工作区并将统计与地图关联到对应的回复。\\
+模型与工具联接 & \code{event/dialogue.py} 装载领域规则；\code{desktop/pi-worker.mjs} 声明工具并运行 Pi；\code{event/pi_bridge.py} 将调用转交 Python 工具。\\
+影像获取与空间计算 & \code{event/karla_project.py} 管理结果编号；\code{event/karla_data.py} 获取影像；\code{event/karla_analysis.py} 执行分割、比较与核查。\\
+制图与复核 & \code{event/karla_layout.py} 生成 QGIS 版式与工程；\code{event/verify_karla.py} 重新读取成果，复算统计量并检查工程。\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{复现主案例。}
+从当前代码启动 FloodLab 工作台，完成模型连接后新建对话，依次提交 Karla 湖 12 月 18 日初报、19 日观测更新及全窗与北部核查请求。各轮的地图和表格可从对应回复打开。也可直接使用归档结果：打开 QGIS 工程，查看原始影像、证据图层和路段清单，再用同一研究范围核对面积和长度。
+
+\section{数据、Skills 及说明文件清单}
+\label{app:evidence}
+表~\ref{tab:artifact-index} 列出课程成果包中用于检查主结论和复看各案例的材料。数据清单记录下载时间、观测日期和研究范围；Skills 与调用记录分别说明工作规则和实际执行过程。
+
+\begin{table}[H]
+\centering
+\caption{数据、Skills 与课程成果。}
+\label{tab:artifact-index}
+\small
+\begin{tabularx}{\linewidth}{@{}p{30mm}>{\raggedright\arraybackslash}X@{}}
+\toprule
+材料 & 内容\\
+\midrule
+主案例数据 & Karla 的两组灾前后像元、EMSN184 参考轮廓、WorldCover 耕地分类和 OSM 道路快照。\\
+主案例成果 & 三轮工具记录、候选掩膜、两期证据对照、核查简报、分区统计、路段清单和 QGIS 工程。\\
+专项 Skills & \code{flood-method-selection}（方法选择）、\code{flood-change-analysis}（多源比较）、\code{flood-evidence-review}（暴露核查）。\\
+通用 Skills & \code{flood-discovery}（灾情检索）、\code{question-to-measure}（任务与量算）、\code{result-interpretation}（结果解释）、\code{event-workspace}（观测产品和工作区）。\\
+补充案例 & 瓦伦西亚道路图和复算记录；Kastelli 官方轮廓、网格量算及专题图；莆田观测目录和覆盖图。\\
+说明文件 & 仓库 README、案例成果索引、输入来源和结果核验记录。\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+\subsection*{主案例的工具接口}
+工具返回的成果编号可作为下一步的输入。例如，\code{karla_segment} 生成的两个掩膜编号交给 \code{karla_compare}；对照图编号可被两次 \code{karla_exposure} 调用复用。图~\ref{fig:bench-karla-turn3} 的工具列表使用表~\ref{tab:karla-tools} 中的函数名。
+
+\begin{table}[H]
+\centering
+\caption{Karla 主案例的注册工具、关键输入和主要产物。}
+\label{tab:karla-tools}
+\small
+\begin{tabularx}{\linewidth}{@{}p{35mm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+工具 & 关键输入 & 返回值与产物\\
+\midrule
+\code{karla_inventory} & 无需显式参数；读取当前工作区。 & 研究窗、可选观测时相、已有成果编号。\\
+\code{karla_acquire} & 传感器：\code{sar} 或 \code{optical}。 & 影像下载编号、观测日与有效覆盖；保存像元与来源清单。\\
+\code{karla_segment} & 下载编号、算法名和选法理由。 & 掩膜编号、候选面积；保存掩膜、边界和专题图。\\
+\code{karla_compare} & 雷达与光学两个掩膜编号。 & 对照图编号、各证据类别面积；保存证据栅格和地图。\\
+\code{karla_exposure} & 对照图编号、范围（\code{study} 或 \code{north}）。 & 耕地重叠面积、道路重叠长度；保存分区地图、CSV 清单和工程包。\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{一次实际的结果复用。}
+第三轮的工具日志中，两次核查的 \code{comparison_id} 均为 \code{comparison-ce8daf32d0}；只把 \code{scope} 从 \code{study}（全窗）改为 \code{north}（北部）。这两个参数足以定位已有证据图并确定统计范围，不必传递原始影像路径或重新分割。
+
+\paragraph{其他案例的工具。}
+Kastelli 用 \code{list_products} 列出产品和观测日；确认要分析后，用 \code{get_footprint} 下载官方轮廓，再由 \code{analyse_footprint} 统计面积、计算网格排名并出图。莆田--仙游用 \code{search_satellite} 查询指定地域和日期的卫星足迹，返回查询元数据与覆盖图，不运行分割。

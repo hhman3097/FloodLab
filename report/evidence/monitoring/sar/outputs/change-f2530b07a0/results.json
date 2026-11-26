@@ -1,0 +1,79 @@
+{
+  "algorithm": "dual-polarisation same-orbit change + stable-dark exclusion + 8-connected filtering",
+  "preset": "conservative",
+  "thresholds": {
+    "post_vv_db_below": -18,
+    "post_vh_db_below": -24,
+    "vv_drop_db_above": 4,
+    "min_pixels": 20
+  },
+  "dates": [
+    "2024-10-20",
+    "2024-11-01"
+  ],
+  "relative_orbit": 110,
+  "crs": "EPSG:32630",
+  "resolution_m": 20,
+  "bbox_lon_lat": [
+    -0.52,
+    39.37,
+    -0.36,
+    39.46
+  ],
+  "valid_fraction": 1.0,
+  "valid_pixels": 366080,
+  "raw_candidate_pixels": 8562,
+  "candidate_pixels": 8287,
+  "patches": 32,
+  "candidate_km2": 3.3148,
+  "vector_area_km2": 3.3148,
+  "area_consistency_m2": 0.0,
+  "input": "sar-152ace0822",
+  "files": {
+    "candidate.tif": "d90a985ac381ba0053a193eb6eaad24b35955d2e850ed12f8c81cfe7316062fb",
+    "candidate.gpkg": "72ba879cd30e30aa04dc560b3c2092bf01424e591e6e7ca4c5a138465fc6996b"
+  },
+  "towns": [
+    {
+      "town": "Catarroja",
+      "code": "46094",
+      "pixels": 3239,
+      "candidate_km2": 1.2956
+    },
+    {
+      "town": "Silla",
+      "code": "46230",
+      "pixels": 3216,
+      "candidate_km2": 1.2864
+    },
+    {
+      "town": "Alfafar",
+      "code": "46022",
+      "pixels": 984,
+      "candidate_km2": 0.3936
+    },
+    {
+      "town": "Albal",
+      "code": "46007",
+      "pixels": 521,
+      "candidate_km2": 0.2084
+    },
+    {
+      "town": "Massanassa",
+      "code": "46165",
+      "pixels": 327,
+      "candidate_km2": 0.1308
+    }
+  ],
+  "reference_comparison": {
+    "both": 2372,
+    "candidate_only": 15,
+    "reference_only": 59135,
+    "common_valid": 204132,
+    "iou": 0.038555313546373655,
+    "support_km2": 81.6528,
+    "reference": "EMSR773 AOI03 GRA v2 (flooded area + flood trace)",
+    "observed_utc": "2024-10-31T10:22:00Z",
+    "interpretation": "Asynchronous spatial comparison, not ground-truth accuracy"
+  }
+}

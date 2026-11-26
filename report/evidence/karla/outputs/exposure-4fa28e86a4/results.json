@@ -1,0 +1,96 @@
+{
+  "scope": "north",
+  "bbox": [
+    22.63,
+    39.49,
+    22.78,
+    39.6
+  ],
+  "input_comparison_id": "comparison-ce8daf32d0",
+  "cropland_total_km2": 114.9956,
+  "cropland_km2": {
+    "both": 43.676,
+    "sar_only": 0.1336,
+    "optical_only": 9.1388,
+    "unknown": 2.5608
+  },
+  "road_m": {
+    "both": 3432.3228981212037,
+    "sar_only": 135.11692770547012,
+    "optical_only": 1951.7181603964116,
+    "unknown": 408.3542794667123
+  },
+  "segments": 103,
+  "road_shortlist": [
+    {
+      "road": "OSM 538784698",
+      "osm_way": 538784698,
+      "highway": "tertiary",
+      "evidence": "both",
+      "length_m": 865.5015700827701,
+      "lon": 22.685619,
+      "lat": 39.588435,
+      "structure": "",
+      "id": 1
+    },
+    {
+      "road": "OSM 538784698",
+      "osm_way": 538784698,
+      "highway": "tertiary",
+      "evidence": "both",
+      "length_m": 349.48538781477373,
+      "lon": 22.678099,
+      "lat": 39.583578,
+      "structure": "",
+      "id": 2
+    },
+    {
+      "road": "Κιλελέρ - Καλαμάκι",
+      "osm_way": 906717499,
+      "highway": "secondary",
+      "evidence": "both",
+      "length_m": 269.34473460362886,
+      "lon": 22.724743,
+      "lat": 39.557818,
+      "structure": "",
+      "id": 3
+    },
+    {
+      "road": "Κιλελέρ - Καλαμάκι",
+      "osm_way": 425625350,
+      "highway": "secondary",
+      "evidence": "both",
+      "length_m": 267.3173807915123,
+      "lon": 22.702749,
+      "lat": 39.549656,
+      "structure": "",
+      "id": 4
+    },
+    {
+      "road": "OSM 538784696",
+      "osm_way": 538784696,
+      "highway": "tertiary",
+      "evidence": "both",
+      "length_m": 252.30605995677126,
+      "lon": 22.6974,
+      "lat": 39.588532,
+      "structure": "",
+      "id": 5
+    },
+    {
+      "road": "OSM 538784698",
+      "osm_way": 538784698,
+      "highway": "tertiary",
+      "evidence": "both",
+      "length_m": 251.59373183889258,
+      "lon": 22.690675,
+      "lat": 39.591698,
+      "structure": "",
+      "id": 6
+    }
+  ],
+  "cropland_source": "landcover.tif",
+  "roads_sha256": "0c1f5bc633679b97c248d946b0d463e54fa160d15d57174f34e5e0343d9efbc6",
+  "boundary": "Centerline overlap is not an observation of road closure or passability.",
+  "road_snapshot": "present-day snapshot retrieved 2026-11-25, not a 2023 network"
+}

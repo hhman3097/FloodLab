@@ -1,4 +1,9 @@
 """Responses transport; preserve the original GIS experiment's local transcript schema."""
+import http.client
+import ssl
+import time
+from urllib.error import URLError
+
 from gis_agent import API as BaseAPI, TOOLS
 
 
@@ -7,7 +12,7 @@ class API(BaseAPI):
         super().__init__(base,key,model)
         self.reasoning={}
 
-    def complete(self,messages):
+    def complete(self,messages,*,allow_tools=True):
         items=[]
         for m in messages:
             role=m["role"]
@@ -22,9 +27,18 @@ class API(BaseAPI):
             if calls:items.extend(self.reasoning.get(calls[0]["id"],[]))
             if content:items.append({"role":role,"content":content})
             for c in calls:items.append({"type":"function_call","call_id":c["id"],**c["function"]})
-        result=self.request("/responses",{"model":self.model,"input":items,"store":False,
-             "tools":[{"type":"function",**t["function"],"strict":False} for t in TOOLS],
-             "parallel_tool_calls":False,"include":["reasoning.encrypted_content"],"max_output_tokens":4000})
+        request={"model":self.model,"input":items,"store":False,
+             "tools":[{"type":"function",**t["function"],"strict":False} for t in TOOLS] if allow_tools else [],
+             "parallel_tool_calls":False,"include":["reasoning.encrypted_content"],"max_output_tokens":4000}
+        try:
+            result=self.request("/responses",request)
+        except (URLError,ConnectionError,TimeoutError,http.client.RemoteDisconnected,ssl.SSLEOFError) as exc:
+            reason=exc.reason if isinstance(exc,URLError) else exc
+            if not isinstance(reason,(ConnectionError,TimeoutError,http.client.RemoteDisconnected,ssl.SSLEOFError)):
+                raise
+            # Retry inference only: QGIS tools execute after the response is parsed.
+            time.sleep(1)
+            result=self.request("/responses",request)
         if result.get("status") in ("failed","incomplete","cancelled"):
             raise RuntimeError("Responses request "+str(result["status"])+": "+str(result.get("incomplete_details") or result.get("error")))
         calls=[];parts=[];reasoning=[]

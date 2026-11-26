@@ -1,0 +1,10 @@
+{
+  "candidate_pixels": 12561,
+  "valid_pixels": 366080,
+  "pixel_area_m2": 5024400.0,
+  "vector_area_m2": 5024400.0,
+  "patches": 15,
+  "agreement_raster_count_verified": true,
+  "qgis_project_reopened": true,
+  "passed": true
+}

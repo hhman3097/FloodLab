@@ -90,6 +90,7 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     evidence=memory.get("evidence",{})
     from pi_bridge import turn as pi_turn
     searched=False
+    project_results={}
     def public_evidence():
         return {**evidence,"sources":[{"citation":f"S{i+1}","index":i,**{k:v for k,v in row.items() if k!="url"}}
                                      for i,row in enumerate(evidence.get("sources",[]))]}
@@ -97,6 +98,15 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
         nonlocal searched,evidence
         if name!="search_floods":
             if project is None:raise ValueError("当前任务没有绑定工作区")
+            if name=="search_satellite":
+                from satellite_catalog import PUTIAN_WINDOW
+                place=str(args.get("place",""))
+                if any(p in place.casefold() for p in ("莆田","仙游","putian","xianyou")):
+                    args={**args,"place":"莆田—仙游","bbox":list(PUTIAN_WINDOW)}
+                cache_key=json.dumps(args,sort_keys=True,ensure_ascii=False)
+                if cache_key not in project_results:
+                    project_results[cache_key]=project.call(name,args)
+                return project_results[cache_key]
             return project.call(name,args)
         found=search(str(args.get("query") or question)[:180],str(args.get("iso") or "").upper(),
                      max(1,min(365,int(args.get("days") or 30))),today)
@@ -108,17 +118,20 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     context={"today":str(today),"history":history[-8:],"last_scope":memory.get("scope"),
              "has_local_case_context":local,"evidence":public_evidence(),"user":question}
     names=["flood-discovery","question-to-measure","result-interpretation"]
-    if project is not None:names.append("event-workspace")
+    if project is not None:
+        names.append("event-workspace")
+        if project.index.get("karla") or any(k in question.casefold() for k in ("karla","卡拉湖","emsn184")):
+            names.extend(["flood-method-selection","flood-change-analysis","flood-evidence-review"])
     skills=[(Path(__file__).parent/"skills"/name/"SKILL.md").read_text(encoding="utf-8").split("---",2)[-1] for name in names]
     policy=POLICY+"\n检索必须实际调用 search_floods 工具，完成后最终 JSON 只可选择 reply 或 gis。\n"+"\n".join(skills)
     presented={}
     if project is not None:
         for i,o in enumerate(project.index["outputs"]):
-            image=(project.root/o["folder"]/"map.png").resolve()
+            image=(project.root/o["folder"]/o.get("preview_file","coverage.geojson" if o.get("kind")=="satellite_coverage" else "map.png")).resolve()
             if project.root.resolve() in image.parents and image.is_file():
                 presented[f"M{i+1}"]=o
         context["project"]={"downloaded":list(project.index["products"]),"maps":[
-            {"ref":ref,**{k:o.get(k) for k in ("key","aoi","observations","grid_m","total_km2")},
+            {"ref":ref,**{k:o.get(k) for k in ("key","kind","aoi","observations","grid_m","total_km2","from","to","preset")},
              **({"top_cells":o.get("top_cells",[])} if ref in list(presented)[-3:] else {})}
             for ref,o in presented.items()]}
         policy+="\nS 编号和 refs 只用于 search_floods 的 sources。EMS 产品目录不是新闻，不给它编 S 编号；写产品编号、研究区与观测日期即可。最终 JSON 增加 map_refs 数组：仅引用本轮正在解释或要求打开的已有地图（如 M1）；切换到不同地点、只讨论新方案或没有匹配时返回 []。返回的有效引用会在回答下方生成可点击的地图预览，不需要给路径。只打开已有成果时不要重算。"
@@ -129,16 +142,23 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     if cancel.is_set():raise InterruptedError("任务已停止")
     scope=plan.get("scope","unknown")
     explicit=bool(re.search("瓦伦西亚|瓦倫西亞|valencia|horta sud",question,re.I))
-    handoff=plan["action"]=="gis" and scope=="local" and (explicit or local) and not searched
+    dedicated = project is not None and any(c["name"] in {"download_sar_pair","segment_sar_flood","publish_sar_map",
+                   "screen_transport","export_transport_map","karla_acquire","karla_segment","karla_compare","karla_exposure"}
+                   and c["response"]["status"]=="ok" for c in project.audit)
+    handoff=plan["action"]=="gis" and scope=="local" and (explicit or local) and not searched and not dedicated
     answer=str(plan.get("answer") or "").strip()
     options=[s[:100] for s in (plan.get("options") or []) if isinstance(s,str) and s.strip()][:3]
-    if plan["action"]=="gis" and not handoff:
+    if plan["action"]=="gis" and not handoff and not dedicated:
         answer="当前案例数据覆盖瓦伦西亚。你希望分析哪个地方？我可以先查当地洪涝记录，再确认有哪些资料可用。"
         options=["查近期国内洪涝","分析瓦伦西亚案例"]
     sources=evidence.get("sources",[])
     refs=[i for i in (plan.get("refs") or []) if type(i) is int and 0<=i<len(sources)]
     visible_refs=[int(i)-1 for i in re.findall(r"\[S(\d+)\]",answer)]
-    computed=project is not None and any(c["name"]=="analyse_footprint" and c["response"]["status"]=="ok" for c in project.audit)
+    computed=project is not None and any(c["name"] in {"analyse_footprint","publish_sar_map","export_transport_map",
+                                           "karla_segment","karla_compare","karla_exposure"}
+                                          and c["response"]["status"]=="ok" for c in project.audit)
+    coverages=[c["response"]["result"] for c in (project.audit if project else []) if c["name"]=="search_satellite" and c["response"]["status"]=="ok"]
+    has_result=computed or bool(coverages)
     invalid_refs=any(i<0 or i>=len(sources) for i in visible_refs)
     products=[p for c in (project.audit if project else []) if c["name"]=="list_products" and c["response"]["status"]=="ok"
               for p in c["response"]["result"] if p.get("key") and p.get("observations")]
@@ -150,10 +170,10 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
             f"- {p['aoi']}：{', '.join(p['observations'])}（{p['key']}）" for p in selected)
         answer+=f"\n\n[核对 EMS 产品目录]({selected[0]['catalog']})"
         refs=[];visible_refs=[]
-    elif computed and invalid_refs:
+    elif has_result and invalid_refs:
         answer=re.sub(r"\[S(\d+)\]",lambda m:m[0] if 1<=int(m[1])<=len(sources) else "",answer)
         visible_refs=[i for i in visible_refs if 0<=i<len(sources)]
-    elif invalid_refs or (searched and not computed and sources and not (refs or visible_refs)):
+    elif invalid_refs or (searched and not has_result and sources and not (refs or visible_refs)):
         answer=("检索得到了一些候选资料，但还不能从中确认具体灾情。可以缩小到一个省，或查看这些资料的原始发布记录。"
                 if sources else "本轮没有可核对的新闻来源，不能确认具体灾情。可以指定地区重新查询。")
         refs=list(range(min(3,len(sources))))
@@ -165,11 +185,15 @@ def decide(api, question, history, memory, local, cancel, search=lookup,project=
     if searched:
         answer+=f"\n\n检索范围：{evidence['from']} 至 {evidence['to']}。"
         if evidence["errors"]:answer+=" 暂不可用："+ "、".join(x.split(":")[0] for x in evidence["errors"])+"。"
-        if not evidence["sources"] and not computed:
+        if not evidence["sources"] and not has_result:
             answer="本次检索没有取得可核对的记录，无法据此判断有没有发生洪涝。"+answer[answer.rfind("\n\n检索范围"):]
             options=["把时间扩大到近90天","换一个省份查询"]
         elif not evidence["sources"]:
-            answer+=" 新闻检索未返回记录；空间统计依据是已下载的观测产品。"
+            answer+=" 新闻检索未返回记录；目录与分析结果见下方。"
+    for result in coverages:
+        counts="；".join(f"{c['collection']}：{c['count']} 景"+("（有后续页）" if c["truncated"] else "")
+                        if c["status"]=="ok" else f"{c['collection']}：查询失败" for c in result["catalogs"])
+        answer+=f"\n\n影像目录核对（{result['from']} 至 {result['to']}，{result['bbox_source']}）：{counts}。此图仅展示影像足迹与检索范围，未提取洪水边界。"
     refs=plan.get("map_refs")
     referenced=[presented[r] for r in dict.fromkeys(r for r in refs if isinstance(r,str) and r in presented)] if isinstance(refs,list) else []
     return {"answer":answer,"options":options,"searched":searched,"scope":scope,"evidence":evidence,"maps":referenced,

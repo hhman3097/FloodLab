@@ -1,0 +1,28 @@
+{
+  "analysis_id": "horta_sud_paiporta_benetusser_major_roads_02",
+  "segments": 23,
+  "municipalities": 2,
+  "qgis_project_reopened": true,
+  "independent_method": "PyQGIS reproject and intersect raw sources; shared GEOS, not survey truth",
+  "max_errors": {
+    "segment_geometry_m": 2.6817588150152005e-09,
+    "segment_csv_m": 0.0,
+    "assessed_m": 9.094947017729282e-13,
+    "flooded_area_m": 0.0,
+    "flood_trace_m": 2.2737367544323206e-13,
+    "exposed_m": 2.2737367544323206e-13,
+    "coverage_pct": 7.716494110354688e-12,
+    "segment_sum_m": 2.2737367544323206e-13
+  },
+  "thresholds": {
+    "segment_geometry_m": 0.05,
+    "segment_csv_m": 0.05,
+    "assessed_m": 0.05,
+    "flooded_area_m": 0.05,
+    "flood_trace_m": 0.05,
+    "exposed_m": 0.05,
+    "coverage_pct": 0.001,
+    "segment_sum_m": 0.05
+  },
+  "passed": true
+}

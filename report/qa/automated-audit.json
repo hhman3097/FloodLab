@@ -1,6 +1,6 @@
 {
-  "pages": 30,
-  "main_chinese_characters": 10605,
+  "pages": 34,
+  "main_chinese_characters": 7456,
   "text_outside_page": [],
   "visual_review": "requires inspection of rendered pages",
   "count_scope": "Main text plus captions/tables; excludes abstract, cover, appendix and references."

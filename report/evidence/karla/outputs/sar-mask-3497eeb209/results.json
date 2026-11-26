@@ -1,0 +1,16 @@
+{
+  "algorithm": "sar_change",
+  "dates": [
+    "2023-09-01",
+    "2023-12-18"
+  ],
+  "input_id": "sar-5cc15dc79a",
+  "patches": 333,
+  "candidate_km2": 71.1892,
+  "candidate_pixels": 177973,
+  "valid_pixels": 1635998,
+  "valid_pct": 100.0,
+  "baseline_km2": 11.078,
+  "evidence_sha256": "d2293930409f74bae7e49c678d2c701415ffea18651761ea527313be60407a30",
+  "method_reason": "截至2023年12月18日，已实际获取2023年9月1日灾前与12月18日观测的Sentinel-1 RTC VV/VH像元；两期均为相对轨道7，研究窗口有效像元覆盖率均100%，同轨观测几何及相同极化支持雷达变化比较。选用sar_change提取候选积水，并单列不可判读区；不使用截止日之后的光学观测。"
+}

@@ -141,10 +141,11 @@ async function prepareWorkspace() {
     if ((await fsp.readFile(marker, "utf8")).trim() === fingerprint) return;
     progress("正在更新应用组件，保留已有分析成果…");
     for (const item of manifest.files) {
-      const ownedCode = item.path.startsWith("workbench/") ||
+      const ownedPayload = item.path.startsWith("workbench/") ||
         (item.path.startsWith("event/") && /\.(py|cjs|txt)$/.test(item.path) && item.path.split("/").length === 2) ||
-        item.path.startsWith("event/skills/") || item.path.startsWith("desktop/");
-      if (!ownedCode) continue;
+        item.path.startsWith("event/skills/") || item.path.startsWith("desktop/") ||
+        item.path.startsWith("event/inputs/assets/karla/") || item.path.startsWith("event/inputs/assets/transport/");
+      if (!ownedPayload) continue;
       const source = path.join(payload, item.path);
       if (await digest(source) !== item.sha256) throw new Error(`Application checksum mismatch: ${item.path}`);
       const dest = path.join(workspace, item.path);

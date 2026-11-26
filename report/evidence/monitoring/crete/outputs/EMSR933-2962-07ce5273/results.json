@@ -1,0 +1,49 @@
+{
+  "total_km2": 0.24126592903240962,
+  "grid_m": 1000,
+  "occupied_cells": 20,
+  "top_cells": [
+    {
+      "cell": "8-11",
+      "flood_km2": 0.07197298991375184,
+      "cell_pct": 7.197298991375184,
+      "rank": 1
+    },
+    {
+      "cell": "7-11",
+      "flood_km2": 0.037892036536891015,
+      "cell_pct": 3.789203653689101,
+      "rank": 2
+    },
+    {
+      "cell": "5-5",
+      "flood_km2": 0.023096095240300055,
+      "cell_pct": 2.3096095240300056,
+      "rank": 3
+    },
+    {
+      "cell": "5-7",
+      "flood_km2": 0.016402844629096858,
+      "cell_pct": 1.6402844629096858,
+      "rank": 4
+    },
+    {
+      "cell": "3-2",
+      "flood_km2": 0.01550528746500208,
+      "cell_pct": 1.550528746500208,
+      "rank": 5
+    }
+  ],
+  "measurement_crs": "EPSG:6933",
+  "features": 88,
+  "notation": [
+    "Flood trace",
+    "Flooded area"
+  ],
+  "source": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com/EMSR933/AOI01/DEL_MONIT01/EMSR933_AOI01_DEL_MONIT01_observedEventA_v1.json",
+  "aoi": "Kastelli",
+  "observations": [
+    "2026-10-06T10:47:00"
+  ],
+  "input_sha256": "ec223ce86495772a5488f16d976934339e5d3d886c1d2d86cced0bc96e60b043"
+}
